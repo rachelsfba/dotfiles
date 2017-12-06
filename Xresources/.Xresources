@@ -1,0 +1,89 @@
+Xft*dpi: 94
+Xft*antialias: true
+Xft*autohint: true
+Xft*rgba: vbgr
+
+#define FONT_NORMAL     xft:Profont:style=SemiCondensed:pixelsize=14,xft:Anonymous Pro:style=Regular:pixelsize=12:antialias=3:autohint=1:hintstyle=3
+#define FONT_BOLD       xft:Profont:embolden=1
+#define FONT_ITALIC     -misc-fixed-medium-r-normal--9-90-75-75-c-60-iso8859-1,6x9
+#define FONT_BOLDITALIC -misc-fixed-medium-r-normal--7-70-75-75-c-50-koi8
+
+vte*font:       FONT_NORMAL
+vte*boldFont:   FONT_BOLD
+vte*italicFont: FONT_ITALIC
+vte*background: #121212
+vte*foreground: #d6d6d6
+vte*scrollBar:  false
+
+vim*font:                         FONT_NORMAL
+vim*boldFont:                     FONT_BOLD
+vim*italicFont:                   FONT_ITALIC
+vim*boldItalicFont:               FONT_BOLDITALIC
+vim*background:                   #080808
+vim*foreground:                   #ebebeb
+vim*scrollBar:                    false
+vim.iso14755:             1
+vim.iso14755_52:          1
+
+vim.skipBuiltinGlyphs:    1
+vim.insecure:             1
+
+mongolia.iso14755:             1
+mongolia.iso14755_52:          1
+mongolia.skipBuiltinGlyphs:    0
+mongolia.insecure:             1
+
+mongolia.buffered:             0
+mongolia.internalBorder:       0
+mongolia.externalBorder:       0
+
+mongolia.font:             FONT_NORMAL
+mongolia.boldFont:         FONT_BOLD
+mongolia.italicFont:       xft:Profont:embolden=1
+mongolia.boldItalicFont:   FONT_BOLDITALIC
+
+URxvt*font1:                -xos4-terminus-medium-r-normal-*-13-*-*-*-*-*-*-1
+URxvt*font2:                -xos4-terminus-medium-r-normal-*-14-*-*-*-*-*-*-1
+URxvt*font3:                -xos4-terminus-medium-r-normal-*-15-*-*-*-*-*-*-1
+URxvt*font4:                -xos4-terminus-medium-r-normal-*-16-*-*-*-*-*-*-1
+URxvt*font5:                -xos4-terminus-medium-r-normal-*-17-*-*-*-*-*-*-1
+URxvt*font6:                -xos4-terminus-medium-r-normal-*-18-*-*-*-*-*-*-1
+URxvt*font7:                -xos4-terminus-medium-r-normal-*-19-*-*-*-*-*-*-1
+URxvt*font8:                -xos4-terminus-medium-r-normal-*-20-*-*-*-*-*-*-1
+
+mongolia*cutchars:             "()*,<>[]{}|'"
+mongolia*matcher.pattern.1:    \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+mongolia*matcher.button:       1
+mongolia*matcher.launcher.1:   /home/polychoron/bin/ff
+mongolia*underlineURLs:        false
+mongolia*urlLauncher:          /home/polychoron/bin/ff
+
+mongolia.jumpScroll:           true
+mongolia.loginShell:           true
+mongolia.saveLines:            4096
+mongolia.scrollBack:           true
+mongolia.scrollKey:            true
+mongolia.scrollTtyKeypress:    true
+mongolia.scrollTtyOutput:      false
+mongolia.scrollWithBuffer:     true
+mongolia.skipScroll:           true
+mongolia.trippleclickwords:    true
+mongolia.urgentOnBell:         false
+
+mongolia.pasteableTabs:        false
+mongolia.pointerBlank:         false
+mongolia.pointerBlankDelay:    2
+mongolia.scrollstyle:          next
+mongolia.scrollBar:            false
+mongolia.depth:                24
+
+URxvt.perl-ext-common:      default,clipboard,selection-to-clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  ff
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.keysym.Shift-Control-C : perl:clipboard:copy
+URxvt.keysym.Shift-Control-V : perl:clipboard:paste
+
+#include "/home/polychoron/.config/Xcolors/nancy.Xresources"
