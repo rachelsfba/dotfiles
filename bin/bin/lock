@@ -1,0 +1,2 @@
+#!/bin/sh
+i3lock -i /data/Pictures/bg/lock_screen.png

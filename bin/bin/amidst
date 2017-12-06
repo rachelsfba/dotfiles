@@ -1,0 +1,2 @@
+#!/bin/sh
+java -noverify -jar ~/.minecraft/Utilities/AMIDST-v4-2.jar

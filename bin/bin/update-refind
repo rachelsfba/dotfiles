@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+echo "not needed anymore, hopefully. we added a thingy at /etc/systemd/system/refind_update.service"
+
+#sudo cp /usr/share/refind/refind_x64.efi /boot/efi/EFI/boot/bootx64.efi
+#sudo cp /usr/share/refind/refind_x64.efi /boot/efi/EFI/boot/bootx64.efi
+#sudo cp /usr/share/refind/refind_x64.efi /boot/efi/EFI/refind/refindx64.efi
+

@@ -1,0 +1,2 @@
+#!/bin/zsh
+wine $HOME/.wine/drive_c/Program\ Files\ \(x86\)/Quake\ Live/Launcher.exe

@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+# Rachel Shaw <rshaw@olivermattei.net>
+#
+# watch_tex - A bash script to automatically execute pdflatex on a given file
+# whenever changes are made.
+#
+# Original Author: oliphant from http://serverfault.com/a/436739
+
+
+FILE="$1"
+
+# the program to use to compile the .tex file given
+CMD="pdflatex"
+
+# hash the file instead of checking timestamp like in the original code
+LAST=`md5sum "$FILE"`
+
+while true; do
+  sleep 1
+  NEW=`md5sum "$FILE"`
+  if [ "$NEW" != "$LAST" ]; then
+    "$CMD" "$FILE"
+    LAST="$NEW"
+  fi
+done

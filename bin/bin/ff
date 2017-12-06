@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+exec firefox $@
+#exec chromium
+#exec google-chrome-stable $@

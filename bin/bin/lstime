@@ -1,0 +1,2 @@
+#!/bin/zsh
+echo "Do \"ls -t\" or \"ls -tr\" for time-based ls."

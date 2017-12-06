@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+if [[ -f $HOME/looplock ]]
+then
+   rm $HOME/looplock
+else
+   touch $HOME/looplock
+
+   while [[ -f $HOME/looplock ]]
+   do
+      xdotool mousedown 1
+      sleep .00001
+      xdotool mouseup 1
+   done
+   xdotool mouseup 1
+fi

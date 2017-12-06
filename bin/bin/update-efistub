@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+sudo cp /boot/vmlinuz-linux /boot/efi/EFI/arch/vmlinuz-arch.efi
+echo "Copied /boot/vmlinuz-linux to EFI directory"
+sudo cp /boot/initramfs-linux.img /boot/efi/EFI/arch/initramfs-arch.img
+echo "Copied /boot/initramfs-linux.img to EFI directory"
+sudo cp /boot/initramfs-linux-fallback.img /boot/efi/EFI/arch/initramfs-arch-fallback.img
+echo "Copied /boot/initramfs-linux-fallback.img to EFI directory"
+
+

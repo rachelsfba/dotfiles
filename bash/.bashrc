@@ -1,0 +1,9 @@
+echo "loading"
+echo "loading"
+echo "loading"
+echo "loading"
+echo "loading"
+echo "loading"
+echo "loading"
+export DJANGO_SECRET_KEY='somethingsecrethere'
+export DJANGO_DATABASE_PASSWORD='foobar'

@@ -1,0 +1,8 @@
+#!/bin/sh
+IP='192.168.1.69'
+VOLUME='VS980_4G_LTE'
+USER='mystorage'
+PW='4483'
+
+USER_TO_USE=`whoami`
+sudo mount -t cifs //$IP/$VOLUME $D_DROID -o user=$USER,password=$PW,ip=$IP,uid=$USER_TO_USE,gid=wheel

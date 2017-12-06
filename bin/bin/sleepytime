@@ -1,0 +1,2 @@
+#!/bin/sh
+redshift -t 5500K:2750K -l 38:-77
