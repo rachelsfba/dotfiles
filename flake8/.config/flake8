@@ -1,0 +1,4 @@
+[flake8]
+# Ignore the following style errors, which I disagree with:
+# E128: Continuation line under-indented for visual indent
+ignore = E128
