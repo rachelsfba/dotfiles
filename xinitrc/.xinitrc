@@ -37,6 +37,6 @@ fi
 xset -dpms -b &
 # xmodshit &
 sleepytime &
-xautolock -time 10 -locker lock &
+# xautolock -time 10 -locker lock &
 nextcloud &
 exec i3
