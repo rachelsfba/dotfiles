@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-cur=`pwd`
-cd /srv/mc/
-java -Xms1G -Xmx2G -jar /srv/mc/jars/1.6-pre.jar nogui
-cd $cur
-#end

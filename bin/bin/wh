@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-cd $D_CODE/wh/
-java -jar wh.jar >> witches-`date "+%F"`.log
