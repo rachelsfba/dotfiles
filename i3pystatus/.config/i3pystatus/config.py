@@ -1,5 +1,4 @@
 # Configuration files for mongolia machine
-# Rachel Shaw <rshaw@olivermattei.net>
 from i3pystatus import Status
 from i3pystatus.weather import weathercom
 

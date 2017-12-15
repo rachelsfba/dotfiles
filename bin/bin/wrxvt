@@ -1,2 +1,2 @@
 #!/usr/bin/env zsh
-exec urxvt -name mongolia 
+exec urxvt -name ${HOST}

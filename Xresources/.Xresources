@@ -42,6 +42,49 @@ mongolia.boldFont:         FONT_BOLD
 mongolia.italicFont:       xft:Profont:embolden=1
 mongolia.boldItalicFont:   FONT_BOLDITALIC
 
+yemen.iso14755:             1
+yemen.iso14755_52:          1
+yemen.skipBuiltinGlyphs:    0
+yemen.insecure:             1
+
+yemen.buffered:             0
+yemen.internalBorder:       0
+yemen.externalBorder:       0
+
+! yemen.font:                 xft:Source Code Pro for Powerline:pixelsize=16:embolden=1
+! yemen.font:                 xft:Neep Alt:style=SemiCondensed:pixelsize=11,xft:Inconsolata\\-g for Powerline:pixelsize=14:embolden=1
+yemen.font:                 xft:Inconsolata\\-g for Powerline:pixelsize=14:embolden=1
+! yemen.boldFont:             xft:Source Code Pro for Powerline:pixelsize=16:embolden=1:style=Bold
+! yemen.boldFont:             xft:Neep Alt:style=Bold SemiCondensed:pixelsize=11,xft:Inconsolata\\-g for Powerline:pixelsize=14:embolden=1:style=Bold
+yemen.boldFont:             xft:Inconsolata\\-g for Powerline:pixelsize=14:embolden=1:style=Bold
+yemen.italicFont:           xft:Profont for Powerline:pixelsize=16:embolden=1
+yemen.boldItalicFont:       -misc-fixed-medium-normal--7-70-75-75-c-50-koi8
+
+yemen*cutchars:             "()*,<>[]{}|'"
+yemen*matcher.pattern.1:    \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+yemen*matcher.button:       1
+yemen*matcher.launcher.1:   /home/polychoron/bin/ff
+yemen*underlineURLs:        false
+yemen*urlLauncher:          /home/polychoron/bin/ff
+
+yemen.jumpScroll:           true
+yemen.loginShell:           true
+yemen.saveLines:            4096
+yemen.scrollBack:           true
+yemen.scrollKey:            true
+yemen.scrollTtyKeypress:    true
+yemen.scrollTtyOutput:      false
+yemen.scrollWithBuffer:     true
+yemen.skipScroll:           true
+yemen.trippleclickwords:    true
+yemen.urgentOnBell:         false
+
+yemen.pasteableTabs:        false
+yemen.pointerBlank:         false
+yemen.pointerBlankDelay:    2
+yemen.scrollstyle:          next
+yemen.scrollBar:            false
+yemen.depth:                24
 URxvt*font1:                -xos4-terminus-medium-r-normal-*-13-*-*-*-*-*-*-1
 URxvt*font2:                -xos4-terminus-medium-r-normal-*-14-*-*-*-*-*-*-1
 URxvt*font3:                -xos4-terminus-medium-r-normal-*-15-*-*-*-*-*-*-1
