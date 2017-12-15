@@ -54,9 +54,9 @@ URxvt*font8:                -xos4-terminus-medium-r-normal-*-20-*-*-*-*-*-*-1
 mongolia*cutchars:             "()*,<>[]{}|'"
 mongolia*matcher.pattern.1:    \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 mongolia*matcher.button:       1
-mongolia*matcher.launcher.1:   /home/polychoron/bin/ff
+mongolia*matcher.launcher.1:   /home/rachel/bin/ff
 mongolia*underlineURLs:        false
-mongolia*urlLauncher:          /home/polychoron/bin/ff
+mongolia*urlLauncher:          /home/rachel/bin/ff
 
 mongolia.jumpScroll:           true
 mongolia.loginShell:           true
@@ -86,4 +86,4 @@ URxvt.keysym.M-s:           perl:keyboard-select:search
 URxvt.keysym.Shift-Control-C : perl:clipboard:copy
 URxvt.keysym.Shift-Control-V : perl:clipboard:paste
 
-#include "/home/polychoron/.config/Xcolors/nancy.Xresources"
+#include "/home/rachel/.config/Xcolors/nancy.Xresources"

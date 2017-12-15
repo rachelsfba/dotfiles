@@ -142,7 +142,7 @@ for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating e
 
 bindsym $mod+Shift+a exec "minecraft"
 bindsym $mod+Shift+s exec "spotify"
-bindsym $mod+Shift+f exec "/home/polychoron/bin/ff"
+bindsym $mod+Shift+f exec "ff"
 bindsym $mod+Shift+p exec "thunderbird"
 bindsym $mod+Shift+v exec "vlc"
 bindsym $mod+Shift+backslash exec "pavucontrol"
@@ -174,7 +174,7 @@ bindsym XF86Search exec "rofi -show run"
 bindsym $mod+Shift+u exec "xautolockctl"
 
 # printscreen functionality
-bindsym --release Print exec "scrot '%Y-%m-%d_%H%M%S_$wx$h_scrot.png' -e 'mv $f /home/polychoron/screenshots'"
+bindsym --release Print exec "scrot '%Y-%m-%d_%H%M%S_$wx$h_scrot.png' -e 'mv $f ~/screenshots'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

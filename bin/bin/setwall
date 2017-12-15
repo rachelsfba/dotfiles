@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-feh --bg-scale /home/polychoron/wallpaper/wallhaven-511031.jpg &
+feh --bg-scale /home/${USER}/wallpaper/wallhaven-511031.jpg &
