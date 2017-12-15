@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/zsh
 # Basic script to kill all old bars and launch new.
 # Taken from https://github.com/jaagr/polybar/wiki
 
