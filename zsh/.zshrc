@@ -102,6 +102,7 @@ bindkey '^b' backward-kill-word
 bindkey ' ' magic-space                # Do history expansion on space
 
 # "ASCII" art and color scheme
-#colorcoke --random
-eval `dircolors -b /usr/share/LS_COLORS`
+# colorcoke --random
+eval `dircolors -b ${XDG_CONFIG_HOME}/LS_COLORS`
 eval `keychain -q --eval ~/.ssh/id_ecdsa`
+
