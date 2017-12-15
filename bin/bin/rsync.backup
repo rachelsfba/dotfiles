@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-rsync -a -e ssh /data/Documents/Dropbox/ dchrdept@dchrdept.com:/home2/dchrdept/www/media
