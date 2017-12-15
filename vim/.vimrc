@@ -273,22 +273,24 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_Inc_Winwidth = 0
 "}}}
-
 let g:rct_completion_use_fri = 1
 let g:Tex_DefaultTargetFormat = "pdf"
+let g:tex_flavor = "latex"
+let g:Tex_BibtexFlavor = 'biber'
+" The following is relevant to make LaTeX rerun after biber if necessary: 
+" (include all formats for which re-running is to be enabled)
+let g:Tex_MultipleCompileFormats='pdf,dvi'
+" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+set grepprg=grep\ -nH\
 
 filetype plugin indent on
 syntax on
-
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
-let g:tex_flavor = "latex"
-set grepprg=grep\ -nH\
 
 au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
 set complete+=
 
 autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
-
 
 " Customisations based on house-style (arbitrary)
 autocmd FileType markdown setlocal sts=2 ts=2 sw=2 expandtab

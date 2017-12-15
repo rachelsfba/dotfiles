@@ -45,14 +45,12 @@ plugins=(git dirhistory django pep8 pip python sudo)
 source $ZSH/oh-my-zsh.sh
 
 source $ZSH_HOME/aliases.zsh
+source $ZSH_HOME/export.zsh
+source $ZSH_HOME/func.zsh
 
 # Source virtualenvwrapper settings
 #source $ZSH_HOME/virtualenvwrapper.zsh
 
-TZ='America/New_York'; export TZ
-HISTFILE=~/.zshhistory
-HISTSIZE=5000
-SAVEHIST=1000000
 setopt extended_history
 setopt share_history
 function history_all { history -E 1 }

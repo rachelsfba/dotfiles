@@ -1,0 +1,28 @@
+#!/bin/bash
+# Searches for given string in all chunks in dimension. 
+
+ITEM_STRING="diamond"
+
+echo -e "\nStage 1: Generating NBT files from MCA regions."
+echo -e "-------------------------------------------------\n"
+# Mca to nbt
+for file in `\ls -A *.mca`; do
+    echo -e "Parsing region file $file..."
+    sudo mca2nbt $file
+done
+
+echo -e "\nStage 2: Generating YML files from NBT files."
+echo -e "-------------------------------------------------\n"
+# Search nbt files
+for dir in `\ls -d */`; do
+    sudo chmod -R 0777 $dir
+    sudo chown -R polychoron:users $dir
+    cd $dir
+    echo -e "In $dir:"
+    echo -e "========"
+    for file in `ls -A`; do
+        echo -e "\tParsing chunk $file in region $dir..."
+        nbt2yaml -n $file | grep "$ITEM_STRING"
+    done
+    cd ..
+done
