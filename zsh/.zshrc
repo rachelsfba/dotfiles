@@ -47,7 +47,7 @@ source $ZSH/oh-my-zsh.sh
 source $ZSH_HOME/aliases.zsh
 
 # Source virtualenvwrapper settings
-source $ZSH_HOME/virtualenvwrapper.zsh
+#source $ZSH_HOME/virtualenvwrapper.zsh
 
 TZ='America/New_York'; export TZ
 HISTFILE=~/.zshhistory
