@@ -1,2 +1,2 @@
 #!/bin/sh
-i3lock -i /data/Pictures/bg/lock_screen.png
+i3lock -i /data/Pictures/bg/lock_screen.png && systemctl suspend
