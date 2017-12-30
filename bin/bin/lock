@@ -1,2 +1,6 @@
-#!/bin/sh
-i3lock -i /data/Pictures/bg/lock_screen.png
+#!/bin/zsh
+if [ "$HOST" = "yemen" ]; then
+    i3lock -i "/data/Pictures/bg/lock_screen.png"
+elif [ "$HOST" = "mongolia" ]; then
+    i3lock -i "/home/rachel/wallpaper/lock_image.png"
+else
