@@ -9,7 +9,13 @@ export D_WEB=$D_WWW
 export D_MEDIA=$DATA/Media
 export D_GAMES=$DATA/Games
 export D_MUSIC=$D_MEDIA/Music
-export D_DOC=$DATA/Documents
+
+if [ "$HOST" = "yemen" ]; then
+    export D_DOC=$DATA
+elif [ "$HOST" = "mongolia" ]; then
+    export D_DOC=$DATA/Documents
+fi
+
 #export D_DBOX=$D_DOC/Dropbox
 export D_NCLOUD=$D_DOC/NextCloud
 

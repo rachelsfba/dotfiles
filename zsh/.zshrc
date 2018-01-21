@@ -47,6 +47,7 @@ source $ZSH/oh-my-zsh.sh
 source $ZSH_HOME/aliases.zsh
 source $ZSH_HOME/export.zsh
 source $ZSH_HOME/func.zsh
+# source $ZSH_HOME/zsh-syntax-highlighting-filetypes.zsh
 
 # Source virtualenvwrapper settings
 #source $ZSH_HOME/virtualenvwrapper.zsh
