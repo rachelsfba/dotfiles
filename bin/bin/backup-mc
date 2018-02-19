@@ -1,0 +1,11 @@
+#!/bin/zsh
+# Backup MC SSP world
+
+SSP_src=$HOME/.minecraft/saves/Notyecraft-b
+SSP_dests=(/data/Documents/NextCloud/SSP_World/ rachel@olivermattei.net:SSP_World/)
+
+for SSP_dest in ${SSP_dests}; do
+    #rsync -r -v ${SSP_src}/* ${SSP_dest}
+    rsync -r ${SSP_src}/* ${SSP_dest}
+    echo "Finished backing up Minecraft SSP world to ${SSP_dest}."
+done

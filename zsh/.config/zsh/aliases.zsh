@@ -38,3 +38,4 @@ alias inc="chromium --incognito"
 
 # From https://askubuntu.com/a/104484
 alias ppt2pdf="libreoffice --headless --invisible --convert-to pdf" 
+
