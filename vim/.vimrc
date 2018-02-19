@@ -206,6 +206,8 @@ let s:comment_map = {
     \   "ruby": '#',
     \   "rust": '\/\/',
     \   "sh": '#',
+    \   "zsh": '#',
+    \   "zshrc": '#',
     \   "desktop": '#',
     \   "fstab": '#',
     \   "conf": '#',
