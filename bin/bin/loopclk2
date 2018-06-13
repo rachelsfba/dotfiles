@@ -8,8 +8,9 @@ else
    while [[ -f $HOME/looplock ]]
    do
       xdotool mousedown 1
-      sleep .01
+      sleep 0.0001
       xdotool mouseup 1
+      sleep 1
    done
    xdotool mouseup 1
 fi

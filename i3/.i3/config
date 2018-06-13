@@ -151,7 +151,7 @@ bindsym $mod+Shift+backslash exec "pavucontrol"
 bindsym $mod+Shift+l exec "lock"
 
 bindsym F7 exec "loopclk2"
-#bindsym F7 exec "xdotool mousedown 3"
+bindsym F8 exec "xdotool mousedown 3"
 #bindsym F8 exec "xdotool mouseup 3"
 
 # BEGIN DELL XPS 15 9550 Function Keys
