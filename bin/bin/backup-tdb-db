@@ -1,0 +1,35 @@
+#!/bin/bash
+# Script to backup website database.
+#
+# @author       Rachel Shaw <rshaw@olivermattei.net>
+# @lastupdated  July 2017
+# @file         backup-tdb-db
+
+TMPFILE="/tmp/tdb-backup.sql.$RANDOM"
+BAK_DIR="/var/www/backups"
+SITE_DIR="/var/www/html"
+
+DATE="`date "+%F"`"
+
+cd $SITE_DIR
+
+#######################################
+###   Create dated backup of SQL.   ###
+#######################################
+DB_ARCHIVE="$BAK_DIR/${DATE}-thedancebox-net.sql.gz"
+
+# Dump database into temporary file.
+mysqldump thedancebox >$TMPFILE
+
+# gzip the temp file.
+gzip --rsyncable <$TMPFILE >$DB_ARCHIVE
+
+########################################
+### Copy backup to offsite location. ###
+########################################
+rsync $DB_ARCHIVE tdb-backups@olivermattei.net:~
+
+########################################
+### Remove temporary file.           ###
+########################################
+rm $TMPFILE

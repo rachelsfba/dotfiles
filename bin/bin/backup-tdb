@@ -1,0 +1,26 @@
+#!/bin/bash
+# Script to backup website files.
+#
+# @author       Rachel Shaw <rshaw@olivermattei.net>
+# @lastupdated  July 2017
+# @file         backup-tdb
+
+BAK_DIR="/var/www/backups"
+SITE_DIR="/var/www/html"
+
+ARCHIVE_CMD="tar czf"
+
+DATE="`date "+%F"`"
+
+cd $SITE_DIR
+
+#######################################
+### Create dated backup of website. ###
+#######################################
+SITE_ARCHIVE="$BAK_DIR/${DATE}-thedancebox-net-backup.tar.gz"
+$ARCHIVE_CMD $SITE_ARCHIVE .
+
+########################################
+### Copy backup to offsite location. ###
+########################################
+rsync $SITE_ARCHIVE tdb-backups@olivermattei.net:~

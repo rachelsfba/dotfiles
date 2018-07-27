@@ -7,9 +7,11 @@ else
 
    while [[ -f $HOME/looplock ]]
    do
+      # For mob farming
       xdotool mousedown 1
-      sleep .00001
+      sleep 0.0001
       xdotool mouseup 1
+      sleep 1.5
    done
    xdotool mouseup 1
 fi

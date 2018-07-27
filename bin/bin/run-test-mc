@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd $D_GAMES/Minecraft_Test_Server
+java -jar -Xms2G -Xmx2G -jar server.jar nogui | grep -v " that already exists with UUID "

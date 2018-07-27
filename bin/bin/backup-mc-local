@@ -3,8 +3,7 @@
 
 #SSP_src=$HOME/.minecraft/saves/Notyecraft-Phi
 SSP_src=/data/Games/Minecraft_Server/world
-SSP_dests=(/data/Documents/NextCloud/SSP_World/ rachel@olivermattei.net:SSP_World/)
-#SSP_dests=(/data/Documents/NextCloud/SSP_World/)
+SSP_dests=(/data/Documents/NextCloud/SSP_World/)
 
 for SSP_dest in ${SSP_dests}; do
     rsync -r -v ${SSP_src}/* ${SSP_dest}
