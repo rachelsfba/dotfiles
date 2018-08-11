@@ -146,6 +146,7 @@ bindsym $mod+Shift+s exec "spotify"
 bindsym $mod+Shift+f exec "ff"
 bindsym $mod+Shift+p exec "thunderbird"
 bindsym $mod+Shift+v exec "vlc"
+bindsym $mod+Shift+semicolon exec "lutris"
 bindsym $mod+Shift+backslash exec "pavucontrol"
 #bindsym $mod+Shift+l exec "systemctl suspend"
 bindsym $mod+Shift+l exec "lock"
@@ -169,7 +170,8 @@ bindsym XF86Tools exec amixer -D pulse sset Capture toggle
 # M4
 #bindsym XF86Launch7 exec amixer -D pulse sset Capture toggle
 # M5
-#bindsym XF86Launch8 exec amixer -D pulse sset Capture toggle
+#
+#indsym XF86Launch8 exec amixer -D pulse sset Capture toggle
 
 bindsym XF86MonBrightnessUp exec xbacklight + 10
 bindsym XF86MonBrightnessDown exec xbacklight - 10
