@@ -1,0 +1,35 @@
+m
+mv
+q
+mkcd 
+mkcd 1098-E
+mkdir 1098-E
+mv 1098{,-}T
+cw
+rename 1098-E
+rename 1098-T
+
+mkdir W-2
+pwd
+!pwd
+rename Financial_Aid_Cerfication_Form_2017.pdf
+mkdir PARENTS
+rename FY2015
+rename FY2015.pdf
+rename FY2016.pdf
+open_with evince
+mkdir UVA_Statements
+rename Spring_2016_UVa_Statement.pdf
+rename Fall_2016_UVa_Statement.pdf
+deleteDd
+delete y
+mv 2017
+rename 2017
+shell 
+rename
+open_with 
+rename Thesis_Modules
+rename Course_Handouts
+rename THESIS
+ln
+delete

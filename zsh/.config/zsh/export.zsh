@@ -25,6 +25,13 @@ export D_FL=/media/fl
 export D_DROID=$DATA/Droid
 export D_DROIDROOT=$DATA/Droid/sdcard0
 
+export D_DND=$D_NCLOUD/DnD
+
+export D_RCC=$D_NCLOUD/RCC_Classes
+export D_PHY=$D_RCC/PHY
+export D_PHY232=$D_RCC/PHY/232
+export D_PHY242=$D_RCC/PHY/242
+
 export D_UVA=$D_NCLOUD/UVA
 export D_CS=$D_UVA/CS
 export D_ECE=$D_UVA/ECE

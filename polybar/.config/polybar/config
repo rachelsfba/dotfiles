@@ -55,8 +55,8 @@ modules-right = mpd filesystem weather volume updates memory cpu eth temperature
 
 tray-position = right
 tray-padding = 2
-tray-transparent = true
-;tray-background = #222
+tray-transparent = false
+tray-background = #222
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -106,8 +106,8 @@ modules-right = mpd filesystem weather volume updates memory cpu eth temperature
 
 tray-position = right
 tray-padding = 2
-tray-transparent = true
-;tray-background = #0063ff
+tray-transparent = false
+tray-background = #222
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -157,8 +157,8 @@ modules-right = mpd filesystem weather volume updates memory cpu eth temperature
 
 tray-position = right
 tray-padding = 2
-tray-transparent = true
-;tray-background = #0063ff
+tray-transparent = false
+tray-background = #222
 
 ;wm-restack = bspwm
 wm-restack = i3
