@@ -50,8 +50,7 @@ font-4 = DejaVu Sans:pixelsize=14;0
 
 modules-left = i3
 modules-center =
-modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
-;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem weather xbacklight volume updates memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -221,6 +220,7 @@ wm-restack = i3
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
 [module/updates]
 type = custom/script
 interval = 1200
@@ -255,6 +255,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /home
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
