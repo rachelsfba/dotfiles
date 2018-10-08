@@ -50,7 +50,7 @@ font-4 = DejaVu Sans:pixelsize=14;0
 
 modules-left = i3
 modules-center =
-modules-right = filesystem weather xbacklight volume updates memory cpu wlan eth battery temperature date powermenu
+modules-right = mpd filesystem weather xbacklight volume updates memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -415,7 +415,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 [module/mpd]
 type = internal/mpd
 
-host = 127.0.0.1
+host = 10.0.0.251
 port = 6600
 password =
 
