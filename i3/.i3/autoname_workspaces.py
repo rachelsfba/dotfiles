@@ -57,6 +57,8 @@ WINDOW_ICONS = {
     'evince': fa.icons['file-pdf'],
     'feh': fa.icons['image'],
     'firefox': fa.icons['firefox'],
+    'foxitreader': fa.icons['file-pdf'],
+    'gimp': fa.icons['camera-retro'],
     'google-chrome': fa.icons['chrome'],
     'gpick': fa.icons['eye-dropper'],
     'imv': fa.icons['image'],
@@ -77,6 +79,7 @@ WINDOW_ICONS = {
     'sublime_text': fa.icons['file-alt'],
     'thunderbird': fa.icons['envelope'],
     'urxvt': fa.icons['terminal'],
+    'vlc': fa.icons['tv'],
     'xfce4-terminal': fa.icons['terminal'],
     'zenity': fa.icons['window-maximize'],
 }

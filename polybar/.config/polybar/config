@@ -405,11 +405,11 @@ label = %percentage_used%%
 [module/wlan]
 type = internal/network
 interface = wlp2s0
-interval = 3.0
+interval = 2.5
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid% (%signal%): %local_ip%
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
@@ -428,7 +428,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 type = internal/network
 interface = eth0
-interval = 3.0
+interval = 2.5
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
