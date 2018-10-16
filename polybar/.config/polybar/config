@@ -43,9 +43,9 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Wuncon Siji:pixelsize=10;1
-font-3 = FontAwesome:pixelsize=14;0
+font-1 = FontAwesome:pixelsize=12;0
+font-2 = Unifont:fontformat=truetype:size=8:antialias=false;0
+font-3 = Wuncon Siji:pixelsize=10;1
 font-4 = DejaVu Sans:pixelsize=14;0
 
 modules-left = i3
@@ -94,9 +94,9 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Wuncon Siji:pixelsize=10;1
-font-3 = FontAwesome:pixelsize=14;0
+font-1 = FontAwesome:pixelsize=12;0
+font-2 = Unifont:fontformat=truetype:size=8:antialias=false;0
+font-3 = Wuncon Siji:pixelsize=10;1
 font-4 = DejaVu Sans:pixelsize=14;0
 
 modules-left = i3
@@ -145,9 +145,9 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Wuncon Siji:pixelsize=10;1
-font-3 = FontAwesome:pixelsize=14;0
+font-1 = FontAwesome:pixelsize=12;0
+font-2 = Unifont:fontformat=truetype:size=8:antialias=false;0
+font-3 = Wuncon Siji:pixelsize=10;1
 font-4 = DejaVu Sans:pixelsize=14;0
 
 modules-left = i3
@@ -170,6 +170,7 @@ wm-restack = i3
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+
 [module/updates]
 type = custom/script
 interval = 1200

@@ -1,3 +1,4 @@
 #!/bin/bash
+killall quakelive_steam
 killall quakelive_steam.exe
 killall Steam.exe
