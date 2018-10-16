@@ -292,6 +292,7 @@ syntax on
 au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
 set complete+=
 
+au BufRead,BufNewFile *.md setlocal textwidth=80
 autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
 
 " Customisations based on house-style (arbitrary)
@@ -306,3 +307,4 @@ nnoremap <F4> :set number!<cr>
 vnoremap <F4> :set number!<cr>
 
 set tabpagemax=100
+let g:powerline_pycmd="py3"
