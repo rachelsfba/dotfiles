@@ -42,3 +42,5 @@ alias ppt2pdf="libreoffice --headless --invisible --convert-to pdf"
 # Used for projecting to other monitors
 alias project='xrandr --output HDMI1 --mode 1920x1080 --left-of eDP1'
 alias unproject='xrandr --output HDMI1 --off'
+
+alias identwin='xprop | grep WM_CLASS'

@@ -215,8 +215,7 @@ bindsym $mod+r mode "resize"
 #    position          top
 #    workspace_buttons yes
 #}
+
 exec_always --no-startup-id $HOME/.config/polybar/launch &
-exec_always --no-startup-id $HOME/.i3/autoname_workspaces.py &
-exec --no-startup-id setwall
-#exec polybar mainB
-#exec polybar mainA
+exec_always --no-startup-id $HOME/.i3/bin/launch-workspace-autonamer &
+exec --no-startup-id setwall &

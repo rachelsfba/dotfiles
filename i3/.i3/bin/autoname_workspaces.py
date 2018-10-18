@@ -50,6 +50,7 @@ from util import *
 WINDOW_ICONS = {
     'alacritty': fa.icons['terminal'],
     'atom': fa.icons['code'],
+    'ario': fa.icons['play'],
     'banshee': fa.icons['play'],
     'cura': fa.icons['cube'],
     'darktable': fa.icons['image'],
@@ -66,12 +67,16 @@ WINDOW_ICONS = {
     'kicad': fa.icons['microchip'],
     'kitty': fa.icons['terminal'],
     'libreoffice': fa.icons['file-alt'],
+    'lutris': fa.icons['gamepad'],
+    'minecraft': fa.icons['globe'],
     'mpv': fa.icons['tv'],
     'mupdf': fa.icons['file-pdf'],
     'openscad': fa.icons['cube'],
     'postman': fa.icons['space-shuttle'],
+    'qbittorrent': fa.icons['download'],
+    'quakelive_steam.exe': fa.icons['gamepad'],
     'slack': fa.icons['slack'],
-    'spotify': fa.icons['music'],  # could also use the 'spotify' icon
+    'spotify': fa.icons['spotify'],  # could also use the 'spotify' icon
     'steam': fa.icons['steam'],
     'subl': fa.icons['file-alt'],
     'subl3': fa.icons['file-alt'],
@@ -80,6 +85,7 @@ WINDOW_ICONS = {
     'thunderbird': fa.icons['envelope'],
     'urxvt': fa.icons['terminal'],
     'vlc': fa.icons['tv'],
+    'wine': fa.icons['windows'],
     'xfce4-terminal': fa.icons['terminal'],
     'zenity': fa.icons['window-maximize'],
 }
