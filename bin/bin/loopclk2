@@ -9,9 +9,9 @@ else
    do
       # For rapid clicking
       xdotool mousedown 1
-      sleep 0.0001
+      sleep 0.01
       xdotool mouseup 1
-      sleep 0.05
+      #sleep 0.05
       #sleep 2
    done
    xdotool mouseup 1

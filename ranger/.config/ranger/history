@@ -1,11 +1,3 @@
-m
-mv
-q
-mkcd 
-mkcd 1098-E
-mkdir 1098-E
-mv 1098{,-}T
-cw
 rename 1098-E
 rename 1098-T
 
@@ -27,9 +19,32 @@ mv 2017
 rename 2017
 shell 
 rename
-open_with 
 rename Thesis_Modules
 rename Course_Handouts
 rename THESIS
 ln
+open_with 
+open_with libreoffice
+rename Student_ID_Photo.jpg
+rename 2014-11-14-Common-App-Responses.pdf
+rename 2015-XX-XX-Curriculum_Vitæ.pdf
+rename 2015-XX-XX-RCC-Diplomas.pdf
+rename 2015-06-06-High-School-Transcript.pdf
+rename 2015-11-11-RCC-Diplomas.pdf
+rename 2015-06-22-High-School-Transcript.pdf
+rename RCC_Transcript.pdf
+rename 2016-10-10-RCC-Transcript.pdf
+rename 2015-06-22-KGHS-Transcript.pdf
+rename 2018-10-25-Robie-CV.pdf
+rename 2018-10-25-RShaw-Résumé.pdf
+rename SAA_STD_DS.pdf
+rename 2018-01-16-UVA-Advisement-Report.pdf
+rename 2014-01SAT-Report.pdf
+rename 2015-04-15-SAT-Report.pdf
+rename 2018-09-18-Student-ID-Photo.jpg
+rename 2015-XX-XX-Curriculum-Vitæ.pdf
 delete
+rename 2018-10-25-UVA-Transcript.pdf
+rename 2015-01-24-UVA-Acceptance-Letter.pdf
+rename UVA_ID
+rename 2015-06-29-UVA-ID.txt
