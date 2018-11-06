@@ -61,6 +61,8 @@ WINDOW_ICONS = {
     'foxitreader': fa.icons['file-pdf'],
     'gimp': fa.icons['camera-retro'],
     'google-chrome': fa.icons['chrome'],
+    'googleearth': fa.icons['globe'],
+    'googleearth-bin': fa.icons['globe'],
     'gpick': fa.icons['eye-dropper'],
     'gpicview': fa.icons['image'],
     'imv': fa.icons['image'],

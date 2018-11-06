@@ -3,10 +3,10 @@
 # Taken from https://github.com/jaagr/polybar/wiki
 
 # Terminate already running instances
-pkill -u $UID -f "python3 ./autoname_workspaces.py" &>/dev/null
+pkill -u $UID -f "python3 $HOME/.i3/bin/autoname_workspaces.py" &>/dev/null
 
 # Wait until the processes have been shut down
-while pgrep -u $UID -f "python3 ./autoname_workspaces.py" &>/dev/null; do sleep 1; done
+while pgrep -u $UID -f "python3 $HOME/.i3/bin/autoname_workspaces.py" &>/dev/null; do sleep 1; done
 
 # Launch workspace renamer
 $HOME/.i3/bin/autoname_workspaces.py &
