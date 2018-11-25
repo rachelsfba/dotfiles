@@ -77,6 +77,7 @@ WINDOW_ICONS = {
     'mpv': fa.icons['tv'],
     'mupdf': fa.icons['file-pdf'],
     'nautilus': fa.icons['folder'],
+    'nextcloud': fa.icons['cloud'],
     'openscad': fa.icons['cube'],
     'pavucontrol': fa.icons['compact-disc'],
     'postman': fa.icons['space-shuttle'],
