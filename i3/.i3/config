@@ -131,7 +131,7 @@ for_window [title="Quake Live" class="Wine"] floating enable
 for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating enable
 
 bindsym $mod+Shift+a exec "minecraft"
-bindsym $mod+Shift+s exec "spotify"
+bindsym $mod+Shift+s exec "gpmdp"
 bindsym $mod+Shift+f exec "ff"
 bindsym $mod+Shift+p exec "thunderbird"
 bindsym $mod+Shift+v exec "vlc"
