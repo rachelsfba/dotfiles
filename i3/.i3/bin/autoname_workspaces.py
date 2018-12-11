@@ -52,6 +52,7 @@ WINDOW_ICONS = {
     'atom': fa.icons['code'],
     'ario': fa.icons['play'],
     'banshee': fa.icons['play'],
+    'boostnote': fa.icons['pencil-alt'],
     'cura': fa.icons['cube'],
     'darktable': fa.icons['image'],
     'discord': fa.icons['discord'],
