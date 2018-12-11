@@ -106,4 +106,3 @@ bindkey ' ' magic-space                # Do history expansion on space
 # colorcoke --random
 eval `dircolors -b ${XDG_CONFIG_HOME}/LS_COLORS`
 eval `keychain -q --eval ~/.ssh/id_ecdsa`
-
