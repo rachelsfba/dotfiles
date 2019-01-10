@@ -279,6 +279,7 @@ let g:rct_completion_use_fri = 1
 let g:Tex_DefaultTargetFormat = "pdf"
 let g:tex_flavor = "latex"
 let g:Tex_BibtexFlavor = 'biber'
+let g:Tex_GotoError = 1
 " The following is relevant to make LaTeX rerun after biber if necessary: 
 " (include all formats for which re-running is to be enabled)
 let g:Tex_MultipleCompileFormats='pdf,dvi'
@@ -308,3 +309,11 @@ vnoremap <F4> :set number!<cr>
 
 set tabpagemax=100
 let g:powerline_pycmd="py3"
+
+" IndentLine {{
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+" }}
+

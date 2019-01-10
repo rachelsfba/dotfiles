@@ -63,9 +63,9 @@ yemen.boldItalicFont:       -misc-fixed-medium-normal--7-70-75-75-c-50-koi8
 yemen*cutchars:             "()*,<>[]{}|'"
 yemen*matcher.pattern.1:    \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
 yemen*matcher.button:       1
-yemen*matcher.launcher.1:   /home/polychoron/bin/ff
+yemen*matcher.launcher.1:   /home/rachel/bin/ff
 yemen*underlineURLs:        false
-yemen*urlLauncher:          /home/polychoron/bin/ff
+yemen*urlLauncher:          /home/rachel/bin/ff
 
 yemen.jumpScroll:           true
 yemen.loginShell:           true
