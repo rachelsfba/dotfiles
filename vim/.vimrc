@@ -14,6 +14,8 @@ runtime! archlinux.vim
 " Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
 " and configure vim to your own liking!
 
+
+
 "{{{Plugin Managers
 
 " Install vim-plug. From
@@ -28,8 +30,14 @@ endif
 call plug#begin('~/.vim/plugged')
 
    " Declare the list of plugins.
+   
+   " Color schemes
    Plug 'drewtempelmeyer/palenight.vim'
    Plug 'trapd00r/neverland-vim-theme'
+   
+   " Plugins
+   Plug 'itchyny/lightline.vim'
+   Plug 'Yggdroot/indentLine'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -155,10 +163,8 @@ highlight MatchParen ctermbg=4
 let g:rct_completion_use_fri = 1
 
 " autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
 set grepprg=grep\ -nH\
-
-filetype plugin indent on
 
 au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
 set complete+=
@@ -177,9 +183,6 @@ vnoremap <F4> :set number!<cr>
 
 set tabpagemax=100
 let g:powerline_pycmd="py3"
-
-
-
 " }}}
 
 "{{{ Functions
@@ -293,36 +296,38 @@ let g:Tex_MultipleCompileFormats='pdf,dvi'
 
 "{{{Look and Feel
 
-" " Favorite Color Scheme
-" if has("gui_running")
-"    colorscheme inkpot
-"    " Remove Toolbar
-"    set guioptions-=T
-"    "Terminus is AWESOME
-"    set guifont=Terminus\ 9
-" else
-    color neverland2
-" endif
-
-"set background=dark
-"colorscheme palenight
-
 "Status line gnarliness
 set laststatus=2
 set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
-if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" Favorite Color Scheme
+if has("gui_running")
+   colorscheme inkpot
+   " Remove Toolbar
+   set guioptions-=T
+   "Terminus is AWESOME
+   set guifont=Terminus\ 9
+else
+   " Neverland Theme
+   color neverland2
+
+   "{{{PaleNight Theme
+   "set background=dark
+   "colorscheme palenight
+
+   "let g:lightline = { 'colorscheme': 'palenight' }
+   "let g:palenight_terminal_italics=1
+   "
+   "if (has("nvim"))
+   "  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+   "  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+   "endif
+   "
+   "if (has("termguicolors"))
+   "   set termguicolors
+   "endif
+   "}}}
 endif
 
-" "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-" "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-" " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-" if (has("termguicolors"))
-"   set termguicolors
-" endif
-
 " }}}
-
 
