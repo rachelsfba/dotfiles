@@ -3,10 +3,10 @@ Xft*antialias: true
 Xft*autohint: true
 Xft*rgba: vbgr
 
-#define FONT_NORMAL     xft:Profont:style=SemiCondensed:pixelsize=14,xft:Anonymous Pro:style=Regular:pixelsize=12:antialias=3:autohint=1:hintstyle=3
-#define FONT_BOLD       xft:Profont:embolden=1
-#define FONT_ITALIC     -misc-fixed-medium-r-normal--9-90-75-75-c-60-iso8859-1,6x9
-#define FONT_BOLDITALIC -misc-fixed-medium-r-normal--7-70-75-75-c-50-koi8
+#define FONT_NORMAL     xft:Profont:style=SemiCondensed:pixelsize=14,xft:Anonymous Pro:style=Regular:pixelsize=12:antialias=3:autohint=1:hintstyle=3,xft:Unifont:pixelsize:16,ProFont for Powerline:style=Regular
+#define FONT_BOLD       xft:Profont:embolden=1,ProFont for Powerline:style=Bold
+#define FONT_ITALIC     -misc-fixed-medium-r-normal--9-90-75-75-c-60-iso8859-1,6x9,ProFont for Powerline:style=Bold
+#define FONT_BOLDITALIC -misc-fixed-medium-r-normal--7-70-75-75-c-50-koi8,ProFont for Powerline:style=Bold
 
 vte*font:       FONT_NORMAL
 vte*boldFont:   FONT_BOLD

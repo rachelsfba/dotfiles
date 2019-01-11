@@ -14,9 +14,37 @@ runtime! archlinux.vim
 " Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
 " and configure vim to your own liking!
 
-execute pathogen#infect()
+"{{{Plugin Managers
 
- "{{{Auto Commands
+" Install vim-plug. From
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+   " Declare the list of plugins.
+   Plug 'drewtempelmeyer/palenight.vim'
+   Plug 'trapd00r/neverland-vim-theme'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+" Needed for Syntax Highlighting and stuff
+filetype on
+" filetype plugin on
+" syntax enable
+" syntax on
+
+" execute pathogen#infect()
+
+"}}}
+
+"{{{Auto Commands
 
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
@@ -63,10 +91,6 @@ set showcmd
 " Folding Stuffs
 set foldmethod=marker
 
-" Needed for Syntax Highlighting and stuff
-filetype on
-filetype plugin on
-syntax enable
 set grepprg=grep\ -nH\ $*
 
 " Who doesn't like autoindent?
@@ -127,24 +151,34 @@ set nohidden
 
 " Set off the other paren
 highlight MatchParen ctermbg=4
-" }}}
 
-"{{{Look and Feel
+let g:rct_completion_use_fri = 1
 
-" Favorite Color Scheme
-if has("gui_running")
-   colorscheme inkpot
-   " Remove Toolbar
-   set guioptions-=T
-   "Terminus is AWESOME
-   set guifont=Terminus\ 9
-else
-   color neverland2
-endif
+" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+set grepprg=grep\ -nH\
 
-"Status line gnarliness
-set laststatus=2
-set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+filetype plugin indent on
+
+au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
+set complete+=
+
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Customisations based on house-style (arbitrary)
+autocmd FileType markdown setlocal sts=2 ts=2 sw=2 expandtab
+autocmd FileType htmldjango setlocal  sts=2 ts=2 sw=2 expandtab
+autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+
+set pastetoggle=<F3>
+nnoremap <F4> :set number!<cr>
+vnoremap <F4> :set number!<cr>
+
+set tabpagemax=100
+let g:powerline_pycmd="py3"
+
+
 
 " }}}
 
@@ -155,40 +189,7 @@ set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 function! Browser ()
    let line = getline (".")
    let line = matchstr (line, "http[^   ]*")
-   exec "!chromium ".line
-endfunction
-
-"}}}
-
-"{{{Theme Rotating
-let themeindex=0
-function! RotateColorTheme()
-   let y = -1
-   while y == -1
-      let colorstring = "inkpot#ron#blue#elflord#evening#koehler#murphy#pablo#desert#torte#"
-      let x = match( colorstring, "#", g:themeindex )
-      let y = match( colorstring, "#", x + 1 )
-      let g:themeindex = x + 1
-      if y == -1
-         let g:themeindex = 0
-      else
-         let themestring = strpart(colorstring, x + 1, y - x - 1)
-         return ":colorscheme ".themestring
-      endif
-   endwhile
-endfunction
-" }}}
-
-"{{{ Todo List Mode
-
-function! TodoListMode()
-   e ~/.todo.otl
-   Calendar
-   wincmd l
-   set foldlevel=1
-   tabnew ~/.notes.txt
-   tabfirst
-   " or 'norm! zMzr'
+   exec "!ff ".line
 endfunction
 
 "}}}
@@ -268,6 +269,7 @@ nnoremap <leader><Space> :call ToggleComment()<cr>
 vnoremap <leader><Space> :call ToggleComment()<cr>
 
 "}}}
+
 "{{{Taglist configuration
 let Tlist_Use_Right_Window = 1
 let Tlist_Enable_Fold_Column = 0
@@ -275,45 +277,52 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_Inc_Winwidth = 0
 "}}}
-let g:rct_completion_use_fri = 1
+
+"{{{LaTeXSuite stuff
 let g:Tex_DefaultTargetFormat = "pdf"
+let g:Tex_ViewRule_pdf = "evince"
 let g:tex_flavor = "latex"
 let g:Tex_BibtexFlavor = 'biber'
 let g:Tex_GotoError = 1
 " The following is relevant to make LaTeX rerun after biber if necessary: 
 " (include all formats for which re-running is to be enabled)
 let g:Tex_MultipleCompileFormats='pdf,dvi'
+
 " autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
-set grepprg=grep\ -nH\
+"}}}
 
-filetype plugin indent on
-syntax on
+"{{{Look and Feel
 
-au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
-set complete+=
+" " Favorite Color Scheme
+" if has("gui_running")
+"    colorscheme inkpot
+"    " Remove Toolbar
+"    set guioptions-=T
+"    "Terminus is AWESOME
+"    set guifont=Terminus\ 9
+" else
+    color neverland2
+" endif
 
-au BufRead,BufNewFile *.md setlocal textwidth=80
-autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
+"set background=dark
+"colorscheme palenight
 
-" Customisations based on house-style (arbitrary)
-autocmd FileType markdown setlocal sts=2 ts=2 sw=2 expandtab
-autocmd FileType htmldjango setlocal  sts=2 ts=2 sw=2 expandtab
-autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+"Status line gnarliness
+set laststatus=2
+set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
-set pastetoggle=<F3>
-nnoremap <F4> :set number!<cr>
-vnoremap <F4> :set number!<cr>
+" "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+" "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+" if (has("termguicolors"))
+"   set termguicolors
+" endif
 
-set tabpagemax=100
-let g:powerline_pycmd="py3"
+" }}}
 
-" IndentLine {{
-let g:indentLine_char = ''
-let g:indentLine_first_char = ''
-let g:indentLine_showFirstIndentLevel = 1
-let g:indentLine_setColors = 0
-" }}
 
