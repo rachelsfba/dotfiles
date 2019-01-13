@@ -8,10 +8,10 @@
 !Xft*rgba: rgba
 !}}}
 
-#define FONT_NORMAL         xft:Inconsolata\\-g for Powerline:pixelsize=12:embolden=1,xft:Source Code Pro:pixelsize=13:embolden=1:style=SemiBold
-#define FONT_BOLD           xft:Inconsolata\\-g for Powerline:pixelsize=12:embolden=1:style=Bold,xft:Source Code Pro:pixelsize=13:style=Bold:embolden=1
-#define FONT_ITALIC         xft:Source Code Pro:pixelsize=13:embolden=1:style=Black
-#define FONT_BOLDITALIC     xft:Source Code Pro:pixelsize=13:embolden=1:style=Semibold Italic
+#define FONT_NORMAL         xft:Inconsolata\\-g for Powerline:pixelsize=12:embolden=1,xft:Source Code Pro for Powerline:pixelsize=13:embolden=1:style=SemiBold
+#define FONT_BOLD           xft:Inconsolata\\-g for Powerline:pixelsize=12:embolden=1:style=Bold,xft:Source Code Pro for Powerline:pixelsize=13:style=Bold:embolden=1
+#define FONT_ITALIC         xft:Source Code Pro for Powerline:pixelsize=13:embolden=1:style=Black
+#define FONT_BOLDITALIC     xft:Source Code Pro for Powerline:pixelsize=13:embolden=1:style=Semibold Italic
 
 vte*font:       FONT_NORMAL
 vte*boldFont:   FONT_BOLD

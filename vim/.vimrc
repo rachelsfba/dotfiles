@@ -38,7 +38,8 @@ call plug#begin('~/.vim/plugged')
    " Plugins
    Plug 'itchyny/lightline.vim'
    Plug 'Yggdroot/indentLine'
-
+   "Plug 'vim-airline/vim-airline'
+   
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -51,6 +52,12 @@ filetype on
 " execute pathogen#infect()
 
 "}}}
+
+"{{{Airline/Powerline
+let g:powerline_pycmd="py3"
+let g:airline_powerline_fonts = 1
+"}}}
+
 
 "{{{Auto Commands
 
@@ -182,8 +189,8 @@ nnoremap <F4> :set number!<cr>
 vnoremap <F4> :set number!<cr>
 
 set tabpagemax=100
-let g:powerline_pycmd="py3"
-" }}}
+
+"}}}
 
 "{{{ Functions
 
