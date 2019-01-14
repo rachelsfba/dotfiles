@@ -1,6 +1,6 @@
 #!/bin/zsh
 if [ "$HOST" = "yemen" ]; then
-    feh --bg-scale /data/Pictures/bg/wallhaven-602455.jpg &
+    feh --bg-scale /data/NextCloud/Art/wallpapers/wallhaven-602455.jpg &
 else
     #feh --bg-center /home/${USER}/wallpaper/wallhaven-246434.jpg &
     #feh --bg-scale /home/${USER}/wallpaper/wallhaven-679296.jpg &
