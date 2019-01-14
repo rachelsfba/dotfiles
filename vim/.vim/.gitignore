@@ -1,2 +1,4 @@
 .netrwhist
 swap
+plugged/*
+autoload/*

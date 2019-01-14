@@ -14,9 +14,52 @@ runtime! archlinux.vim
 " Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
 " and configure vim to your own liking!
 
-execute pathogen#infect()
 
- "{{{Auto Commands
+
+"{{{Plugin Managers
+
+" Install vim-plug. From
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+   " Declare the list of plugins.
+   
+   " Color schemes
+   Plug 'drewtempelmeyer/palenight.vim'
+   Plug 'trapd00r/neverland-vim-theme'
+   
+   " Plugins
+   Plug 'itchyny/lightline.vim'
+   Plug 'Yggdroot/indentLine'
+   "Plug 'vim-airline/vim-airline'
+   
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+" Needed for Syntax Highlighting and stuff
+filetype on
+" filetype plugin on
+" syntax enable
+" syntax on
+
+" execute pathogen#infect()
+
+"}}}
+
+"{{{Airline/Powerline
+let g:powerline_pycmd="py3"
+let g:airline_powerline_fonts = 1
+"}}}
+
+
+"{{{Auto Commands
 
 " Automatically cd into the directory that the file is in
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
@@ -63,11 +106,20 @@ set showcmd
 " Folding Stuffs
 set foldmethod=marker
 
-" Needed for Syntax Highlighting and stuff
-filetype on
-filetype plugin on
-syntax enable
 set grepprg=grep\ -nH\ $*
+
+set tabpagemax=100
+
+" From https://shapeshed.com/vim-netrw/
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
 
 " Who doesn't like autoindent?
 set autoindent
@@ -127,26 +179,31 @@ set nohidden
 
 " Set off the other paren
 highlight MatchParen ctermbg=4
-" }}}
 
-"{{{Look and Feel
+let g:rct_completion_use_fri = 1
 
-" Favorite Color Scheme
-if has("gui_running")
-   colorscheme inkpot
-   " Remove Toolbar
-   set guioptions-=T
-   "Terminus is AWESOME
-   set guifont=Terminus\ 9
-else
-   color neverland2
-endif
+" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
+"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
+set grepprg=grep\ -nH\
 
-"Status line gnarliness
-set laststatus=2
-set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
+set complete+=
 
-" }}}
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Customisations based on house-style (arbitrary)
+autocmd FileType markdown setlocal sts=2 ts=2 sw=2 expandtab
+autocmd FileType htmldjango setlocal  sts=2 ts=2 sw=2 expandtab
+autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+
+set pastetoggle=<F3>
+nnoremap <F4> :set number!<cr>
+vnoremap <F4> :set number!<cr>
+
+set tabpagemax=100
+
+"}}}
 
 "{{{ Functions
 
@@ -155,40 +212,7 @@ set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 function! Browser ()
    let line = getline (".")
    let line = matchstr (line, "http[^   ]*")
-   exec "!chromium ".line
-endfunction
-
-"}}}
-
-"{{{Theme Rotating
-let themeindex=0
-function! RotateColorTheme()
-   let y = -1
-   while y == -1
-      let colorstring = "inkpot#ron#blue#elflord#evening#koehler#murphy#pablo#desert#torte#"
-      let x = match( colorstring, "#", g:themeindex )
-      let y = match( colorstring, "#", x + 1 )
-      let g:themeindex = x + 1
-      if y == -1
-         let g:themeindex = 0
-      else
-         let themestring = strpart(colorstring, x + 1, y - x - 1)
-         return ":colorscheme ".themestring
-      endif
-   endwhile
-endfunction
-" }}}
-
-"{{{ Todo List Mode
-
-function! TodoListMode()
-   e ~/.todo.otl
-   Calendar
-   wincmd l
-   set foldlevel=1
-   tabnew ~/.notes.txt
-   tabfirst
-   " or 'norm! zMzr'
+   exec "!ff ".line
 endfunction
 
 "}}}
@@ -268,6 +292,7 @@ nnoremap <leader><Space> :call ToggleComment()<cr>
 vnoremap <leader><Space> :call ToggleComment()<cr>
 
 "}}}
+
 "{{{Taglist configuration
 let Tlist_Use_Right_Window = 1
 let Tlist_Enable_Fold_Column = 0
@@ -275,47 +300,54 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_SingleClick = 1
 let Tlist_Inc_Winwidth = 0
 "}}}
-let g:rct_completion_use_fri = 1
+
+"{{{LaTeXSuite stuff
 let g:Tex_DefaultTargetFormat = "pdf"
+let g:Tex_ViewRule_pdf = "evince"
 let g:tex_flavor = "latex"
 let g:Tex_BibtexFlavor = 'biber'
+let g:Tex_GotoError = 1
 " The following is relevant to make LaTeX rerun after biber if necessary: 
 " (include all formats for which re-running is to be enabled)
 let g:Tex_MultipleCompileFormats='pdf,dvi'
+
 " autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
-set grepprg=grep\ -nH\
+"}}}
 
-filetype plugin indent on
-syntax on
+"{{{Look and Feel
 
-au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
-set complete+=
+"Status line gnarliness
+set laststatus=2
+set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
-au BufRead,BufNewFile *.md setlocal textwidth=80
-autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
+" Favorite Color Scheme
+if has("gui_running")
+   colorscheme inkpot
+   " Remove Toolbar
+   set guioptions-=T
+   "Terminus is AWESOME
+   set guifont=Terminus\ 9
+else
+   " Neverland Theme
+   color neverland2
 
-" Customisations based on house-style (arbitrary)
-autocmd FileType markdown setlocal sts=2 ts=2 sw=2 expandtab
-autocmd FileType htmldjango setlocal  sts=2 ts=2 sw=2 expandtab
-autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
+   "{{{PaleNight Theme
+   "set background=dark
+   "colorscheme palenight
 
+   "let g:lightline = { 'colorscheme': 'palenight' }
+   "let g:palenight_terminal_italics=1
+   "
+   "if (has("nvim"))
+   "  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+   "  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+   "endif
+   "
+   "if (has("termguicolors"))
+   "   set termguicolors
+   "endif
+   "}}}
+endif
 
-set pastetoggle=<F3>
-nnoremap <F4> :set number!<cr>
-vnoremap <F4> :set number!<cr>
+" }}}
 
-set tabpagemax=100
-let g:powerline_pycmd="py3"
-
-" From https://shapeshed.com/vim-netrw/
-" let g:netrw_banner = 0
-" let g:netrw_liststyle = 3
-" let g:netrw_browse_split = 4
-" let g:netrw_altv = 1
-" let g:netrw_winsize = 25
-" augroup ProjectDrawer
-"   autocmd!
-"   autocmd VimEnter * :Vexplore
-" augroup END

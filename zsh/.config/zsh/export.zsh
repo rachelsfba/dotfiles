@@ -26,6 +26,7 @@ export D_DROID=$DATA/Droid
 export D_DROIDROOT=$DATA/Droid/sdcard0
 
 export D_DND=$D_NCLOUD/DnD
+export D_ART=$D_NCLOUD/Art
 
 export D_RCC=$D_NCLOUD/RCC_Classes
 export D_PHY=$D_RCC/PHY
