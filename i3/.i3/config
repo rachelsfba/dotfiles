@@ -146,13 +146,12 @@ bindsym F7 exec "loopclk2"
 bindsym F8 exec "xdotool mousedown 3"
 #bindsym F8 exec "xdotool mouseup 3"
 
-# BEGIN DELL XPS 15 9550 Function Keys
 bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 
 # M1
-bindsym XF86Tools exec amixer -D pulse sset Capture toggle
+bindsym XF86Tools exec pactl set-source-mute alsa_input.usb-046d_HD_Pro_Webcam_C920_DB259BDF-02.iec958-stereo toggle
 # M2
 #bindsym XF86Launch5 exec amixer -D pulse sset Capture toggle
 # M3
@@ -174,7 +173,6 @@ bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
 bindsym XF86Search exec "rofi -show run"
-# END DELL XPS 15 9550 Function Keys
 
 bindsym $mod+Shift+u exec "xautolockctl"
 
