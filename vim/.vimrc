@@ -36,7 +36,8 @@ call plug#begin('~/.vim/plugged')
    " Plugins
    Plug 'itchyny/lightline.vim'
    Plug 'Yggdroot/indentLine'
-   Plug 'vim-latex/vim-latex'
+   "Plug 'vim-latex/vim-latex'
+   Plug 'lervag/vimtex'
    "Plug 'vim-airline/vim-airline'
    
 " List ends here. Plugins become visible to Vim after this call.
@@ -339,23 +340,26 @@ endif
 
 
 "{{{LaTeXSuite stuff
-
-let g:Tex_DefaultTargetFormat = "pdf"
-
-"let g:Tex_ViewRule_pdf = "evince"
-let g:Tex_ViewRule_pdf = 'zathura'
-
-" use LaTeX by default
-let g:tex_flavor = "latex"
-let g:Tex_BibtexFlavor = 'biber'
-
-let g:Tex_GotoError = 0
-" The following is relevant to make LaTeX rerun after biber if necessary: 
-" (include all formats for which re-running is to be enabled)
-let g:Tex_MultipleCompileFormats='pdf,dvi'
-
-" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
+"
+"let g:Tex_DefaultTargetFormat = "pdf"
+"
+""let g:Tex_ViewRule_pdf = "evince"
+"let g:Tex_ViewRule_pdf = 'zathura'
+"
+"" use LaTeX by default
+"let g:tex_flavor = "latex"
+"let g:Tex_BibtexFlavor = 'biber'
+"
+"let g:Tex_GotoError = 0
+"" The following is relevant to make LaTeX rerun after biber if necessary: 
+"" (include all formats for which re-running is to be enabled)
+"let g:Tex_MultipleCompileFormats='pdf,dvi'
+"
+"" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
 "}}}
 
+"{{{vimtex stuff
+let g:vimtex_view_method='zathura'
+"}}}
 
 
