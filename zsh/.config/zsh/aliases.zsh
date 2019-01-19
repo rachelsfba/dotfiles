@@ -27,7 +27,7 @@ alias ga='git add'
 alias gc='git commit'
 alias sta='git status'
 alias gs='sta'
-alias wim='vim -p'
+alias wim='vim -p --servername azerbaijan'
 alias vim='wim'
 
 alias dps='docker ps -a'
