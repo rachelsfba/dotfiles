@@ -14,8 +14,6 @@ runtime! archlinux.vim
 " Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
 " and configure vim to your own liking!
 
-
-
 "{{{Plugin Managers
 
 " Install vim-plug. From
@@ -38,6 +36,7 @@ call plug#begin('~/.vim/plugged')
    " Plugins
    Plug 'itchyny/lightline.vim'
    Plug 'Yggdroot/indentLine'
+   Plug 'vim-latex/vim-latex'
    "Plug 'vim-airline/vim-airline'
    
 " List ends here. Plugins become visible to Vim after this call.
@@ -301,19 +300,6 @@ let Tlist_Use_SingleClick = 1
 let Tlist_Inc_Winwidth = 0
 "}}}
 
-"{{{LaTeXSuite stuff
-let g:Tex_DefaultTargetFormat = "pdf"
-let g:Tex_ViewRule_pdf = "evince"
-let g:tex_flavor = "latex"
-let g:Tex_BibtexFlavor = 'biber'
-let g:Tex_GotoError = 1
-" The following is relevant to make LaTeX rerun after biber if necessary: 
-" (include all formats for which re-running is to be enabled)
-let g:Tex_MultipleCompileFormats='pdf,dvi'
-
-" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
-"}}}
-
 "{{{Look and Feel
 
 "Status line gnarliness
@@ -350,4 +336,26 @@ else
 endif
 
 " }}}
+
+
+"{{{LaTeXSuite stuff
+
+let g:Tex_DefaultTargetFormat = "pdf"
+
+"let g:Tex_ViewRule_pdf = "evince"
+let g:Tex_ViewRule_pdf = 'zathura'
+
+" use LaTeX by default
+let g:tex_flavor = "latex"
+let g:Tex_BibtexFlavor = 'biber'
+
+let g:Tex_GotoError = 0
+" The following is relevant to make LaTeX rerun after biber if necessary: 
+" (include all formats for which re-running is to be enabled)
+let g:Tex_MultipleCompileFormats='pdf,dvi'
+
+" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
+"}}}
+
+
 

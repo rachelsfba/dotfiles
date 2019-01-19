@@ -1,6 +1,6 @@
 #!/bin/zsh
 if [ "$HOST" = "yemen" ]; then
-    i3lock -i "/data/NextCloud/Art/wallpapers/wallhaven-602455.jpg" && systemctl suspend
+    i3lock -i "/data/NextCloud/Art/wallpapers/wallhaven-602455.png" && systemctl suspend
 elif [ "$HOST" = "mongolia" ]; then
     i3lock -i "/home/rachel/wallpaper/lock_image.png"
 fi
