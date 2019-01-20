@@ -1,12 +1,3 @@
-###############################################################################
-## WARNING: 
-##   This is an auto-generated file created from the template in "config.base"
-##   
-##   Edit that file or any host-specific files instead! Changes made here will
-##   not be saved.
-###############################################################################
-
-
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -220,13 +211,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch &
 exec_always --no-startup-id $HOME/.i3/bin/launch-workspace-autonamer &
 exec_always --no-startup-id setwall &
 
-
-###############################################################################
-##                     mongolia-specific config stuff!                       ##
-###############################################################################
-
-# start up with workspaces on right monitors
-workspace number 1 output DP-1.8
-workspace number 2 output DP-1.1.8
-workspace number 3 output DVI-I-1
 

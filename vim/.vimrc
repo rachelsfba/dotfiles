@@ -359,6 +359,10 @@ endif
 "}}}
 
 "{{{vimtex stuff
+" use LaTeX by default
+let g:tex_flavor = "latex"
+
+" use zathura as PDF viewer (evince/FoxitReader might be system default)
 let g:latex_view_general_viewer = 'zathura'
 let g:vimtex_view_method='zathura'
 "}}}

@@ -1,0 +1,9 @@
+###############################################################################
+##                     mongolia-specific config stuff!                       ##
+###############################################################################
+
+# start up with workspaces on right monitors
+workspace number 1 output DP-1.8
+workspace number 2 output DP-1.1.8
+workspace number 3 output DVI-I-1
+

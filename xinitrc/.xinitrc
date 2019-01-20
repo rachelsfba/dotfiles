@@ -1,12 +1,11 @@
 #!/bin/sh
-
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
+i3location=$HOME/dotfiles/i3/.i3
 
 # merge in defaults and keymaps
-
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
 fi
@@ -37,4 +36,6 @@ sleepytime &
 # xautolock -time 10 -locker lock &
 nextcloud &
 urxvtd &
-exec i3
+
+# Generate local host-specific i3 config file and then run i3 wm.
+$i3location/bin/gen-local-config && exec i3

@@ -1,0 +1,25 @@
+#!/bin/zsh
+# Generates host-specific local i3 config. Necessary to make sure monitor stuff
+# is handled properly for desktop (mongolia is hostname).
+
+# location of i3 wm files
+i3location=$HOME/dotfiles/i3/.i3/
+
+# Move to i3 config location
+cd $i3location
+
+# Prep warning header
+echo -e "###############################################################################" >config
+echo -e "## WARNING: " >>config
+echo -e "##   This is an auto-generated file created from the template in \"config.base\"" >>config
+echo -e "##   " >>config
+echo -e "##   Edit that file or any host-specific files instead! Changes made here will" >>config
+echo -e "##   not be saved." >>config
+echo -e "###############################################################################\n\n" >>config
+
+# Host-specific setup
+if [ "$HOST" = "mongolia" ]; then
+    cat config.base config.mongolia >>config 
+else
+    cat config.base >>config 
+fi
