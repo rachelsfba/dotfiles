@@ -102,6 +102,7 @@ WINDOW_ICONS = {
     'VirtualBox': fa.icons['server'],
     'wine': fa.icons['windows'],
     'xfce4-terminal': fa.icons['terminal'],
+    'zathura': fa.icons['file-pdf'],
     'zenity': fa.icons['window-maximize'],
 }
 
