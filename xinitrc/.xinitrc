@@ -35,6 +35,7 @@ xmodshit &
 sleepytime &
 # xautolock -time 10 -locker lock &
 nextcloud &
+qbittorrent & # seeding is good manners, friends.
 urxvtd &
 
 # Generate local host-specific i3 config file and then run i3 wm.
