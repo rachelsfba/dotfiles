@@ -57,6 +57,8 @@ export EDITOR=vim
 export PATH=$BINARIES:$(ruby -e 'print Gem.user_dir')/bin:$PATH
 export PYTHONPATH=~/dev:$PYTHONPATH
 
+# Qt4/Qt5/KDE/GTK theme stuff
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # ZSH config
 export TZ='America/New_York'

@@ -1,4 +1,4 @@
 #!/usr/bin/env zsh
-exec firefox $@
+GTK_THEME=Arc-Darker firefox $@
 #exec chromium
 #exec google-chrome-stable $@
