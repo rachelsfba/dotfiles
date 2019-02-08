@@ -215,6 +215,8 @@ function! Browser ()
    exec "!ff ".line
 endfunction
 
+nmap <leader>f :call Browser()<cr>
+
 "}}}
 
 let s:comment_map = {
