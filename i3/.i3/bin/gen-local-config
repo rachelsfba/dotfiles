@@ -20,6 +20,8 @@ echo -e "#######################################################################
 # Host-specific setup
 if [ "$HOST" = "mongolia" ]; then
     cat config.base config.mongolia >>config 
+elif [ "$HOST" = "yemen" ]; then
+    cat config.base config.yemen >>config 
 else
     cat config.base >>config 
 fi

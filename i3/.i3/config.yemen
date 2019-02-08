@@ -1,0 +1,9 @@
+###############################################################################
+##                        yemen-specific config stuff!                       ##
+###############################################################################
+
+# Set font with proper size
+font xft:ProFont 11
+#font xft:Anonymous Pro:style=Regular:pixelsize=12:antialias=3:autohint=1:hintstyle=3
+#font xft:Inconsolata-g for Powerline 12:embolden=1
+#font xft:Source Code Pro for Powerline:pixelsize=13:embolden=1:style=SemiBold

@@ -6,7 +6,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font xft:ProFont 12
+# font xft:ProFont 12
 #font  xft:Profont:style=SemiCondensed:pixelsize=14,xft:Anonymous Pro:style=Regular:pixelsize=12:antialias=3:autohint=1:hintstyle=3
 #font xft:Monofur Regular 11
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
