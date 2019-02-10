@@ -131,5 +131,7 @@ URxvt*font6:                -xos4-terminus-medium-r-normal-*-18-*-*-*-*-*-*-1
 URxvt*font7:                -xos4-terminus-medium-r-normal-*-19-*-*-*-*-*-*-1
 URxvt*font8:                -xos4-terminus-medium-r-normal-*-20-*-*-*-*-*-*-1
 
+URxvt.bell-command: canberra-gtk-play -i bell
+
 
 #include "/home/rachel/.config/Xcolors/nancy.Xresources"
