@@ -57,6 +57,7 @@ WINDOW_ICONS = {
     'darktable': fa.icons['image'],
     'discord': fa.icons['discord'],
     'evince': fa.icons['file-pdf'],
+    'evolution': fa.icons['envelope'],
     'feh': fa.icons['image'],
     'firefox': fa.icons['firefox'],
     'foxitreader': fa.icons['file-pdf'],
