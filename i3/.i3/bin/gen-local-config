@@ -8,14 +8,19 @@ i3location=$HOME/dotfiles/i3/.i3/
 # Move to i3 config location
 cd $i3location
 
-# Prep warning header
-echo -e "###############################################################################" >config
-echo -e "## WARNING: " >>config
-echo -e "##   This is an auto-generated file created from the template in \"config.base\"" >>config
-echo -e "##   " >>config
-echo -e "##   Edit that file or any host-specific files instead! Changes made here will" >>config
-echo -e "##   not be saved." >>config
-echo -e "###############################################################################\n\n" >>config
+# Prep warning text
+read -d '' warning_text <<EOF
+###############################################################################
+## WARNING: 
+##   This is an auto-generated file created from the template in "config.base"
+##   
+##   Edit that file or any host-specific files instead! Changes made here will
+##   not be saved.
+###############################################################################
+EOF
+
+# Warning header
+echo -e "${warning_text}\n" >config
 
 # Host-specific setup
 if [ "$HOST" = "mongolia" ]; then
@@ -25,3 +30,6 @@ elif [ "$HOST" = "yemen" ]; then
 else
     cat config.base >>config 
 fi
+
+# Warning footer
+echo -e "\n${warning_text}" >>config
