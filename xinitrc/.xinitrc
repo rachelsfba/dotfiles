@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 userresources=$HOME/.Xresources
 usermodmap=$HOME/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
@@ -29,6 +29,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+if [ "$HOST" = "yemen" ]; then
+    xrandr --auto
+fi
+
+
 xset -dpms -b &
 xmodshit &
 # xmodshit &
@@ -39,4 +44,5 @@ qbittorrent & # seeding is good manners, friends.
 urxvtd &
 
 # Generate local host-specific i3 config file and then run i3 wm.
-$i3location/bin/gen-local-config && exec i3
+$i3location/bin/gen-local-config
+exec i3
