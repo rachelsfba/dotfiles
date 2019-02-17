@@ -1,0 +1,35 @@
+#!/bin/zsh
+# Generates host-specific local sway config. Necessary to make sure monitor
+# stuff is handled properly for desktop (mongolia is hostname).
+
+# location of sway wm files
+swaylocation=$HOME/dotfiles/sway/.config/sway
+
+# Move to sway config location
+cd $swaylocation
+
+# Prep warning text
+warning_text=`cat <<EOF
+###############################################################################
+## WARNING: 
+##   This is an auto-generated file created from the template in "config.base"
+##   
+##   Edit that file or any host-specific files instead! Changes made here will
+##   not be saved.
+###############################################################################
+EOF`
+
+# Warning header
+echo -e "${warning_text}\n" >config
+
+# Host-specific setup
+if [ "$HOST" = "mongolia" ]; then
+    cat config.base config.mongolia >>config 
+elif [ "$HOST" = "yemen" ]; then
+    cat config.base config.yemen >>config 
+else
+    cat config.base >>config 
+fi
+
+# Warning footer
+echo -e "\n${warning_text}" >>config
