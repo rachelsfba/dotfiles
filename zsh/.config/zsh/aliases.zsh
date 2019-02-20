@@ -18,8 +18,9 @@ alias rgrep="grep -r"
 alias cd1="cd ${D_UVA} && ls"
 alias cd2='cd $DL && ls -tr'
 
-alias ls='ls++ -al'
-alias lsp='ls++ --potsf'
+#alias ls='ls++ -al'
+#alias lsp='ls++ --potsf'
+alias ls='exa -l'
 
 alias urxvt='urxvt -name mongolia'
 alias gp='git push'
