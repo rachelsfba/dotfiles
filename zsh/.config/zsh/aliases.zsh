@@ -15,12 +15,12 @@ alias more='less'
 alias spck="aspell -t -c"
 alias rgrep="grep -r"
 
-alias cd1="cd ${D_UVA} && ls"
-alias cd2='cd $DL && ls -tr'
+alias cd1="cd ${D_UVA} && exa -laF"
+alias cd2='cd $DL && exa -laF -sold'
 
 #alias ls='ls++ -al'
 #alias lsp='ls++ --potsf'
-alias ls='exa -lF'
+alias ls='exa -laF --git'
 
 alias urxvt='urxvt -name mongolia'
 alias gp='git push'
