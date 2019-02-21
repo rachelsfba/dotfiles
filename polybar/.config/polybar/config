@@ -446,7 +446,7 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/mpd
 
 host = 10.0.0.251
-port = 6600
+port = 8888
 password =
 
 interval = 1

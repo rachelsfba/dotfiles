@@ -57,6 +57,9 @@ export EDITOR=vim
 export PATH=$BINARIES:$(ruby -e 'print Gem.user_dir')/bin:$PATH
 export PYTHONPATH=~/dev:$PYTHONPATH
 
+# MPD stuff
+export MPD_HOST=$(cat ${XDG_DATA_HOME}/mpc/MPC_HOST.secret)
+
 # Qt4/Qt5/KDE/GTK theme stuff
 export QT_QPA_PLATFORMTHEME=qt5ct
 
