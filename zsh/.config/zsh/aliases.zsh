@@ -20,7 +20,7 @@ alias cd2='cd $DL && ls -tr'
 
 #alias ls='ls++ -al'
 #alias lsp='ls++ --potsf'
-alias ls='exa -l'
+alias ls='exa -lF'
 
 alias urxvt='urxvt -name mongolia'
 alias gp='git push'
