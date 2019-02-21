@@ -1,4 +1,5 @@
 #!/bin/sh
+echo $#
 
 # --- Safety check
 if [ $# -ne 4 ]; then
