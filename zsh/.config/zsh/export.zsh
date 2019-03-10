@@ -69,3 +69,5 @@ export TZ='America/New_York'
 export HISTFILE=~/.zshhistory
 export HISTSIZE=5000
 export SAVEHIST=1000000
+
+

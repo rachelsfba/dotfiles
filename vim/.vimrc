@@ -35,7 +35,7 @@ call plug#begin('~/.vim/plugged')
    
    " Plugins
    Plug 'itchyny/lightline.vim'
-   Plug 'Yggdroot/indentLine'
+   "Plug 'Yggdroot/indentLine'
    "Plug 'vim-latex/vim-latex'
    Plug 'lervag/vimtex'
    "Plug 'vim-airline/vim-airline'
