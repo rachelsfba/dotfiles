@@ -57,9 +57,10 @@ modules-center =
 modules-right = filesystem weather xbacklight volume updates memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
-tray-padding = 2
+;tray-padding = 2
+tray-detached = false
 tray-transparent = false
-tray-background = #222
+tray-background = ${root.background}
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -111,10 +112,11 @@ modules-center =
 modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 
-;tray-position = right
+tray-position = right
 ;tray-padding = 2
-;tray-transparent = false
-;tray-background = #222
+tray-detached = false
+tray-transparent = false
+tray-background = ${root.background}
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -166,10 +168,11 @@ modules-center =
 modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 
-;tray-position = right
+tray-position = 
 ;tray-padding = 2
-;tray-transparent = false
-;tray-background = #222
+tray-detached = false
+tray-transparent = false
+tray-background = ${root.background}
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -221,7 +224,7 @@ modules-center =
 modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 
-tray-position = right
+tray-position = 
 tray-padding = 2
 tray-transparent = false
 tray-background = #222

@@ -36,6 +36,7 @@ elif [ "$HOST" = "yemen" ]; then
 fi
 
 
+#xset -dpms b 100 &
 xset -dpms -b &
 xmodshit &
 sleepytime &

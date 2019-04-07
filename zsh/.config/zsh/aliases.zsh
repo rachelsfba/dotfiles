@@ -16,7 +16,7 @@ alias spck="aspell -t -c"
 alias rgrep="grep -r"
 
 alias cd1="cd ${D_UVA} && exa -laF"
-alias cd2='cd $DL && exa -laF -sold'
+alias cd2='cd $DL && exa -laF -snew'
 
 alias ls='ls++ -al'
 alias lsp='ls++ --potsf'
@@ -45,5 +45,5 @@ alias project='xrandr --output HDMI1 --mode 1920x1080 --left-of eDP1'
 alias unproject='xrandr --output HDMI1 --off'
 
 alias identwin='xprop | grep WM_CLASS'
-alias tea='termdown 2m -b'
-alias tea2='termdown 4m -b'
+alias tea='termdown 2m && ( while true; do paplay ${HOME}/bell.ogg; done )'
+alias tea2='termdown 4m && ( while true; do paplay ${HOME}/bell.ogg; done )'
