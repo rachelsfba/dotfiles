@@ -131,7 +131,7 @@ scroll-down = i3wm-wsprev
 
 
 [bar/mainB]
-monitor = ${env:MONITOR:DVI-I-1}
+monitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 27
 ;offset-x = 1%

@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
    " Color schemes
    Plug 'drewtempelmeyer/palenight.vim'
    Plug 'trapd00r/neverland-vim-theme'
+   Plug 'aonemd/kuroi.vim'
    
    " Plugins
    Plug 'itchyny/lightline.vim'
@@ -331,6 +332,9 @@ if has("gui_running")
 else
    " Neverland Theme
    color neverland2
+"    color palenight
+"    set background=dark
+"    color kuroi
 
    "{{{PaleNight Theme
    "set background=dark
