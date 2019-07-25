@@ -2,5 +2,5 @@
 if [ "$HOST" = "yemen" ]; then
     i3lock -i "${D_ART}/wallpapers/wallhaven-602455.png" && systemctl suspend
 elif [ "$HOST" = "mongolia" ]; then
-    i3lock -i "${D_ART}/wallpapers/wallhaven-602455.png"
+    i3lock -i "${D_ART}/wallpapers/lockscreen.png"
 fi
