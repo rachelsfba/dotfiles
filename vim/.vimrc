@@ -55,7 +55,7 @@ filetype on
 "}}}
 
 "{{{Airline/Powerline
-let g:powerline_pycmd="py3"
+let g:powerline_pycmd="python3"
 let g:airline_powerline_fonts = 1
 "}}}
 
