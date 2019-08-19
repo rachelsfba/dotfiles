@@ -137,8 +137,8 @@ bindsym $mod+Shift+backslash exec "pavucontrol"
 #bindsym $mod+Shift+l exec "systemctl suspend"
 bindsym $mod+Shift+l exec "lock"
 
-#bindsym F6 exec "loopclk"
-#bindsym F7 exec "loopclk2"
+bindsym F6 exec "loopclk"
+bindsym F7 exec "loopclk2"
 #bindsym F8 exec "xdotool mousedown 3"
 #bindsym F8 exec "xdotool mouseup 3"
 
