@@ -31,6 +31,7 @@ fi
 
 if [ "$HOST" = "mongolia" ]; then
     qbittorrent & # seeding is good manners, friends.
+    xrandr --output DVI-I-1 --mode 1920x1080 --output DP-1.1.8 --primary --right-of DVI-I-1 --mode 1920x1080 --output DP-1.8 --right-of DP-1.1.8 --mode 1920x1080
 elif [ "$HOST" = "yemen" ]; then
     xrandr --auto
 fi
@@ -41,9 +42,12 @@ xset -dpms -b &
 xmodshit &
 sleepytime &
 # xautolock -time 10 -locker lock &
+urxvtd &
 qbittorent %
 nextcloud &
-urxvtd &
+keepass &
+discord &
+
 
 # Generate local host-specific i3 config file and then run i3 wm.
 $i3location/bin/gen-local-config && exec i3
