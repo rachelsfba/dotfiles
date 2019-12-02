@@ -108,3 +108,14 @@ bindkey ' ' magic-space                # Do history expansion on space
 # colorcoke --random
 eval `dircolors -b ${XDG_CONFIG_HOME}/LS_COLORS`
 eval `keychain -q --eval ~/.ssh/id_ecdsa`
+
+if [ "$HOST" = "yemen" ]; then
+    echo -e "\u001b[35m"
+    echo -e "   ▄▄▄▄▄          ·▄▄▄▄        .▄▄ · "
+    echo -e "   •██  ▪         ██▪ ██ ▪     ▐█ ▀. "
+    echo -e "    ▐█.▪ ▄█▀▄     ▐█· ▐█▌ ▄█▀▄ ▄▀▀▀█▄"
+    echo -e "    ▐█▌·▐█▌.▐▌    ██. ██ ▐█▌.▐▌▐█▄▪▐█"
+    echo -e "    ▀▀▀  ▀█▄▀▪    ▀▀▀▀▀•  ▀█▄▀▪ ▀▀▀▀ "
+    echo -e "\u001b[0m"
+    cat $HOME/TODO.txt 2>/dev/null || echo "No TODOs at the present!"
+fi
