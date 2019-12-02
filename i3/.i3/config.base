@@ -158,8 +158,8 @@ bindsym XF86Tools exec pactl set-source-mute alsa_input.usb-046d_HD_Pro_Webcam_C
 #
 #indsym XF86Launch8 exec amixer -D pulse sset Capture toggle
 
-bindsym XF86MonBrightnessUp exec xbacklight + 10
-bindsym XF86MonBrightnessDown exec xbacklight - 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 # bindsym XF86AudioPlay exec playerctl play-pause
 # bindsym XF86AudioNext exec playerctl next
