@@ -16,3 +16,9 @@ bones(){
     sleep 3s
     xdotool mousedown 3
 }
+
+up() {
+    for i in `seq $1`; do
+        cd ..
+    done
+}

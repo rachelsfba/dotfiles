@@ -31,8 +31,11 @@ call plug#begin('~/.vim/plugged')
    
    " Color schemes
    Plug 'drewtempelmeyer/palenight.vim'
-   Plug 'trapd00r/neverland-vim-theme'
+   Plug 'omattei/neverland-vim-theme'
    Plug 'aonemd/kuroi.vim'
+  
+   " Color scheme test
+   Plug 'jgallen23/Color-Scheme-Test'
    
    " Plugins
    Plug 'itchyny/lightline.vim'
