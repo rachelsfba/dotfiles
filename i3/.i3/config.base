@@ -125,7 +125,8 @@ for_window [title="Quake Live" class="Wine"] floating enable
 for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating enable
 
 bindsym $mod+Shift+a exec "minecraft"
-bindsym $mod+Shift+s exec "gpmdp"
+bindsym $mod+Shift+s exec "spotify"
+#bindsym $mod+Shift+s exec "gpmdp"
 bindsym $mod+Shift+f exec "ff"
 #bindsym $mod+Shift+p exec "thunderbird"
 bindsym $mod+t exec "steam"
@@ -147,7 +148,8 @@ bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 
 # M1
-bindsym XF86Tools exec pactl set-source-mute alsa_input.usb-046d_HD_Pro_Webcam_C920_DB259BDF-02.iec958-stereo toggle
+bindsym XF86Tools exec amixer -D pulse sset Capture toggle
+#bindsym XF86Tools exec pactl set-source-mute alsa_input.usb-046d_HD_Pro_Webcam_C920_DB259BDF-02.analog-stereo toggle
 # M2
 #bindsym XF86Launch5 exec amixer -D pulse sset Capture toggle
 # M3

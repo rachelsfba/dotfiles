@@ -70,4 +70,6 @@ export HISTFILE=~/.zshhistory
 export HISTSIZE=5000
 export SAVEHIST=1000000
 
+# Ansible
+export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible/ansible.cfg
 

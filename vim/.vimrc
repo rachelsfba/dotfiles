@@ -43,7 +43,11 @@ call plug#begin('~/.vim/plugged')
    "Plug 'vim-latex/vim-latex'
    Plug 'lervag/vimtex'
    "Plug 'vim-airline/vim-airline'
-   
+  
+   " Python stuff
+   Plug 'cespare/vim-toml'
+   Plug 'psf/black'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -125,6 +129,10 @@ set tabpagemax=100
 "   autocmd VimEnter * :Vexplore
 " augroup END
 
+
+" Set textwidth to 88 chars
+set textwidth=88
+
 " Who doesn't like autoindent?
 set autoindent
 
@@ -141,9 +149,6 @@ if version >= 700
    set spl=en spell
    set nospell
 endif
-
-" Real men use gcc
-"compiler gcc
 
 " Cool tab completion stuff
 set wildmenu
@@ -308,6 +313,7 @@ function! AppendModeline()
 endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
+nnoremap <leader>k :wa<cr>
 
 "}}}
 
