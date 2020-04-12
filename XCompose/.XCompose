@@ -1,4 +1,4 @@
-include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+include "%L"
 <Multi_key> <G> <A>            : "Α"   U0391    # GREEK CAPITAL LETTER ALPHA
 <Multi_key> <G> <B>            : "Β"   U0392    # GREEK CAPITAL LETTER BETA
 <Multi_key> <G> <D>            : "Δ"   U0394    # GREEK CAPITAL LETTER DELTA
@@ -51,3 +51,4 @@ include "/usr/share/X11/locale/en_US.UTF-8/Compose"
 
 <Multi_key>     <t>     <r>     <i> : "▲"   U25B2   # Triangle
 <Multi_key>     <R>     <x>         : "℞"   U211E   # PRESCRIPTION TAKE
+<Multi_key>     <slash>     <slash>         : "✓"   U2713   # CHECKMARK

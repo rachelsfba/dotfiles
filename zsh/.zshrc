@@ -100,6 +100,8 @@ bindkey "^e" end-of-line            # See https://stackoverflow.com/questions/23
 bindkey "^a" beginning-of-line      # See https://stackoverflow.com/questions/23128353/zsh-shortcut-ctrl-a-not-working
 bindkey '^i' expand-or-complete-prefix # Completion in the middle of a line
 bindkey '^z' undo                      # C-x-u is overkill
+bindkey "^r" history-incremental-pattern-search-backward
+bindkey "^f" history-incremental-pattern-search-forward
 bindkey '^w' kill-word
 bindkey '^b' backward-kill-word
 bindkey ' ' magic-space                # Do history expansion on space

@@ -1,2 +1,0 @@
-#!/bin/sh
-java -noverify -jar /data/Games/Minecraft/amidst-v4-3-beta4.jar

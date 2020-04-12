@@ -12,6 +12,7 @@ else
       sleep 0.0001
       xdotool mouseup 1
       sleep 1.5
+      #sleep 3 # for end farm
    done
    xdotool mouseup 1
 fi
