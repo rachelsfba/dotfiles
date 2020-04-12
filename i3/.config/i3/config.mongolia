@@ -1,0 +1,33 @@
+###############################################################################
+##                     mongolia-specific config stuff!                       ##
+###############################################################################
+
+# Monitor setup
+# 
+#  ##################### ##################### ####################
+#  ##                 ## ##                 ## ##                ## 
+#  ##     $mLeft      ## ##    $mCenter     ## ##     $mRight    ##
+#  ##     DVI-I-1     ## ##    DP-1.1.8     ## ##     DP-1.8     ##
+#  ##                 ## ##                 ## ##                ## 
+#  ##################### ##################### ####################
+# 
+set $mLeft DVI-I-1
+set $mCenter DP-1.1.8
+set $mRight DP-1.8
+
+# Create the workspaces and manage them. 
+# Start up with workspaces on right monitors
+workspace $ws1 output $mLeft
+workspace $ws2 output $mCenter
+workspace $ws3 output $mRight
+#workspace $ws4 output $mRight
+#workspace $ws5 output $mRight
+#workspace $ws6 output $mRight
+#workspace $ws7 output $mRight
+#workspace $ws8 output $mRight
+workspace $ws9 output $mLeft 
+workspace $ws10 output $mLeft
+
+
+# Set font with proper size
+font xft:ProFont:style=Regular 14
