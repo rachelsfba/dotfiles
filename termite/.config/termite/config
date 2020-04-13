@@ -1,7 +1,7 @@
 [options]
 scroll_on_output = false
 scroll_on_keystroke = true
-audible_bell = false
+audible_bell = true
 mouse_autohide = false
 allow_bold = true
 dynamic_title = true
@@ -30,7 +30,10 @@ cursor_shape = block
 #modify_other_keys = false
 
 [colors]
-#cursor = #dcdccc
+#cursor          = #201526
+cursor           = #8B7E66
+#cursor          = #0F9DBA
+
 foreground      = #ffffff
 foreground_bold = #ffffff
 background      = #000000
