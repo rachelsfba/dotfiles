@@ -86,16 +86,14 @@ zstyle ':completion:*:ssh:*' tag-order \
 zstyle ':completion:*:ssh:*' group-order \
 
 bindkey -v
-bindkey "\e[8~" end-of-line
-bindkey "\e[7~" beginning-of-line
 bindkey "\e[5~" beginning-of-history
 bindkey "\e[6~" end-of-history
 bindkey "\e[3~" delete-char
 bindkey "\e[2~" quoted-insert
 bindkey "\e[5C" forward-word
 bindkey "\e[5D" backward-word
-bindkey "\e[8~" end-of-line            # For rxvt
-bindkey "\e[7~" beginning-of-line      # For rxvt
+bindkey "\eOH" beginning-of-line      # For rxvt
+bindkey "\eOF" end-of-line            # For rxvt
 bindkey "^e" end-of-line            # See https://stackoverflow.com/questions/23128353/zsh-shortcut-ctrl-a-not-working
 bindkey "^a" beginning-of-line      # See https://stackoverflow.com/questions/23128353/zsh-shortcut-ctrl-a-not-working
 bindkey '^i' expand-or-complete-prefix # Completion in the middle of a line

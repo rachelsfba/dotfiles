@@ -39,7 +39,7 @@ xset -dpms -b &
 xmodshit &
 sleepytime &
 # xautolock -time 10 -locker lock &
-urxvtd &
+#urxvtd &
 qbittorent %
 nextcloud &
 keepass &

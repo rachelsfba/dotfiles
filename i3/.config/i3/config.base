@@ -200,7 +200,8 @@ bindsym $mod+Shift+r exec "$XDG_CONFIG_HOME/i3/bin/gen-local-config && i3-msg 'r
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # start a terminal
-bindsym $mod+Shift+Return exec wrxvt
+#bindsym $mod+Shift+Return exec wrxvt
+bindsym $mod+Shift+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
