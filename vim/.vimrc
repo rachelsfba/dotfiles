@@ -38,7 +38,9 @@ call plug#begin('~/.vim/plugged')
    Plug 'jgallen23/Color-Scheme-Test'
    
    " Plugins
-   Plug 'itchyny/lightline.vim'
+   "Plug 'itchyny/lightline.vim'
+   "Plug 'powerline/powerline'
+   Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
    "Plug 'Yggdroot/indentLine'
    "Plug 'vim-latex/vim-latex'
    Plug 'lervag/vimtex'
@@ -62,8 +64,10 @@ filetype on
 "}}}
 
 "{{{Airline/Powerline
-let g:powerline_pycmd="python3"
-let g:airline_powerline_fonts = 1
+"let g:powerline_pycmd="python3"
+"let g:airline_powerline_fonts = 1
+
+"set rtp+=~/.vim/plugged/powerline/powerline/bindings/vim
 "}}}
 
 
@@ -396,6 +400,4 @@ let g:vimtex_view_method='zathura'
 " TeX characters concealing
 let g:tex_conceal=''
 "}}}
-
-
 

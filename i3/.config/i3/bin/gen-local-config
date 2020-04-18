@@ -3,7 +3,7 @@
 # is handled properly for desktop (mongolia is hostname).
 
 # location of i3 wm files
-i3location=$HOME/dotfiles/i3/.i3/
+i3location=$HOME/dotfiles/i3/.config/i3/
 
 # Move to i3 config location
 cd $i3location

@@ -1,3 +1,11 @@
+###############################################################################
+## WARNING: 
+##   This is an auto-generated file created from the template in "config.base"
+##   
+##   Edit that file or any host-specific files instead! Changes made here will
+##   not be saved.
+###############################################################################
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -217,3 +225,20 @@ exec_always --no-startup-id $HOME/.i3/bin/launch-workspace-autonamer &
 exec_always --no-startup-id setwall &
 
 
+###############################################################################
+##                        yemen-specific config stuff!                       ##
+###############################################################################
+
+# Set font with proper size
+font xft:ProFont:style=Regular 11
+#font xft:Anonymous Pro:style=Regular:pixelsize=12:antialias=3:autohint=1:hintstyle=3
+#font xft:Inconsolata-g for Powerline 12:embolden=1
+#font xft:Source Code Pro for Powerline:pixelsize=13:embolden=1:style=SemiBold
+
+###############################################################################
+## WARNING: 
+##   This is an auto-generated file created from the template in "config.base"
+##   
+##   Edit that file or any host-specific files instead! Changes made here will
+##   not be saved.
+###############################################################################
