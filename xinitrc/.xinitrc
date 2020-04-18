@@ -31,6 +31,8 @@ fi
 
 if [ "$HOST" = "mongolia" ]; then
     qbittorrent & # seeding is good manners, friends.
+    keepass & # passwords
+    discord & # discord
 fi
 
 
@@ -40,11 +42,8 @@ xmodshit &
 sleepytime &
 # xautolock -time 10 -locker lock &
 urxvtd &
-qbittorent %
 nextcloud &
-keepass &
-discord &
 setdisplay
 
 # Generate local host-specific i3 config file and then run i3 wm.
-$i3location/bin/gen-local-config && exec i3
+i3location/bin/gen-local-config && exec i3
