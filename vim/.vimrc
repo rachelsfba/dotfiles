@@ -344,7 +344,7 @@ if has("gui_running")
    set guifont=Terminus\ 9
 else
    " Neverland Theme
-   color neverland2
+   color neverland
 "    color palenight
 "    set background=dark
 "    color kuroi

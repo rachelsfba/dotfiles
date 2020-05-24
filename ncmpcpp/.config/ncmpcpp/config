@@ -46,9 +46,9 @@ mpd_music_dir = $D_MUSIC
 ##        format          "44100:16:2"
 ## }
 ##
-#
-#visualizer_fifo_path = /tmp/mpd.fifo
-#
+
+visualizer_fifo_path = /tmp/mpd.fifo
+
 ##
 ## Note: Below parameter is needed for ncmpcpp to determine which output
 ## provides data for visualizer and thus allow syncing between visualization and
