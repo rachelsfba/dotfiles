@@ -37,6 +37,10 @@ call plug#begin('~/.vim/plugged')
    " Color scheme test
    Plug 'jgallen23/Color-Scheme-Test'
    
+   " Python stuff
+   Plug 'cespare/vim-toml'
+   Plug 'psf/black'
+   
    " Plugins
    "Plug 'itchyny/lightline.vim'
    "Plug 'powerline/powerline'
@@ -46,9 +50,6 @@ call plug#begin('~/.vim/plugged')
    Plug 'lervag/vimtex'
    "Plug 'vim-airline/vim-airline'
   
-   " Python stuff
-   Plug 'cespare/vim-toml'
-   Plug 'psf/black'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

@@ -13,3 +13,5 @@
     required
 [merge]
     renormalize = true
+[pager]
+	branch = false
