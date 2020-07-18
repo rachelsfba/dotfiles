@@ -90,16 +90,16 @@ gaps outer 0
 # Use xprop to identify WM_CLASS (use second value in 2-tuple)
 
 
-assign [class="(?i)^Evolution$"]   →  $ws9
-assign [class="(?i)^Slack$"]       →  $ws9
-assign [class="(?i)^discord$"]     →  $ws9
+#assign [class="(?i)^Evolution$"]   →  $ws9
+#assign [class="(?i)^Slack$"]       →  $ws9
+#assign [class="(?i)^discord$"]     →  $ws9
 
-assign [class="(?i)^vlc$"]         →  $ws10
-assign [class="(?i)^mplayer$"]     →  $ws10
+#assign [class="(?i)^vlc$"]         →  $ws10
+#assign [class="(?i)^mplayer$"]     →  $ws10
 
-for_window [title="^pianobar$"] move --no-auto-back-and-forth to workspace $ws10
+#for_window [title="^pianobar$"] move --no-auto-back-and-forth to workspace $ws10
 #fix for spotify not moving to workspace 10
-for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace $ws10
+#for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace $ws10
 
 for_window [title="QUAKE LIVE Launcher" class="Wine"] floating enable
 for_window [title="Quake Live" class="Wine"] floating enable

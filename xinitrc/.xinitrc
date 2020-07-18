@@ -46,4 +46,4 @@ nextcloud &
 setdisplay
 
 # Generate local host-specific i3 config file and then run i3 wm.
-i3location/bin/gen-local-config && exec i3
+$i3location/bin/gen-local-config && exec i3
