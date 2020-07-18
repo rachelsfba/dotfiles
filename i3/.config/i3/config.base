@@ -97,6 +97,8 @@ gaps outer 0
 #assign [class="(?i)^vlc$"]         →  $ws10
 #assign [class="(?i)^mplayer$"]     →  $ws10
 
+#for_window [title="^.* Chat - Mozilla Firefox$" class="(?)^firefox$"] move --no-auto-back-and-forth to workspace $ws9
+
 #for_window [title="^pianobar$"] move --no-auto-back-and-forth to workspace $ws10
 #fix for spotify not moving to workspace 10
 #for_window [class="^Spotify$"] move --no-auto-back-and-forth to workspace $ws10
@@ -146,7 +148,6 @@ bindsym XF86Tools exec amixer -D pulse sset Capture toggle
 # M4
 #bindsym XF86Launch7 exec amixer -D pulse sset Capture toggle
 # M5
-#
 #indsym XF86Launch8 exec amixer -D pulse sset Capture toggle
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10

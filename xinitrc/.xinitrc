@@ -43,6 +43,9 @@ sleepytime &
 # xautolock -time 10 -locker lock &
 #urxvtd &
 nextcloud &
+keepassxc &
+discord &
+setxkbmap -option      terminate:ctrl_alt_bksp &
 setdisplay
 
 # Generate local host-specific i3 config file and then run i3 wm.

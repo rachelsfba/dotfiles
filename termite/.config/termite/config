@@ -8,7 +8,8 @@ dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
 #font = InconsolataGo Nerd Font 15px
-font = InconsolataGo Nerd Font 11
+#font = InconsolataGo Nerd Font 11
+font = InconsolataGo Nerd Font 15px
 scrollback_lines = 10000
 search_wrap = true
 #icon_name = terminal
@@ -19,6 +20,8 @@ cursor_blink = system
 
 # "block", "underline" or "ibeam"
 cursor_shape = block
+#cursor_shape = ibeam
+#cursor_shape = underline
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 #browser = xdg-open
@@ -31,8 +34,11 @@ cursor_shape = block
 
 [colors]
 #cursor          = #201526
-cursor           = #8B7E66
-#cursor          = #0F9DBA
+#cursor          = #8B7E66
+#cursor          = #AF00AF
+#cursor          = #AF00FF
+cursor          = #FF00D7
+#cursor          = #d7005f
 
 foreground      = #ffffff
 foreground_bold = #ffffff
@@ -42,7 +48,9 @@ background      = #000000
 #background = rgba(63, 63, 63, 0.8)
 
 # if unset, will reverse foreground and background
-highlight = #2f2f2f
+#highlight = #2f2f2f
+#highlight = #ff5fd7
+highlight = 
 
 # colors from color0 to color254 can be set
 color0   = #1b1d1e
@@ -224,7 +232,6 @@ color174 = #d78787
 color175 = #d787af
 color176 = #d787d7
 color177 = #d787ff
-color178 = #d7af00
 color179 = #d7af5f
 color180 = #d7af87
 color181 = #d7afaf

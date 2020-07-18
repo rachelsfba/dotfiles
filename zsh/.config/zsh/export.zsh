@@ -27,6 +27,9 @@ export D_DROIDROOT=$DATA/Droid/sdcard0
 
 export D_DND=$D_NCLOUD/DnD
 export D_ART=$D_NCLOUD/Art
+export D_PHOTOS=$D_NCLOUD/Photographs
+export D_PHOTOGRAPHS=$D_PHOTOS
+export D_MEMES=$D_NCLOUD/Memes
 
 export D_RCC=$D_NCLOUD/RCC_Classes
 export D_PHY=$D_RCC/PHY

@@ -1,5 +1,5 @@
 ! xft {{{
-!!Xft*dpi: 92
+Xft*dpi: 92
 !!Xft*antialias: true
 !!!Xft*hinting: true
 !!Xft*autohint: true

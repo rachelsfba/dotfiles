@@ -110,3 +110,4 @@ eval `dircolors -b ${XDG_CONFIG_HOME}/LS_COLORS`
 eval `keychain -q --eval ~/.ssh/id_ecdsa`
 
 todo
+alias paper='. /data/Code/MC_1.15.2/Paper/paper'

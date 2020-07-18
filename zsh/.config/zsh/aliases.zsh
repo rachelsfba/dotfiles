@@ -47,3 +47,5 @@ alias unproject='xrandr --output HDMI1 --off'
 alias identwin='xprop | grep WM_CLASS'
 alias tea='termdown 2m && ( while true; do paplay ${HOME}/bell.ogg; done )'
 alias tea2='termdown 4m && ( while true; do paplay ${HOME}/bell.ogg; done )'
+
+alias keepassxc='QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_QPA_PLATFORMTHEME= keepassxc'
