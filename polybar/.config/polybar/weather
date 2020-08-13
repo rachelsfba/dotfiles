@@ -1,5 +1,8 @@
 #!/bin/sh
-
+# Script from
+# https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/openweathermap-fullfeatured
+# 
+# Icons at https://erikflowers.github.io/weather-icons/
 get_icon() {
     case $1 in
         # Icons for weather-icons
