@@ -15,3 +15,5 @@
     renormalize = true
 [pager]
 	branch = false
+[pull]
+	rebase = true

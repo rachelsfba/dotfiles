@@ -31,7 +31,6 @@ fi
 
 if [ "$HOST" = "mongolia" ]; then
     qbittorrent & # seeding is good manners, friends.
-    keepass & # passwords
     discord & # discord
 fi
 
@@ -43,8 +42,7 @@ sleepytime &
 # xautolock -time 10 -locker lock &
 #urxvtd &
 nextcloud &
-keepassxc &
-discord &
+keepass_wrapper &
 setxkbmap -option      terminate:ctrl_alt_bksp &
 setdisplay
 

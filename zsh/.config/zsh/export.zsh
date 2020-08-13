@@ -27,6 +27,8 @@ export D_DROIDROOT=$DATA/Droid/sdcard0
 
 export D_DND=$D_NCLOUD/DnD
 export D_ART=$D_NCLOUD/Art
+export D_VIDS=$D_NCLOUD/Videos
+export D_VIDEOS=$D_VIDS
 export D_PHOTOS=$D_NCLOUD/Photographs
 export D_PHOTOGRAPHS=$D_PHOTOS
 export D_MEMES=$D_NCLOUD/Memes
@@ -57,6 +59,7 @@ export DEV_DIR=$HOME/dev
 
 # Environmental variables
 export EDITOR=vim
+export TERMINAL=termite
 export PATH=$BINARIES:$(ruby -e 'print Gem.user_dir')/bin:$PATH
 export PYTHONPATH=~/dev:$PYTHONPATH
 

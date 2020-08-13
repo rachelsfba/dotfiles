@@ -18,8 +18,12 @@ alias rgrep="grep -r"
 alias cd1="cd ${D_UVA} && exa -laF"
 alias cd2='cd $DL && exa -laF -snew'
 
-alias ls='ls++ -al'
-alias lsp='ls++ --potsf'
+alias ls='exa'
+alias l='exa'
+
+alias la='exa -alaFg'
+alias ll='exa -alaFg'
+#alias lsp='ls++ --potsf'
 #alias ls='exa -laF --git'
 
 alias urxvt='urxvt -name mongolia'
@@ -48,4 +52,4 @@ alias identwin='xprop | grep WM_CLASS'
 alias tea='termdown 2m && ( while true; do paplay ${HOME}/bell.ogg; done )'
 alias tea2='termdown 4m && ( while true; do paplay ${HOME}/bell.ogg; done )'
 
-alias keepassxc='QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_QPA_PLATFORMTHEME= keepassxc'
+#alias keepassxc='QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_QPA_PLATFORMTHEME= keepassxc'

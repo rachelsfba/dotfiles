@@ -45,12 +45,13 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=12;0
-font-2 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = Wuncon Siji:pixelsize=10;1
-font-4 = DejaVu Sans:pixelsize=14;0
-font-5 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-6 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-7 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-2 = Weather Icons:size=12;1
+font-3 = Unifont:fontformat=truetype:size=8:antialias=false;0
+font-4 = Wuncon Siji:pixelsize=10;1
+font-5 = DejaVu Sans:pixelsize=14;0
+font-6 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-7 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-8 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = i3
 modules-center =
@@ -75,7 +76,7 @@ scroll-down = i3wm-wsprev
 
 
 [bar/mainA]
-monitor = ${env:MONITOR:DP-1.8}
+monitor = ${env:MONITOR:DP-1.1.1.8}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -100,12 +101,13 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=12;0
-font-2 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = Wuncon Siji:pixelsize=10;1
-font-4 = DejaVu Sans:pixelsize=14;0
-font-5 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-6 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-7 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-2 = Weather Icons:size=12;1
+font-3 = Unifont:fontformat=truetype:size=8:antialias=false;0
+font-4 = Wuncon Siji:pixelsize=10;1
+font-5 = DejaVu Sans:pixelsize=14;0
+font-6 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-7 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-8 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = i3
 modules-center =
@@ -131,62 +133,6 @@ scroll-down = i3wm-wsprev
 
 
 [bar/mainB]
-monitor = ${env:MONITOR:DVI-I-1}
-width = 100%
-height = 27
-;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 3
-line-color = #f00
-
-border-size = 4
-border-color = #00000000
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = fixed:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=12;0
-font-2 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = Wuncon Siji:pixelsize=10;1
-font-4 = DejaVu Sans:pixelsize=14;0
-font-5 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-6 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-7 = "Font Awesome 5 Brands:pixelsize=10;1"
-
-modules-left = i3
-modules-center =
-modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
-;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
-
-tray-position = 
-;tray-padding = 2
-tray-detached = false
-tray-transparent = false
-tray-background = ${root.background}
-
-;wm-restack = bspwm
-wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
-
-
-[bar/mainC]
 monitor = ${env:MONITOR:DP-1.1.8}
 width = 100%
 height = 27
@@ -212,12 +158,70 @@ module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = FontAwesome:pixelsize=12;0
-font-2 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-3 = Wuncon Siji:pixelsize=10;1
-font-4 = DejaVu Sans:pixelsize=14;0
-font-5 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-6 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-7 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-2 = Weather Icons:size=12;1
+font-3 = Unifont:fontformat=truetype:size=8:antialias=false;0
+font-4 = Wuncon Siji:pixelsize=10;1
+font-5 = DejaVu Sans:pixelsize=14;0
+font-6 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-7 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-8 = "Font Awesome 5 Brands:pixelsize=10;1"
+
+modules-left = i3
+modules-center =
+modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
+;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+
+tray-position = 
+;tray-padding = 2
+tray-detached = false
+tray-transparent = false
+tray-background = ${root.background}
+
+;wm-restack = bspwm
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+[bar/mainC]
+monitor = ${env:MONITOR:DP-1.8}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 4
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;1
+font-1 = FontAwesome:pixelsize=12;0
+font-2 = Weather Icons:size=12;1
+font-3 = Unifont:fontformat=truetype:size=8:antialias=false;0
+font-4 = Wuncon Siji:pixelsize=10;1
+font-5 = DejaVu Sans:pixelsize=14;0
+font-6 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-7 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-8 = "Font Awesome 5 Brands:pixelsize=10;1"
 
 modules-left = i3
 modules-center =
@@ -248,7 +252,7 @@ format = <label>
 format-underline = #d14200
 label = "%output:0:30%"
 exec = ~/.config/polybar/updates
-exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+exec-if = "ping -q -w 2 -c 1 allende > /dev/null"
 
 [module/xwindow]
 type = internal/xwindow
@@ -341,12 +345,10 @@ label-urgent-padding = 2
 
 [module/weather]
 type = custom/script
-interval = 10
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
 exec = ~/.config/polybar/weather
 exec-if = "ping -q -w 2 -c 1 allende > /dev/null"
+interval = 60
+format-underline = #a95aec
 
 
 ;[module/mpd]
@@ -476,12 +478,14 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
+format-volume-underline = #C0FF02
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
+label-muted-underline = #C0FF02
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -588,4 +592,5 @@ screenchange-reload = true
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
 ; vim:ft=dosini

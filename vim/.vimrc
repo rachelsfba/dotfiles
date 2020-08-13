@@ -49,6 +49,7 @@ call plug#begin('~/.vim/plugged')
    "Plug 'vim-latex/vim-latex'
    Plug 'lervag/vimtex'
    "Plug 'vim-airline/vim-airline'
+   Plug 'tpope/vim-abolish'
   
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -65,7 +66,7 @@ filetype on
 "}}}
 
 "{{{Airline/Powerline
-"let g:powerline_pycmd="python3"
+let g:powerline_pycmd="python3"
 "let g:airline_powerline_fonts = 1
 
 "set rtp+=~/.vim/plugged/powerline/powerline/bindings/vim
