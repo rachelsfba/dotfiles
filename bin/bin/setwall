@@ -4,6 +4,7 @@ if [ "$HOST" = "yemen" ]; then
 else
     #feh --bg-scale ${D_ART}/wallpapers/portland2.jpeg &
     feh --bg-scale ${D_ART}/wallpapers/space.jpg &
+    #feh --bg-tile ${D_ART}/wallpapers/2020-09-08.png &
 fi
 
 

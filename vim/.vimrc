@@ -29,6 +29,9 @@ call plug#begin('~/.vim/plugged')
 
    " Declare the list of plugins.
    
+   " Language syntaxes
+   Plug 'martinda/Jenkinsfile-vim-syntax'
+   
    " Color schemes
    Plug 'drewtempelmeyer/palenight.vim'
    Plug 'omattei/neverland-vim-theme'
