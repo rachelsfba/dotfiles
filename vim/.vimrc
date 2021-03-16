@@ -29,6 +29,12 @@ call plug#begin('~/.vim/plugged')
 
    " Declare the list of plugins.
    
+   " Use release branch (recommend)
+   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+   " Git plugin
+   Plug 'tpope/vim-fugitive'
+
    " Language syntaxes
    Plug 'martinda/Jenkinsfile-vim-syntax'
    
