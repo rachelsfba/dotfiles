@@ -39,9 +39,9 @@ call plug#begin('~/.vim/plugged')
    Plug 'martinda/Jenkinsfile-vim-syntax'
    
    " Color schemes
-   Plug 'drewtempelmeyer/palenight.vim'
-   Plug 'omattei/neverland-vim-theme'
-   Plug 'aonemd/kuroi.vim'
+   " Plug 'drewtempelmeyer/palenight.vim'
+   Plug 'obeijaflor/neverland-vim-theme'
+   " Plug 'aonemd/kuroi.vim'
   
    " Color scheme test
    Plug 'jgallen23/Color-Scheme-Test'
@@ -172,8 +172,17 @@ set wildmode=list:longest,full
 " Got backspace?
 set backspace=2
 
-" Line Numbers PWN!
+" Line Numbers
 set number
+
+" per https://jeffkreeftmeijer.com/vim-number/
+"set relativenumber
+"set nonumber
+"augroup numbertoggle
+"  autocmd!
+"  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber nonumber
+"  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber number
+"augroup END
 
 " Ignoring case is a fun trick
 set ignorecase

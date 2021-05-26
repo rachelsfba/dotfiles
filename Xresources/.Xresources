@@ -112,26 +112,3 @@ mongolia.pointerBlankDelay:    2
 mongolia.scrollstyle:          next
 mongolia.scrollBar:            false
 mongolia.depth:                24
-
-URxvt.perl-ext-common:      default,clipboard,selection-to-clipboard,url-select,keyboard-select
-URxvt.url-select.launcher:  ff
-URxvt.url-select.underline: true
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.keysym.M-Escape:      perl:keyboard-select:activate
-URxvt.keysym.M-s:           perl:keyboard-select:search
-URxvt.keysym.Shift-Control-C : perl:clipboard:copy
-URxvt.keysym.Shift-Control-V : perl:clipboard:paste
-
-URxvt*font1:                -xos4-terminus-medium-r-normal-*-13-*-*-*-*-*-*-1
-URxvt*font2:                -xos4-terminus-medium-r-normal-*-14-*-*-*-*-*-*-1
-URxvt*font3:                -xos4-terminus-medium-r-normal-*-15-*-*-*-*-*-*-1
-URxvt*font4:                -xos4-terminus-medium-r-normal-*-16-*-*-*-*-*-*-1
-URxvt*font5:                -xos4-terminus-medium-r-normal-*-17-*-*-*-*-*-*-1
-URxvt*font6:                -xos4-terminus-medium-r-normal-*-18-*-*-*-*-*-*-1
-URxvt*font7:                -xos4-terminus-medium-r-normal-*-19-*-*-*-*-*-*-1
-URxvt*font8:                -xos4-terminus-medium-r-normal-*-20-*-*-*-*-*-*-1
-
-URxvt.bell-command: canberra-gtk-play -i bell
-
-
-#include "/home/rachel/.config/Xcolors/nancy.Xresources"

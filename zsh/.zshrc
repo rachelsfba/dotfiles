@@ -61,8 +61,11 @@ setopt autocd recexact longlistjobs
 setopt autoresume pushdsilent
 setopt autopushd pushdminus extendedglob rcquotes mailwarning
 unsetopt bgnice autoparamslash
-autoload -U compinit
+autoload -Uz compinit
 compinit
+
+# Autocompletion for kitty : https://sw.kovidgoyal.net/kitty/#frequently-asked-questions
+kitty + complete setup zsh | source /dev/stdin
 
 # smart urls
 autoload -U url-quote-magic
