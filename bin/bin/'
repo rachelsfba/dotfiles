@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Per https://www.reddit.com/r/archlinux/comments/kcbjcu/discord_becomes_laggy_during_long_voice_calls/
+exec discord --no-sandbox

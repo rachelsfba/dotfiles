@@ -39,9 +39,10 @@ call plug#begin('~/.vim/plugged')
    Plug 'martinda/Jenkinsfile-vim-syntax'
    
    " Color schemes
-   " Plug 'drewtempelmeyer/palenight.vim'
+   "Plug 'wojciechkepka/bogster'
+   "Plug 'drewtempelmeyer/palenight.vim'
    Plug 'obeijaflor/neverland-vim-theme'
-   " Plug 'aonemd/kuroi.vim'
+   "Plug 'aonemd/kuroi.vim'
   
    " Color scheme test
    Plug 'jgallen23/Color-Scheme-Test'
@@ -339,6 +340,9 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 nnoremap <leader>k :wa<cr>
 
+" Per https://vim.fandom.com/wiki/Search_and_replace_the_word_under_the_cursor#Mapping
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
 "}}}
 
 "{{{Taglist configuration
@@ -364,7 +368,8 @@ if has("gui_running")
    set guifont=Terminus\ 9
 else
    " Neverland Theme
-   color neverland
+"    color bogster
+    color neverland
 "    color palenight
 "    set background=dark
 "    color kuroi

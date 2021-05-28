@@ -37,13 +37,13 @@ fi
 
 #xset -dpms b 100 &
 xset -dpms -b &
-xmodshit &
 sleepytime &
 # xautolock -time 10 -locker lock &
 #urxvtd &
 nextcloud &
 keepass_wrapper &
 setxkbmap -option      terminate:ctrl_alt_bksp &
+xmodshit &
 setdisplay
 
 # Generate local host-specific i3 config file and then run i3 wm.

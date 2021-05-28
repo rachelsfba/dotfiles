@@ -52,4 +52,7 @@ alias identwin='xprop | grep WM_CLASS'
 alias tea='termdown 2m && ( while true; do paplay ${HOME}/bell.ogg; done )'
 alias tea2='termdown 4m && ( while true; do paplay ${HOME}/bell.ogg; done )'
 
+# Per https://www.reddit.com/r/archlinux/comments/kcbjcu/discord_becomes_laggy_during_long_voice_calls/
+alias discord='discord --no-sandbox'
+
 #alias keepassxc='QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_QPA_PLATFORMTHEME= keepassxc'
