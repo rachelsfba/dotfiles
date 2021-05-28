@@ -16,4 +16,4 @@
 [pager]
 	branch = false
 [pull]
-	rebase = true
+	rebase = false
