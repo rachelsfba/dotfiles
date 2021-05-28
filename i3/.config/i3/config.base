@@ -129,8 +129,8 @@ bindsym $mod+Shift+backslash exec "pavucontrol"
 #bindsym $mod+Shift+l exec "systemctl suspend"
 bindsym $mod+Shift+l exec "lock"
 
-bindsym F6 exec "loopclk"
-bindsym F7 exec "loopclk2"
+#bindsym F6 exec "loopclk"
+#bindsym F7 exec "loopclk2"
 #bindsym F8 exec "xdotool mousedown 3"
 #bindsym F8 exec "xdotool mouseup 3"
 
@@ -202,7 +202,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # start a terminal
 #bindsym $mod+Shift+Return exec wrxvt
-bindsym $mod+Shift+Return exec termite
+#bindsym $mod+Shift+Return exec termite
+bindsym $mod+Shift+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
