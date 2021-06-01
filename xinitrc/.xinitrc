@@ -41,7 +41,8 @@ sleepytime &
 # xautolock -time 10 -locker lock &
 #urxvtd &
 nextcloud &
-keepass_wrapper &
+#keepass_wrapper &
+keepassxc &
 setxkbmap -option      terminate:ctrl_alt_bksp &
 xmodshit &
 setdisplay
