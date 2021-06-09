@@ -79,3 +79,9 @@ export SAVEHIST=1000000
 # Ansible
 export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible/ansible.cfg
 
+# per https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
+if type rg &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='rg --files --hidden'
+    export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+

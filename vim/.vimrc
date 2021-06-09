@@ -41,7 +41,8 @@ call plug#begin('~/.vim/plugged')
    " Color schemes
    "Plug 'wojciechkepka/bogster'
    "Plug 'drewtempelmeyer/palenight.vim'
-   Plug 'obeijaflor/neverland-vim-theme'
+   "Plug 'obeijaflor/neverland-vim-theme'
+   Plug 'trapd00r/neverland-vim-theme'
    "Plug 'aonemd/kuroi.vim'
   
    " Color scheme test
@@ -54,12 +55,24 @@ call plug#begin('~/.vim/plugged')
    " Plugins
    "Plug 'itchyny/lightline.vim'
    "Plug 'powerline/powerline'
-   Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+   "Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+   Plug 'vim-airline/vim-airline'
+   Plug 'vim-airline/vim-airline-themes'"
    "Plug 'Yggdroot/indentLine'
    "Plug 'vim-latex/vim-latex'
    Plug 'lervag/vimtex'
-   "Plug 'vim-airline/vim-airline'
    Plug 'tpope/vim-abolish'
+
+   " From https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
+   " -----
+   " Evaluating currently for usefulness.
+   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+   Plug 'junegunn/fzf.vim'
+   Plug 'editorconfig/editorconfig-vim'
+   Plug 'preservim/nerdtree'
+
+   " Shows line diffs on left-hand-side column relative to last git commit
+   Plug 'airblade/vim-gitgutter'
   
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -75,13 +88,22 @@ filetype on
 
 "}}}
 
-"{{{Airline/Powerline
-let g:powerline_pycmd="python3"
-"let g:airline_powerline_fonts = 1
+"{{{Airline/Powerline/Lightline
+"let g:powerline_pycmd="python3"
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='deus'
+
+"Status line gnarliness
+"set laststatus=2
+"set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
 "set rtp+=~/.vim/plugged/powerline/powerline/bindings/vim
 "}}}
 
+"{{{fzf
+map ; :Files<cr>
+"}}}
 
 "{{{Auto Commands
 
@@ -130,7 +152,8 @@ set showcmd
 " Folding Stuffs
 set foldmethod=marker
 
-set grepprg=grep\ -nH\ $*
+"set grepprg=grep\ -nH\ $*
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
 set tabpagemax=100
 
@@ -354,10 +377,6 @@ let Tlist_Inc_Winwidth = 0
 "}}}
 
 "{{{Look and Feel
-
-"Status line gnarliness
-set laststatus=2
-set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
 
 " Favorite Color Scheme
 if has("gui_running")
