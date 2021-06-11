@@ -15,7 +15,6 @@ alias more='less'
 alias spck="aspell -t -c"
 alias rgrep="grep -r"
 
-alias cd1="cd ${D_UVA} && exa -laF"
 alias cd2='cd $DL && exa -laF -snew'
 
 alias ls='exa'
@@ -36,8 +35,6 @@ alias wim='vim -p --servername azerbaijan'
 alias vim='wim'
 
 alias dps='docker ps -a'
-alias dex='docker exec -it www /bin/bash'
-alias dsql='docker exec -it db_adm /bin/bash'
 
 alias inc="chromium --incognito"
 

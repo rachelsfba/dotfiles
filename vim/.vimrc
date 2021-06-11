@@ -217,10 +217,26 @@ set smartcase
 " This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great!
 inoremap jj <Esc>
 
+" Move by line
 nnoremap j gj
 nnoremap k gk
 
 nnoremap JJJJ <Nop>
+
+" Open new file adjacent to current file
+nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" No arrow keys --- force yourself to use the home row
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Left and right can switch buffers
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
 
 " Incremental searching is sexy
 set incsearch
@@ -444,4 +460,8 @@ let g:vimtex_view_method='zathura'
 " TeX characters concealing
 let g:tex_conceal=''
 "}}}
+
+
+" Check out https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+" in the future for more tweaks to consider.
 
