@@ -58,8 +58,8 @@ export DL=$D_DL
 export DEV_DIR=$HOME/dev
 
 # Environmental variables
-export EDITOR=vim
-export TERMINAL=termite
+export EDITOR=nvi
+export TERMINAL=alacritty
 export PATH=$BINARIES:$(ruby -e 'print Gem.user_dir')/bin:$PATH
 export PYTHONPATH=~/dev:$PYTHONPATH
 

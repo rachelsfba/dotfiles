@@ -92,6 +92,7 @@ filetype on
 "let g:powerline_pycmd="python3"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='default'
 let g:airline_theme='deus'
 
 "Status line gnarliness
@@ -102,7 +103,8 @@ let g:airline_theme='deus'
 "}}}
 
 "{{{fzf
-map ; :Files<cr>
+map <C-p> :Files<cr>
+nmap <leader>; :Buffers<cr>
 "}}}
 
 "{{{Auto Commands
@@ -227,16 +229,16 @@ nnoremap JJJJ <Nop>
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " No arrow keys --- force yourself to use the home row
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 
 " Left and right can switch buffers
-nnoremap <left> :bp<CR>
-nnoremap <right> :bn<CR>
+"nnoremap <left> :bp<CR>
+"nnoremap <right> :bn<CR>
 
 " Incremental searching is sexy
 set incsearch
@@ -254,10 +256,6 @@ set nohidden
 highlight MatchParen ctermbg=4
 
 let g:rct_completion_use_fri = 1
-
-" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
-"set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/after
-set grepprg=grep\ -nH\
 
 au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
 set complete+=
@@ -403,51 +401,11 @@ if has("gui_running")
    set guifont=Terminus\ 9
 else
    " Neverland Theme
-"    color bogster
     color neverland
-"    color palenight
-"    set background=dark
-"    color kuroi
 
-   "{{{PaleNight Theme
-   "set background=dark
-   "colorscheme palenight
-
-   "let g:lightline = { 'colorscheme': 'palenight' }
-   "let g:palenight_terminal_italics=1
-   "
-   "if (has("nvim"))
-   "  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-   "  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-   "endif
-   "
-   "if (has("termguicolors"))
-   "   set termguicolors
-   "endif
-   "}}}
 endif
 
 " }}}
-
-
-"{{{LaTeXSuite stuff
-"
-"let g:Tex_DefaultTargetFormat = "pdf"
-"
-""let g:Tex_ViewRule_pdf = "evince"
-"let g:Tex_ViewRule_pdf = 'zathura'
-"
-"" use LaTeX by default
-"let g:tex_flavor = "latex"
-"let g:Tex_BibtexFlavor = 'biber'
-"
-"let g:Tex_GotoError = 0
-"" The following is relevant to make LaTeX rerun after biber if necessary: 
-"" (include all formats for which re-running is to be enabled)
-"let g:Tex_MultipleCompileFormats='pdf,dvi'
-"
-"" autocmd BufNewFile,BufRead *.tex set makeprg=pdflatex\ %\ &&\ evince\ %:r.pdf
-"}}}
 
 "{{{vimtex stuff
 " use LaTeX by default

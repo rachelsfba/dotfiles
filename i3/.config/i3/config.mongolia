@@ -30,4 +30,4 @@ workspace $ws10 output $mLeft
 
 
 # Set font with proper size
-font xft:ProFont:style=Regular:size=12
+font xft:SauceCodePro Nerd Font:size=16

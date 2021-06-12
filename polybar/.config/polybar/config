@@ -1,11 +1,20 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;                                                    ;
-;   To learn more about how to configure Polybar     ;
-;   go to https://github.com/jaagr/polybar           ;
-;                                                    ;
-;   The README contains a lot of information         ;
-;                                                    ;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
 
 [colors]
 ;background = ${xrdb:color0:#222}
@@ -44,14 +53,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=12;0
-font-2 = Weather Icons:size=12;1
-font-3 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-4 = Wuncon Siji:pixelsize=10;1
-font-5 = DejaVu Sans:pixelsize=14;0
-font-6 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-7 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-8 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-1 = SauceCodePro Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
@@ -100,14 +102,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=12;0
-font-2 = Weather Icons:size=12;1
-font-3 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-4 = Wuncon Siji:pixelsize=10;1
-font-5 = DejaVu Sans:pixelsize=14;0
-font-6 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-7 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-8 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-1 = SauceCodePro Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
@@ -157,14 +152,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=12;0
-font-2 = Weather Icons:size=12;1
-font-3 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-4 = Wuncon Siji:pixelsize=10;1
-font-5 = DejaVu Sans:pixelsize=14;0
-font-6 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-7 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-8 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-1 = SauceCodePro Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
@@ -214,14 +202,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = FontAwesome:pixelsize=12;0
-font-2 = Weather Icons:size=12;1
-font-3 = Unifont:fontformat=truetype:size=8:antialias=false;0
-font-4 = Wuncon Siji:pixelsize=10;1
-font-5 = DejaVu Sans:pixelsize=14;0
-font-6 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-7 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-8 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-1 = SauceCodePro Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
@@ -253,7 +234,7 @@ format = <label>
 format-underline = #d14200
 label = "%output:0:30%"
 exec = ~/.config/polybar/updates
-exec-if = "ping -q -w 2 -c 1 allende > /dev/null"
+exec-if = "ping -q -w 2 -c 1 138.197.63.241 > /dev/null"
 
 [module/xwindow]
 type = internal/xwindow
@@ -347,7 +328,7 @@ label-urgent-padding = 2
 [module/weather]
 type = custom/script
 exec = ~/.config/polybar/weather
-exec-if = "ping -q -w 2 -c 1 allende > /dev/null"
+exec-if = "ping -q -w 2 -c 1 138.197.63.241 > /dev/null"
 interval = 60
 format-underline = #a95aec
 
@@ -437,7 +418,8 @@ interface = eth0
 interval = 2.5
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+; \Ufa92  ng-mdi-web
+format-connected-prefix = "爵  "  
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -468,7 +450,7 @@ date-alt = " "
 time = "| %H:%M:%S"
 time-alt = %H:%M
 
-format-prefix = 
+format-prefix = "  "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -483,7 +465,8 @@ format-volume-underline = #C0FF02
 label-volume = VOL
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+; \Ufc5d  nf-mdi-volume_mute
+format-muted-prefix = "ﱝ  "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 label-muted-underline = #C0FF02
@@ -522,14 +505,18 @@ format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = "   "
+ramp-capacity-1 = "   "
+ramp-capacity-2 = "   "
+ramp-capacity-3 = "   "
+ramp-capacity-4 = "   "
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = "   "   
+animation-charging-1 = "   "
+animation-charging-2 = "   "
+animation-charging-3 = "   "
+animation-charging-4 = "   "
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
@@ -548,9 +535,9 @@ label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = "  "
+ramp-1 = "  "
+ramp-2 = "  "
 ramp-foreground = ${colors.foreground-alt}
 
 
