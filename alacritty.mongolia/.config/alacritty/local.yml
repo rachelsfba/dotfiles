@@ -1,4 +1,7 @@
 font:
-  size: 11
+  # Point size
+  #
+  # Font size set in per-host local.yml file
+  size: 12
 
 # vim: set ts=4 sw=2 tw=88 et :

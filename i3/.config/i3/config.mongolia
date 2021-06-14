@@ -28,6 +28,5 @@ workspace $ws3 output $mRight
 workspace $ws9 output $mLeft 
 workspace $ws10 output $mLeft
 
-
 # Set font with proper size
-font xft:SauceCodePro Nerd Font:size=16
+font pango:Inconsolata Nerd Font 13

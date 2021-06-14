@@ -24,15 +24,12 @@ up() {
 }
 
 todo() {
-    #if [ "$HOST" = "yemen" ]; then
-    if [ -f "$HOME/TODO.txt" ]; then
-        echo -e "\u001b[35m"
-        echo -e "   ▄▄▄▄▄          ·▄▄▄▄        .▄▄ · "
-        echo -e "   •██  ▪         ██▪ ██ ▪     ▐█ ▀. "
-        echo -e "    ▐█.▪ ▄█▀▄     ▐█· ▐█▌ ▄█▀▄ ▄▀▀▀█▄"
-        echo -e "    ▐█▌·▐█▌.▐▌    ██. ██ ▐█▌.▐▌▐█▄▪▐█"
-        echo -e "    ▀▀▀  ▀█▄▀▪    ▀▀▀▀▀•  ▀█▄▀▪ ▀▀▀▀ "
-        echo -e "\u001b[0m"
-        cat $HOME/TODO.txt 2>/dev/null || echo "No TODOs at the present!"
-    fi
+    echo -e "\u001b[35m"
+    echo -e "   ▄▄▄▄▄          ·▄▄▄▄        .▄▄ · "
+    echo -e "   •██  ▪         ██▪ ██ ▪     ▐█ ▀. "
+    echo -e "    ▐█.▪ ▄█▀▄     ▐█· ▐█▌ ▄█▀▄ ▄▀▀▀█▄"
+    echo -e "    ▐█▌·▐█▌.▐▌    ██. ██ ▐█▌.▐▌▐█▄▪▐█"
+    echo -e "    ▀▀▀  ▀█▄▀▪    ▀▀▀▀▀•  ▀█▄▀▪ ▀▀▀▀ "
+    echo -e "\u001b[0m"
+    cat $HOME/TODO.txt 2>/dev/null || echo "No TODOs at the present!"
 }
