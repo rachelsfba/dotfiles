@@ -325,6 +325,6 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch &
 #exec_always --no-startup-id $HOME/.i3/bin/launch-workspace-autonamer &
 exec_always --no-startup-id setwall &
-
+exec_always --no-startup-id xmodshit &
 
 

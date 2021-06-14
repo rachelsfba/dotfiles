@@ -3,4 +3,10 @@
 ###############################################################################
 
 # Set font with proper size
-font pango:Inconsolata Nerd Font 12
+font pango:Inconsolata 11
+# Can't use Inconsolata Nerd Font because ligatures are overwritten -- see 
+# https://github.com/ryanoasis/nerd-fonts/issues/509
+# and
+# https://github.com/ryanoasis/nerd-fonts/issues/254
+#font pango:Inconsolata Nerd Font 11
+#font pango:monospace 11

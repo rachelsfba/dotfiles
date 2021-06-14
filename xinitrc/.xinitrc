@@ -44,7 +44,7 @@ nextcloud &
 #keepass_wrapper &
 keepassxc &
 setxkbmap -option      terminate:ctrl_alt_bksp &
-xmodshit &
+#xmodshit &
 setdisplay
 
 # Generate local host-specific i3 config file and then run i3 wm.

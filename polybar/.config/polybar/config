@@ -53,7 +53,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = SauceCodePro Nerd Font:size=12;1
+font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
@@ -102,7 +102,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = SauceCodePro Nerd Font:size=12;1
+font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
@@ -152,7 +152,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = SauceCodePro Nerd Font:size=12;1
+font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
@@ -202,7 +202,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = SauceCodePro Nerd Font:size=12;1
+font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
@@ -421,7 +421,7 @@ format-connected-underline = #55aa55
 ; \Ufa92  ng-mdi-web
 format-connected-prefix = "爵  "  
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+label-connected = %local_ip% 
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
@@ -462,13 +462,12 @@ type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
 format-volume-underline = #C0FF02
-label-volume = VOL
+;label-volume = VOL
+label-volume = "  "
 label-volume-foreground = ${root.foreground}
 
-; \Ufc5d  nf-mdi-volume_mute
-format-muted-prefix = "ﱝ  "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted =    sound muted
 label-muted-underline = #C0FF02
 
 bar-volume-width = 10
@@ -482,9 +481,9 @@ bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = ━
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = ━
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
