@@ -108,6 +108,8 @@ nmap <leader>; :Buffers<cr>
 "}}}
 
 "{{{coc stuff
+" Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+
 " 'Smart' nevigation
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -364,6 +366,15 @@ autocmd FileType htmldjango setlocal  sts=2 ts=2 sw=2 expandtab
 autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
+" Prevent accidental writes to buffers that shouldn't be edited
+" Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+autocmd BufRead *.orig set readonly
+autocmd BufRead *.pacnew set readonly
+
+" Leave paste mode when leaving insert mode
+" Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+autocmd InsertLeave * set nopaste
+
 set pastetoggle=<F3>
 nnoremap <F4> :set number!<cr>
 vnoremap <F4> :set number!<cr>
@@ -472,6 +483,13 @@ endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 nnoremap <leader>k :wa<cr>
+
+" Neat X clipboard integration
+" \p will paste clipboard into buffer
+" \c will copy entire buffer into clipboard
+" Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
+noremap <leader>p :read !xsel --clipboard --output<cr>
+noremap <leader>c :w !xsel -ib<cr><cr>
 
 " Per https://vim.fandom.com/wiki/Search_and_replace_the_word_under_the_cursor#Mapping
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>

@@ -24,12 +24,34 @@ up() {
 }
 
 todo() {
-    echo -e "\u001b[35m"
+    # Prints a colorized todo list
+    filename=$HOME/TODO.txt
+
+    # Use `$ tput <cmd>` to generate escape sequences
+    #
+    #   <cmd>    Description
+    #   -----    -----------
+    #   setab    set background color
+    #   setaf    set foreground color
+    #   bold     make text bold
+    #   sgr0     reset text styling
+    #
+    # Use `$ infocmp alacritty` to check valid tput commands for alacritty
+    # Use `$ colors256` script to check colors
+    orange="$(tput setaf 208)"
+    green="$(tput setaf 118)"
+    pink="$(tput setaf 201)"
+    reset="$(tput sgr0)"
+
+    # Colorizes each of the (0x??) TODO numbers at the start of a line
+    colorized_todos="$(sed "s/^  \((0x\w\+)\)/  $pink\1$green/g" $filename)"
+
+    echo -e "$orange"
     echo -e "   ▄▄▄▄▄          ·▄▄▄▄        .▄▄ · "
     echo -e "   •██  ▪         ██▪ ██ ▪     ▐█ ▀. "
     echo -e "    ▐█.▪ ▄█▀▄     ▐█· ▐█▌ ▄█▀▄ ▄▀▀▀█▄"
     echo -e "    ▐█▌·▐█▌.▐▌    ██. ██ ▐█▌.▐▌▐█▄▪▐█"
     echo -e "    ▀▀▀  ▀█▄▀▪    ▀▀▀▀▀•  ▀█▄▀▪ ▀▀▀▀ "
-    echo -e "\u001b[0m"
-    cat $HOME/TODO.txt 2>/dev/null || echo "No TODOs at the present!"
+    echo -e "$reset"
+    echo -e "$colorized_todos$reset\n" # note: must add back the newline
 }

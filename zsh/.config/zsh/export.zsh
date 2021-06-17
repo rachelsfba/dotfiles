@@ -58,7 +58,7 @@ export DL=$D_DL
 export DEV_DIR=$HOME/dev
 
 # Environmental variables
-export EDITOR=nvi
+export EDITOR=nvim
 export TERMINAL=alacritty
 export PATH=$BINARIES:$(ruby -e 'print Gem.user_dir')/bin:$PATH
 export PYTHONPATH=~/dev:$PYTHONPATH
