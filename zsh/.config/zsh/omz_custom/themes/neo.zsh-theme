@@ -1,4 +1,4 @@
-# trapd00r.zsh-theme
+# neo.zsh-theme: a modification of trapd00r.zsh-theme
 #
 # This theme needs a terminal supporting 256 colors as well as unicode.
 # In order to avoid external dependencies, it also has a zsh version of
@@ -98,7 +98,7 @@ zstyle ':vcs_info:*' actionformats \
     '%{$c8%}(%f%s)%{$c7%}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
 
 zstyle ':vcs_info:*' formats \
-    "%{$c8%}%s%%{$c7%}❨ %{$c9%}%{$c11%}%b%{$c7%} ❩%{$reset_color%}%f "
+    "%{$c8%}%s%{$c7%}❨ %{$c9%}%{$c11%}%b%{$c7%}❩%{$reset_color%}%f "
 
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
 zstyle ':vcs_info:*' enable git
@@ -109,23 +109,23 @@ prompt_jnrowe_precmd () {
   vcs_info
   if [ "${vcs_info_msg_0_}" = "" ]; then
     dir_status="%{$c1%}%n%{$c4%}@%{$c2%}%m%{$c0%}:%{$c3%}%l%{$c6%}->%{$(zsh_path)%} %{$c0%}(%{$c5%}%?%{$c0%})"
-    PROMPT='%{$fg_bold[green]%}%p%{$reset_color%}${vcs_info_msg_0_}${dir_status} ${ret_status}%{$reset_color%}
+    PROMPT='${dir_status} ${ret_status}%{$reset_color%}
 > '
   # modified, to be committed
   elif [[ $(git diff --cached --name-status 2>/dev/null ) != "" ]]; then
     dir_status="%{$c1%}%n%{$c4%}@%{$c2%}%m%{$c0%}:%{$c3%}%l%{$c6%}->%{$(zsh_path)%} %{$c0%}(%{$c5%}%?%{$c0%})"
     PROMPT='${vcs_info_msg_0_}%{$30%} %{$bg_bold[red]%}%{$fg_bold[cyan]%}C%{$fg_bold[black]%}OMMIT%{$reset_color%}
-%{$fg_bold[green]%}%p%{$reset_color%}${dir_status}%{$reset_color%}
+${dir_status}%{$reset_color%}
 > '
   elif [[ $(git diff --name-status 2>/dev/null ) != "" ]]; then
     dir_status="%{$c1%}%n%{$c4%}@%{$c2%}%m%{$c0%}:%{$c3%}%l%{$c6%}->%{$(zsh_path)%} %{$c0%}(%{$c5%}%?%{$c0%})"
     PROMPT='${vcs_info_msg_0_}%{$bg_bold[red]%}%{$fg_bold[blue]%}D%{$fg_bold[black]%}IRTY%{$reset_color%}
-%{$fg_bold[green]%}%p%{$reset_color%}${dir_status}%{$reset_color%}
+${dir_status}%{$reset_color%}
 %{$c13%}>%{$c0%} '
   else
     dir_status="%{$c1%}%n%{$c4%}@%{$c2%}%m%{$c0%}:%{$c3%}%l%{$c6%}->%{$(zsh_path)%} %{$c0%}(%{$c5%}%?%{$c0%})"
     PROMPT='${vcs_info_msg_0_}
-%{$fg_bold[green]%}%p%{$reset_color%}${dir_status}%{$reset_color%}
+${dir_status}%{$reset_color%}
 > '
   fi
 }
