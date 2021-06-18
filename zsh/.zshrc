@@ -9,7 +9,7 @@ ZSH=$ZSH_HOME/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="neo"
+ZSH_THEME="trapd00r"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -110,4 +110,3 @@ eval `dircolors -b ${XDG_CONFIG_HOME}/LS_COLORS`
 eval `keychain -q --eval ~/.ssh/id_ecdsa`
 
 todo
-alias paper='. /data/Code/MC_1.15.2/Paper/paper'

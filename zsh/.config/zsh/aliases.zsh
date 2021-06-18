@@ -25,15 +25,6 @@ alias ll='exa -alaFg'
 #alias lsp='ls++ --potsf'
 #alias ls='exa -laF --git'
 
-alias urxvt='urxvt -name mongolia'
-alias gp='git push'
-alias ga='git add'
-alias gc='git commit'
-alias sta='git status'
-alias gs='sta'
-alias vim='vim --servername azerbaijan'
-#alias nvim='nvim'
-
 alias dps='docker ps -a'
 
 alias inc="chromium --incognito"
