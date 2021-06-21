@@ -57,7 +57,7 @@ font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
-modules-right = filesystem weather xbacklight volume updates memory cpu wlan eth battery temperature date powermenu
+modules-right = filesystem weather backlight audio updates memory cpu wlan battery temperature date powermenu
 
 tray-position = right
 ;tray-padding = 2
@@ -66,7 +66,7 @@ tray-transparent = false
 tray-background = ${root.background}
 
 ;wm-restack = bspwm
-wm-restack = i3
+;wm-restack = i3
 
 ;override-redirect = true
 
@@ -106,8 +106,8 @@ font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
-modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
-;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = mpd filesystem weather audio updates memory cpu eth temperature date powermenu
+;modules-right = filesystem backlight audio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 ;tray-padding = 2
@@ -116,7 +116,7 @@ tray-transparent = false
 tray-background = ${root.background}
 
 ;wm-restack = bspwm
-wm-restack = i3
+;wm-restack = i3
 
 ;override-redirect = true
 
@@ -156,8 +156,8 @@ font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
 modules-center =
-modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
-;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = mpd filesystem weather audio updates memory cpu eth temperature date powermenu
+;modules-right = filesystem backlight audio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = 
 ;tray-padding = 2
@@ -166,7 +166,7 @@ tray-transparent = false
 tray-background = ${root.background}
 
 ;wm-restack = bspwm
-wm-restack = i3
+;wm-restack = i3
 
 ;override-redirect = true
 
@@ -207,8 +207,8 @@ font-1 = Inconsolata Nerd Font:size=12;1
 modules-left = i3
 modules-center =
 ;modules-right = filesystem weather eth temperature date powermenu
-modules-right = mpd filesystem weather volume updates memory cpu eth temperature date powermenu
-;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = mpd filesystem weather audio updates memory cpu eth temperature date powermenu
+;modules-right = filesystem backlight audio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = 
 tray-padding = 2
@@ -216,7 +216,7 @@ tray-transparent = false
 tray-background = #222
 
 ;wm-restack = bspwm
-wm-restack = i3
+;wm-restack = i3
 
 ;override-redirect = true
 
@@ -347,35 +347,31 @@ format-underline = #a95aec
 ;label-song-ellipsis = true
 
 
-[module/xbacklight]
-type = internal/xbacklight
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
 
 format = <label> <bar>
-label = BL
+label = " "
 
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
 bar-indicator-font = 2
-bar-fill = ─
+bar-fill = ━
 bar-fill-font = 2
 bar-fill-foreground = #9f78e1
-bar-empty = ─
+bar-empty = ━
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
-
-
-[module/backlight-acpi]
-inherit = module/xbacklight
-type = internal/backlight
-card = intel_backlight
 
 
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = "  "
+;format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #f90000
 format-underline = #f90000
 label = %percentage%%
 
@@ -383,8 +379,9 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = "  "
+;format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #4bffdc
 format-underline = #4bffdc
 label = %percentage_used%%
 
@@ -396,7 +393,7 @@ interval = 2.5
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid% (%signal%): %local_ip%
+label-connected = "%essid% (%signal%): %local_ip%"
 
 ;format-disconnected =
 format-disconnected = <label-disconnected>
@@ -404,12 +401,13 @@ format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = (poor)
+ramp-signal-1 = (bad)
+ramp-signal-2 = (good)
+ramp-signal-3 = (great)
+ramp-signal-4 = (awesome)
+;ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = #9f78e1
 
 
 [module/eth]
@@ -420,7 +418,8 @@ interval = 2.5
 format-connected-underline = #55aa55
 ; \Ufa92  ng-mdi-web
 format-connected-prefix = "爵  "  
-format-connected-prefix-foreground = ${colors.foreground-alt}
+;format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = #55aa55
 label-connected = %local_ip% 
 
 ;format-disconnected =
@@ -451,14 +450,17 @@ time = "| %H:%M:%S"
 time-alt = %H:%M
 
 format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
+;format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #0a6cf5
 format-underline = #0a6cf5
 
 label = %date% %time%
 
 
-[module/volume]
-type = internal/volume
+[module/audio]
+type = internal/pulseaudio
+
+click-right = pavucontrol
 
 format-volume = <label-volume> <bar-volume>
 format-volume-underline = #C0FF02
@@ -466,7 +468,8 @@ format-volume-underline = #C0FF02
 label-volume = "  "
 label-volume-foreground = ${root.foreground}
 
-format-muted-foreground = ${colors.foreground-alt}
+;format-muted-foreground = ${colors.foreground-alt}
+format-muted-foreground = #C0FF02
 label-muted =    sound muted
 label-muted-underline = #C0FF02
 
@@ -509,14 +512,16 @@ ramp-capacity-1 = "   "
 ramp-capacity-2 = "   "
 ramp-capacity-3 = "   "
 ramp-capacity-4 = "   "
-ramp-capacity-foreground = ${colors.foreground-alt}
+;ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = #ffb52a
 
 animation-charging-0 = "   "   
 animation-charging-1 = "   "
 animation-charging-2 = "   "
 animation-charging-3 = "   "
 animation-charging-4 = "   "
-animation-charging-foreground = ${colors.foreground-alt}
+;animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-foreground = #ffb52a
 animation-charging-framerate = 750
 
 
@@ -530,14 +535,15 @@ format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = "  "
 ramp-1 = "  "
 ramp-2 = "  "
-ramp-foreground = ${colors.foreground-alt}
+;ramp-foreground = ${colors.foreground-alt}
+ramp-foreground = #f50a4d
 
 
 [module/powermenu]
@@ -545,9 +551,9 @@ type = custom/menu
 
 format-spacing = 1
 
-label-open = 
+label-open = " "
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = "ﰸ  cancel"
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
