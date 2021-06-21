@@ -105,6 +105,7 @@ gaps outer 0
 
 for_window [title="QUAKE LIVE Launcher" class="Wine"] floating enable
 for_window [title="Quake Live" class="Wine"] floating enable
+for_window [title="FINAL FANTASY XIV" class="ffxiv_dx11.exe"] floating enable
 for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating enable
 
 
@@ -119,9 +120,9 @@ bindsym $mod+Shift+a exec "minecraft"
 bindsym $mod+Shift+s exec "spotify"
 #bindsym $mod+Shift+s exec "gpmdp"
 bindsym $mod+Shift+f exec "ff"
-#bindsym $mod+Shift+p exec "thunderbird"
+bindsym $mod+Shift+p exec "thunderbird"
+#bindsym $mod+Shift+p exec "evolution"
 bindsym $mod+t exec "steam"
-bindsym $mod+Shift+p exec "evolution"
 bindsym $mod+Shift+v exec "vlc"
 bindsym $mod+Shift+d exec "discord"
 bindsym $mod+Shift+semicolon exec "lutris"
@@ -129,6 +130,7 @@ bindsym $mod+Shift+backslash exec "pavucontrol"
 #bindsym $mod+Shift+l exec "systemctl suspend"
 bindsym $mod+Shift+l exec "lock"
 
+bindsym Ctrl+Scroll_Lock exec "loopclk"
 #bindsym F6 exec "loopclk"
 #bindsym F7 exec "loopclk2"
 #bindsym F8 exec "xdotool mousedown 3"

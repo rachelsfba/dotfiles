@@ -38,6 +38,11 @@ call plug#begin(stdpath('data') . '/plugged')
 
    " Language syntaxes
    Plug 'martinda/Jenkinsfile-vim-syntax'
+   Plug 'cespare/vim-toml'
+   Plug 'justinmk/vim-syntax-extra'
+   
+   " Extra movement options
+   Plug 'justinmk/vim-sneak'
    
    " Color schemes
    "Plug 'wojciechkepka/bogster'
@@ -50,7 +55,6 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'jgallen23/Color-Scheme-Test'
    
    " Python stuff
-   Plug 'cespare/vim-toml'
    Plug 'psf/black'
    
    " Plugins
@@ -65,15 +69,35 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'tpope/vim-abolish'
 
    " From https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
-   " -----
    " Evaluating currently for usefulness.
+   Plug 'preservim/nerdtree'
+
+   " Fuzzy finder
    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
    Plug 'junegunn/fzf.vim'
+
+   " Consistent editing experience between editors
    Plug 'editorconfig/editorconfig-vim'
-   Plug 'preservim/nerdtree'
 
    " Shows line diffs on left-hand-side column relative to last git commit
    Plug 'airblade/vim-gitgutter'
+
+   " Stuff to look into once NeoVim 0.5 is stable
+   " -----------------------------------------------
+   " https://github.com/nvim-treesitter/nvim-treesitter
+   "Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+   
+   " Stuff to look into once NeoVim 0.5 is stable
+   " -----------------------------------------------
+   " https://github.com/nvim-telescope/telescope.nvim
+   "Plug 'nvim-lua/popup.nvim'
+   "Plug 'nvim-lua/plenary.nvim'
+   "Plug 'nvim-telescope/telescoApe.nvim'
+   
+   " Stuff to look into once NeoVim 0.5 is stable
+   " -----------------------------------------------
+   " https://github.com/neovim/nvim-lspconfig
+   "Plug 'neovim/nvim-lspconfig'
   
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -109,6 +133,14 @@ nmap <leader>; :Buffers<cr>
 "}}}
 
 "{{{coc stuff
+let g:coc_global_extensions = [ 
+    \ 'coc-json',
+    \ 'coc-git',
+    \ 'coc-markdownlint',
+    \ 'coc-pyright',
+    \ 'coc-rust-analyzer'
+    \]
+
 " Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 
 " 'Smart' nevigation
@@ -265,11 +297,15 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
-" Use english for spellchecking, but don't spellcheck by default
+" Use English for spellchecking, but don't spellcheck by default
 if version >= 700
    set spl=en spell
    set nospell
 endif
+
+" Permanent undo -- persists between nvim sessions
+set undodir=$XDG_DATA_HOME/nvim/undo
+set undofile
 
 " Cool tab completion stuff
 set wildmenu
@@ -497,13 +533,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 "}}}
 
-"{{{Taglist configuration
-let Tlist_Use_Right_Window = 1
-let Tlist_Enable_Fold_Column = 0
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Use_SingleClick = 1
-let Tlist_Inc_Winwidth = 0
-"}}}
 
 "{{{Look and Feel
 

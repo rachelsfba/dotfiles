@@ -1,0 +1,12 @@
+[calendars]
+[[default]]
+path = $XDG_DATA_HOME/vdirsyncer/calendars/2944aeb4-8310-4e9d-a685-78c0245e4d1b/
+type = calendar
+color = dark green
+
+[locale]
+timeformat = %H:%M
+dateformat = %d/%m/%Y
+longdateformat = %d/%m/%Y
+datetimeformat = %d/%m/%Y %H:%M
+longdatetimeformat = %d/%m/%Y %H:%M
