@@ -34,7 +34,11 @@ todo() {
     #   setab    set background color
     #   setaf    set foreground color
     #   bold     make text bold
+    #   smso     start bold text
+    #   rmso     stop bold text
     #   sgr0     reset text styling
+    #   smul     start underlining
+    #   rmul     stop underlining
     #
     # Use `$ infocmp alacritty` to check valid tput commands for alacritty
     # Use `$ colors256` script to check colors
