@@ -1,12 +1,21 @@
 [calendars]
-[[default]]
-path = $XDG_DATA_HOME/vdirsyncer/calendars/2944aeb4-8310-4e9d-a685-78c0245e4d1b/
+
+[[rachel_stuff]]
+path = $XDG_DATA_HOME/vdirsyncer/calendars/rachel_stuff/
 type = calendar
-color = dark green
+color = dark magenta
+
+[[alyssa_stuff]]
+path = $XDG_DATA_HOME/vdirsyncer/calendars/alyssa_stuff/
+type = calendar
+color = dark blue
 
 [locale]
 timeformat = %H:%M
-dateformat = %d/%m/%Y
-longdateformat = %d/%m/%Y
-datetimeformat = %d/%m/%Y %H:%M
-longdatetimeformat = %d/%m/%Y %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+
+# vim: set ts=4 sw=4 tw=88 ft=dosini et
