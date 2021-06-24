@@ -1,14 +1,8 @@
 [calendars]
 
-[[rachel_stuff]]
-path = $XDG_DATA_HOME/vdirsyncer/calendars/rachel_stuff/
-type = calendar
-color = dark magenta
-
-[[alyssa_stuff]]
-path = $XDG_DATA_HOME/vdirsyncer/calendars/alyssa_stuff/
-type = calendar
-color = dark blue
+[[vdirsyncer_calendars]]
+path = $XDG_DATA_HOME/vdirsyncer/calendars/*
+type = discover 
 
 [locale]
 timeformat = %H:%M
@@ -18,4 +12,4 @@ datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
 
 
-# vim: set ts=4 sw=4 tw=88 ft=dosini et
+# vim: set ts=4 sw=4 tw=88 ft=dosini et :

@@ -58,55 +58,26 @@ password.fetch = ["command", "cat", "/home/rachel/.local/share/vdirsyncer/secret
 ##                               CalDAV / Calendars                                   ##
 ##                               ==================                                   ##
 ########################################################################################
-
-########################################################################################
-##                                    Rachel Stuff                                    ##
-########################################################################################
-[pair rachel_bf_calendar]
-a = "rachel_bf_calendar_local"
-b = "rachel_bf_calendar_remote"
-collections = [["Rachel Stuff", "rachel_stuff", "2944aeb4-8310-4e9d-a685-78c0245e4d1b"]]
+[pair bf_cal]
+a = "bf_cal_local"
+b = "bf_cal_remote"
+collections = [["Rachel Stuff", "rachel_stuff", "2944aeb4-8310-4e9d-a685-78c0245e4d1b"], ["Alyssa Stuff", "alyssa_stuff", "alyssa-stuff-3"]]
 
 # Calendars also have a color property
 metadata = ["displayname", "color"]
 
 conflict_resolution = "b wins"
 
-[storage rachel_bf_calendar_local]
+[storage bf_cal_local]
 type = "filesystem"
 path = "/home/rachel/.local/share/vdirsyncer/calendars/"
 fileext = ".ics"
 
-[storage rachel_bf_calendar_remote]
+[storage bf_cal_remote]
 type = "caldav"
 url = "https://cloud.beijaflor.es/remote.php/caldav/"
 username.fetch = ["command", "cat", "/home/rachel/.local/share/vdirsyncer/secrets/cloud.beijaflor.es/username"]
 password.fetch = ["command", "cat", "/home/rachel/.local/share/vdirsyncer/secrets/cloud.beijaflor.es/password"]
 
 
-########################################################################################
-##                                    Alyssa Stuff                                    ##
-########################################################################################
-[pair alyssa_bf_calendar]
-a = "alyssa_bf_calendar_local"
-b = "alyssa_bf_calendar_remote"
-collections = [["Alyssa Stuff", "alyssa_stuff", "alyssa-stuff-3"]]
-
-# Calendars also have a color property
-metadata = ["displayname", "color"]
-
-conflict_resolution = "b wins"
-
-[storage alyssa_bf_calendar_local]
-type = "filesystem"
-path = "/home/rachel/.local/share/vdirsyncer/calendars/"
-fileext = ".ics"
-
-[storage alyssa_bf_calendar_remote]
-type = "caldav"
-url = "https://cloud.beijaflor.es/remote.php/caldav/"
-username.fetch = ["command", "cat", "/home/rachel/.local/share/vdirsyncer/secrets/cloud.beijaflor.es/username"]
-password.fetch = ["command", "cat", "/home/rachel/.local/share/vdirsyncer/secrets/cloud.beijaflor.es/password"]
-
-
-#  vim: set ts=4 sw=4 tw=88 ft=dosini et :
+# vim: set ts=4 sw=4 tw=88 ft=dosini et :
