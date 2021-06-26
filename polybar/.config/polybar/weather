@@ -115,15 +115,15 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     now=$(date +%s)
 
     if [ "$sun_rise" -gt "$now" ]; then
-        daytime="   $(get_duration "$((sun_rise-now))")"  # \Ue34c  nf-weather-sunrise
+        daytime="    $(get_duration "$((sun_rise-now))")"  # \Ue34c  nf-weather-sunrise
         #daytime="   $(get_duration "$((sun_rise-now))")"  # \Uf051  wi-sunrise
     elif [ "$sun_set" -gt "$now" ]; then
-        daytime="   $(get_duration "$((sun_set-now))")"  # \Ue34d  nf-weather-sunset
+        daytime="    $(get_duration "$((sun_set-now))")"  # \Ue34d  nf-weather-sunset
         #daytime="   $(get_duration "$((sun_set-now))")"  # \Uf052  wi-sunset 
     else
-        daytime="   $(get_duration "$((sun_rise-now))")"  # \Ue34c  nf-weather-sunrise
+        daytime="    $(get_duration "$((sun_rise-now))")"  # \Ue34c  nf-weather-sunrise
         #daytime="   $(get_duration "$((sun_rise-now))")"  # \Uf051  wi-sunrise
     fi
 
-    echo "$(get_icon "$current_icon")   $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon")   $forecast_temp$SYMBOL   $daytime"
+    echo "$(get_icon "$current_icon")    $current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon")    $forecast_temp$SYMBOL   $daytime"
 fi
