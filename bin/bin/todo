@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# todo: Prints a colorized todo list
+
+# File containing the actual todos
+filename=$HOME/TODO.txt
+
+# Use `$ tput <cmd>` to generate escape sequences
+#
+#   <cmd>    Description
+#   -----    -----------
+#   setab    set background color
+#   setaf    set foreground color
+#   bold     make text bold
+#   smso     start bold text
+#   rmso     stop bold text
+#   sgr0     reset text styling
+#   smul     start underlining
+#   rmul     stop underlining
+#
+# Use `$ infocmp alacritty` to check valid tput commands for alacritty
+# Use `$ colors256` script to check colors
+orange="$(tput setaf 208)"
+green="$(tput setaf 118)"
+pink="$(tput setaf 201)"
+bold="$(tput bold)"
+#unbold="$(tput rmso)"
+underline="$(tput smul)"
+ununderline="$(tput rmul)"
+reset="$(tput sgr0)"
+
+# Colorizes each of the (0x??) TODO numbers at the start of a line
+formatted_text="$(sed "s/^  \((0x\w\+)\)/  $pink\1$green/g" $filename)"
+# Make underlined stuffs
+formatted_text="$(echo "$formatted_text" | sed "s/\[u\]\(.*\)\[\/u\]/$underline\1$ununderline/g")"
+# Make bold stuffs
+#ormatted_text="$(echo "$formatted_text" | sed "s/\[b\]\(.*\)\[\/b\]/$bold\1$unbold/g")"
+
+echo -e "$orange"
+echo -e "   ▄▄▄▄▄          ·▄▄▄▄        .▄▄ · "
+echo -e "   •██  ▪         ██▪ ██ ▪     ▐█ ▀. "
+echo -e "    ▐█.▪ ▄█▀▄     ▐█· ▐█▌ ▄█▀▄ ▄▀▀▀█▄"
+echo -e "    ▐█▌·▐█▌.▐▌    ██. ██ ▐█▌.▐▌▐█▄▪▐█"
+echo -e "    ▀▀▀  ▀█▄▀▪    ▀▀▀▀▀•  ▀█▄▀▪ ▀▀▀▀ "
+echo -e "$reset"
+echo -e "$formatted_text$reset\n" # note: must add back the newline

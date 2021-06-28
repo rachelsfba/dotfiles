@@ -25,6 +25,7 @@ export D_FL=/media/fl
 export D_DROID=$DATA/Droid
 export D_DROIDROOT=$DATA/Droid/sdcard0
 
+export D_ALY=$D_NCLOUD/Aly
 export D_DND=$D_NCLOUD/DnD
 export D_ART=$D_NCLOUD/Art
 export D_VIDS=$D_NCLOUD/Videos
