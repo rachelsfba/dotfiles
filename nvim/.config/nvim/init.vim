@@ -358,6 +358,9 @@ nnoremap k gk
 
 nnoremap JJJJ <Nop>
 
+" Add current date/time to insert position
+nnoremap <leader>da :put =strftime(\"%Y-%m-%d %H:%M:%S\")<cr>
+
 " Open new file adjacent to current file
 " Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -399,8 +402,6 @@ let g:rct_completion_use_fri = 1
 
 au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
 set complete+=
-
-au BufRead,BufNewFile *.md setlocal textwidth=80
 
 " Customisations based on house-style (arbitrary)
 autocmd FileType markdown setlocal sts=2 ts=2 sw=2 expandtab
