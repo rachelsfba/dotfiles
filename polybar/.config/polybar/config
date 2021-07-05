@@ -331,25 +331,6 @@ interval = 60
 format-underline = #a95aec
 
 
-[module/backlight]
-type = internal/backlight
-card = intel_backlight
-
-format = <label> <bar>
-label = " "
-
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #ff
-bar-indicator-font = 1
-bar-fill = ─
-bar-fill-font = 1
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 1
-bar-empty-foreground = ${colors.foreground-alt}
-
-
 [module/cpu]
 type = internal/cpu
 interval = 2
@@ -450,6 +431,26 @@ format-prefix-foreground = #0a6cf5
 format-underline = #0a6cf5
 
 label = %date% %time%
+
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+format = <label> <bar>
+format-underline = #9f78e1
+label = " "
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #ff
+bar-indicator-font = 1
+bar-fill = ─
+bar-fill-font = 1
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 1
+bar-empty-foreground = ${colors.foreground-alt}
 
 
 [module/audio]
