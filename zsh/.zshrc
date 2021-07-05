@@ -74,7 +74,7 @@ export ZSH_CUSTOM=$ZSH_HOME/omz_custom
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dirhistory django rust rustup sudo extract)
+plugins=(git dirhistory django rust rustup cargo sudo extract)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -140,7 +140,11 @@ bindkey ' ' magic-space                # Do history expansion on space
 
 # Set LS_COLORS
 eval `dircolors -b ${XDG_CONFIG_HOME}/LS_COLORS`
+# Source rustup env (adds Rust binaries to $PATH)
+source $CARGO_HOME/env
 # Load SSH key into memory so I'm not prompted for my password all the time
 eval `keychain -q --eval ~/.ssh/id_ecdsa`
 # Show TODO list
 todo
+
+

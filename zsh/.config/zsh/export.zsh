@@ -22,9 +22,6 @@ export D_NCLOUD=$D_DOC/NextCloud
 export D_DL=$D_DOC/Downloads
 export D_FL=/media/fl
 
-export D_DROID=$DATA/Droid
-export D_DROIDROOT=$DATA/Droid/sdcard0
-
 export D_ALY=$D_NCLOUD/Aly
 export D_DND=$D_NCLOUD/DnD
 export D_ART=$D_NCLOUD/Art
@@ -34,20 +31,9 @@ export D_PHOTOS=$D_NCLOUD/Photographs
 export D_PHOTOGRAPHS=$D_PHOTOS
 export D_MEMES=$D_NCLOUD/Memes
 
-export D_RCC=$D_NCLOUD/RCC_Classes
-export D_PHY=$D_RCC/PHY
-export D_PHY232=$D_RCC/PHY/232
-export D_PHY242=$D_RCC/PHY/242
-
-export D_UVA=$D_NCLOUD/UVA
-export D_CS=$D_UVA/CS
-export D_ECE=$D_UVA/ECE
-export D_APMA=$D_UVA/APMA
-export D_STS=$D_UVA/STS
-
 # XDG settings
-export XDG_CACHE_HOME=~/.cache
-export XDG_CONFIG_HOME=~/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 
 # Commonly-used dir shortcuts
@@ -58,11 +44,16 @@ export CODE=$D_CODE
 export DL=$D_DL
 export DEV_DIR=$HOME/dev
 
-# Environmental variables
+# Rust config variables
+# N.B. $CARGO_HOME/env will be sourced in .zshrc
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export CARGO_HOME=$XDG_CACHE_HOME/cargo
+
+# General environment variables
 export EDITOR=nvim
 export TERMINAL=alacritty
-export PATH=$BINARIES:$(ruby -e 'print Gem.user_dir')/bin:$PATH
-export PYTHONPATH=~/dev:$PYTHONPATH
+export PATH=$BINARIES:$PATH
+#export PYTHONPATH=$PYTHONPATH
 
 # MPD stuff
 export MPD_PASS=$(cat ${XDG_DATA_HOME}/mpd/password)
