@@ -35,6 +35,9 @@ call plug#begin(stdpath('data') . '/plugged')
 
    " Git plugin
    Plug 'tpope/vim-fugitive'
+   
+   " Commenting out lines easily
+   Plug 'tpope/vim-commentary'
 
    " Language syntaxes
    Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -440,79 +443,8 @@ nmap <leader>f :call Browser()<cr>
 
 "}}}
 
-let s:comment_map = {
-    \   "c": '\/\/',
-    \   "cpp": '\/\/',
-    \   "go": '\/\/',
-    \   "java": '\/\/',
-    \   "javascript": '\/\/',
-    \   "lua": '--',
-    \   "scala": '\/\/',
-    \   "php": '\/\/',
-    \   "python": '#',
-    \   "ruby": '#',
-    \   "rust": '\/\/',
-    \   "sh": '#',
-    \   "zsh": '#',
-    \   "zshrc": '#',
-    \   "desktop": '#',
-    \   "fstab": '#',
-    \   "conf": '#',
-    \   "profile": '#',
-    \   "bashrc": '#',
-    \   "bash_profile": '#',
-    \   "yaml": '#',
-    \   "mail": '>',
-    \   "eml": '>',
-    \   "bat": 'REM',
-    \   "ahk": ';',
-    \   "vim": '"',
-    \   "tex": '%',
-    \ }
-
-function! ToggleComment()
-    if has_key(s:comment_map, &filetype)
-        let comment_leader = s:comment_map[&filetype]
-        if getline('.') =~ "^" . comment_leader . " "
-            " Uncomment the line
-            execute "silent s/^" . comment_leader . " //"
-        else
-            if getline('.') =~ "^" . comment_leader
-                " Uncomment the line
-                execute "silent s/^" . comment_leader . " //"
-            else
-                " Comment the line
-                execute "silent s/^/" . comment_leader . " /"
-            end
-        end
-    else
-        echo "No comment leader found for filetype"
-    end
-endfunction
-
-" Taken from https://stackoverflow.com/a/24046914 and modified
-" function! ToggleComment()
-"     if has_key(s:comment_map, &filetype)
-"         let comment_leader = s:comment_map[&filetype]
-"         if getline('.') =~ "^\\s*" . comment_leader . " "
-"             " Uncomment the line
-"             execute "silent s/^\\(\\s*\\)" . comment_leader . " /\\1/"
-"         else
-"             if getline('.') =~ "^\\s*" . comment_leader
-"                 " Uncomment the line
-"                 execute "silent s/^\\(\\s*\\)" . comment_leader . "/\\1/"
-"             else
-"                 " Comment the line
-"                 execute "silent s/^\\(\\s*\\)/\\1" . comment_leader . " /"
-"             end
-"         end
-"     else
-"         echo "No comment leader found for filetype"
-"     end
-" endfunction
-
-nnoremap <leader><Space> :call ToggleComment()<cr>
-vnoremap <leader><Space> :call ToggleComment()<cr>
+nnoremap <leader><Space> :Commentary<cr>
+vnoremap <leader><Space> :Commentary<cr>
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
