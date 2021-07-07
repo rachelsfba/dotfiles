@@ -10,6 +10,7 @@ else
       # For mob farming
       xdotool mousedown 1
       sleep 0.1
+      #sleep 0.1
       xdotool mouseup 1
       #sleep 1
       #sleep 3 # for end farm

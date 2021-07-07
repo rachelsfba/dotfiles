@@ -117,7 +117,8 @@ for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating e
 ########################################################################################################
 
 bindsym $mod+Shift+a exec "minecraft"
-bindsym $mod+Shift+s exec "spotify"
+bindsym $mod+Shift+s exec "youtube-music"
+#bindsym $mod+Shift+s exec "spotify"
 #bindsym $mod+Shift+s exec "gpmdp"
 bindsym $mod+Shift+f exec "ff"
 bindsym $mod+Shift+p exec "thunderbird"
