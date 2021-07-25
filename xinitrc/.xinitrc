@@ -29,23 +29,21 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-if [ "$HOST" = "mongolia" ]; then
-    qbittorrent & # seeding is good manners, friends.
-    discord & # discord
-fi
+# Turn off DPMS 
+# Turn off system bell
+#xset -dpms -b &
 
-
-#xset -dpms b 100 &
-xset -dpms -b &
-sleepytime &
-# xautolock -time 10 -locker lock &
-#urxvtd &
-nextcloud &
-#keepass_wrapper &
+# Run password manager
 keepassxc &
-setxkbmap -option      terminate:ctrl_alt_bksp &
+
+# Make Ctrl + Alt + Backspace kill X11
+setxkbmap -option terminate:ctrl_alt_bksp &
+
 #xmodshit &
-setdisplay
+
+if [ "$HOST" = "yemen" ]; then
+    xrandr --output eDP-1 --mode 1920x1080
+fi
 
 # Generate local host-specific i3 config file and then run i3 wm.
 $i3location/bin/gen-local-config && exec i3

@@ -1,0 +1,23 @@
+; Runs the NextCloud Client in the background for file synchronization
+;
+; Use like:
+;   $ systemctl --user enable nextcloud.service
+;   $ systemctl --user start nextcloud.service
+;   $ systemctl --user status nextcloud.service
+; etc.
+;
+; Per https://blog.svedr.in/posts/running-the-nextcloud-client-under-systemd/
+
+[Unit]
+Description=nextcloud
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+ExecStart=/usr/bin/nextcloud
+Restart=on-failure
+RestartSec=5s
+LimitNOFILE=65535:65535
+
+[Install]
+WantedBy=multi-user.target
