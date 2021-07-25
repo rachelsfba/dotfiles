@@ -119,15 +119,6 @@ filetype on
 
 "}}}
 
-"{{{Rust stuff
-" rust playpen clipboard command
-let g:rust_clip_command = 'xclip -selection clipboard'
-
-" reformats buffer on a save using rustfmt
-" Per https://github.com/rust-lang/rust.vim
-let g:rustfmt_autosave = 1
-"}}}
-
 "{{{Airline
 "let g:powerline_pycmd="python3"
 let g:airline_powerline_fonts=1
@@ -243,30 +234,30 @@ autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 " autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
 " Restore cursor position to where it was before
-augroup JumpCursorOnEdit
-   au!
-   autocmd BufReadPost *
-            \ if expand("<afile>:p:h") !=? $TEMP |
-            \   if line("'\"") > 1 && line("'\"") <= line("$") |
-            \     let JumpCursorOnEdit_foo = line("'\"") |
-            \     let b:doopenfold = 1 |
-            \     if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
-            \        let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
-            \        let b:doopenfold = 2 |
-            \     endif |
-            \     exe JumpCursorOnEdit_foo |
-            \   endif |
-            \ endif
-   " Need to postpone using "zv" until after reading the modelines.
-   autocmd BufWinEnter *
-            \ if exists("b:doopenfold") |
-            \   exe "normal zv" |
-            \   if(b:doopenfold > 1) |
-            \       exe  "+".1 |
-            \   endif |
-            \   unlet b:doopenfold |
-            \ endif
-augroup END
+" augroup JumpCursorOnEdit
+"    au!
+"    autocmd BufReadPost *
+"             \ if expand("<afile>:p:h") !=? $TEMP |
+"             \   if line("'\"") > 1 && line("'\"") <= line("$") |
+"             \     let JumpCursorOnEdit_foo = line("'\"") |
+"             \     let b:doopenfold = 1 |
+"             \     if (foldlevel(JumpCursorOnEdit_foo) > foldlevel(JumpCursorOnEdit_foo - 1)) |
+"             \        let JumpCursorOnEdit_foo = JumpCursorOnEdit_foo - 1 |
+"             \        let b:doopenfold = 2 |
+"             \     endif |
+"             \     exe JumpCursorOnEdit_foo |
+"             \   endif |
+"             \ endif
+"    " Need to postpone using "zv" until after reading the modelines.
+"    autocmd BufWinEnter *
+"             \ if exists("b:doopenfold") |
+"             \   exe "normal zv" |
+"             \   if(b:doopenfold > 1) |
+"             \       exe  "+".1 |
+"             \   endif |
+"             \   unlet b:doopenfold |
+"             \ endif
+" augroup END
 
 "}}}
 
@@ -418,12 +409,6 @@ let g:rct_completion_use_fri = 1
 au FileType * exec("setlocal dictionary+=/usr/share/vim/vimfiles/dictionaries/".expand('<amatch>'))
 set complete+=
 
-" Customisations based on house-style (arbitrary)
-autocmd FileType markdown setlocal sts=2 ts=2 sw=2 expandtab
-autocmd FileType htmldjango setlocal  sts=2 ts=2 sw=2 expandtab
-autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-
 " Prevent accidental writes to buffers that shouldn't be edited
 " Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 autocmd BufRead *.orig set readonly
@@ -483,7 +468,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 "}}}
 
-
 "{{{Look and Feel
 
 " Favorite Color Scheme
@@ -501,22 +485,5 @@ endif
 
 " }}}
 
-"{{{vimtex stuff
-" use LaTeX by default
-let g:tex_flavor = "latex"
-
-" per https://github.com/lervag/vimtex/wiki/introduction#neovim
-let g:vimtex_compiler_progname = 'nvr'
-
-" use zathura as PDF viewer (evince/FoxitReader might be system default)
-let g:latex_view_general_viewer = 'zathura'
-let g:vimtex_view_method='zathura'
-
-" TeX characters concealing
-let g:tex_conceal=''
-"}}}
-
-
 " Check out https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 " in the future for more tweaks to consider.
-
