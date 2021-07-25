@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#REDSHIFT=/usr/bin/redshift
+REDSHIFT=/usr/bin/redshift-gtk
+
+# Terminate already running redshift instances
+killall -q redshift
+killall -q redshift-gtk
+
+# Wait until the processes have been shut down
+while pgrep -x redshift >/dev/null; do sleep 0.1; done
+while pgrep -x redshift-gtk >/dev/null; do sleep 0.1; done
+
+# Run redshift once it's safe (no conflicts -- otherwise we would have flickering)
+${REDSHIFT}
