@@ -59,6 +59,9 @@ call plug#begin(stdpath('data') . '/plugged')
    
    " Python stuff
    Plug 'psf/black'
+
+   " Rust stuff
+   Plug 'rust-lang/rust.vim'
    
    " Plugins
    "Plug 'itchyny/lightline.vim'
@@ -116,7 +119,16 @@ filetype on
 
 "}}}
 
-"{{{Airline/Powerline/Lightline
+"{{{Rust stuff
+" rust playpen clipboard command
+let g:rust_clip_command = 'xclip -selection clipboard'
+
+" reformats buffer on a save using rustfmt
+" Per https://github.com/rust-lang/rust.vim
+let g:rustfmt_autosave = 1
+"}}}
+
+"{{{Airline
 "let g:powerline_pycmd="python3"
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
