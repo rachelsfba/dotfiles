@@ -325,7 +325,14 @@ bindsym $mod+r mode "resize"
 #######################################################################################               ##
 ########################################################################################################
 
-exec_always --no-startup-id $HOME/.config/polybar/launch &
-exec_always --no-startup-id setwall &
-exec_always --no-startup-id keepassxc &
-exec_always --no-startup-id nextcloud &
+exec_always --no-startup-id $HOME/.config/polybar/launch
+exec_always --no-startup-id setwall
+
+exec --no-startup-id nextcloud
+
+# Doesn't really NEED to start up by default
+#exec discord
+# Doesn't really NEED to start up by default
+#exec keepassxc 
+# Use `systemctl --user enable --now redshift-gtk.service` instead
+#exec --no-startup-id redshift
