@@ -330,6 +330,7 @@ exec_always --no-startup-id $HOME/.config/redshift/launch
 exec_always --no-startup-id setwall
 
 exec --no-startup-id nextcloud
+exec --no-startup-id unclutter --timeout 3 --fork
 
 # Doesn't really NEED to start up by default
 #exec discord
