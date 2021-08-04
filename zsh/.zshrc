@@ -145,6 +145,6 @@ source $CARGO_HOME/env
 # Load SSH key into memory so I'm not prompted for my password all the time
 eval `keychain -q --eval ~/.ssh/id_ecdsa`
 # Show TODO list
-todo
+# todo
 
 
