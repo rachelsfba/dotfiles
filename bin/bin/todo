@@ -3,7 +3,7 @@
 # todo: Prints a colorized todo list
 
 # File containing the actual todos
-filename=$HOME/TODO.txt
+filename=$HOME/dev/todo/TODO.txt
 
 # Use `$ tput <cmd>` to generate escape sequences
 #
