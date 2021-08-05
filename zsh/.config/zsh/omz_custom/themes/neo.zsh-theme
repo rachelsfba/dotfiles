@@ -94,8 +94,13 @@ if [ "$TERM" = linux ]; then
   c13=$'\e[31;1m'
 fi
 
+# from trapd00r 
+#zstyle ':vcs_info:*' actionformats \
+#    "%{$c8%}(%f%s)%{$c7%}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f "
+
+# my version
 zstyle ':vcs_info:*' actionformats \
-    '%{$c8%}(%f%s)%{$c7%}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+    "%{$c8%}%s%{$c7%}❨ %{$c10%}%F{2}%b%F{3}|%F{1}%a%{$c7%}❩%{$reset_color%}%f "
 
 zstyle ':vcs_info:*' formats \
     "%{$c8%}%s%{$c7%}❨ %{$c9%}%{$c11%}%b%{$c7%}❩%{$reset_color%}%f "
