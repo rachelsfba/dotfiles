@@ -198,8 +198,22 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Applying codeAction to the selected region.
+" Example: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -340,6 +354,10 @@ set backspace=2
 " Line Numbers
 set number
 
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
 " per https://jeffkreeftmeijer.com/vim-number/
 "set relativenumber
 "set nonumber
@@ -430,13 +448,13 @@ set tabpagemax=100
 
 "{{{ Open URL in browser
 
-function! Browser ()
-   let line = getline (".")
-   let line = matchstr (line, "http[^   ]*")
-   exec "!ff ".line
-endfunction
+" function! Browser ()
+"    let line = getline (".")
+"    let line = matchstr (line, "http[^   ]*")
+"    exec "!ff ".line
+" endfunction
 
-nmap <leader>f :call Browser()<cr>
+" nmap <leader>f :call Browser()<cr>
 
 "}}}
 
@@ -485,5 +503,3 @@ endif
 
 " }}}
 
-" Check out https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-" in the future for more tweaks to consider.

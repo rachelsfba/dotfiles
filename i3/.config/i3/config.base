@@ -124,12 +124,13 @@ bindsym $mod+Shift+f exec "ff"
 # bindsym $mod+Shift+p exec "thunderbird"
 bindsym $mod+Shift+p exec "evolution"
 bindsym $mod+t exec "steam"
-bindsym $mod+Shift+v exec "vlc"
+bindsym $mod+Shift+m exec "vlc"
 bindsym $mod+Shift+d exec "discord"
 bindsym $mod+Shift+semicolon exec "lutris"
 bindsym $mod+Shift+backslash exec "pavucontrol"
 #bindsym $mod+Shift+l exec "systemctl suspend"
-bindsym $mod+Shift+l exec "lock"
+#bindsym $mod+Shift+l exec "lock"
+bindsym $mod+Scroll_Lock exec "lock"
 
 bindsym Ctrl+Scroll_Lock exec "loopclk"
 #bindsym F6 exec "loopclk"
@@ -219,10 +220,10 @@ bindsym $mod+d exec "rofi -show run"
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -231,10 +232,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+j move left
-#bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-#bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -242,11 +243,12 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# slit in horizontal orientation
-bindsym $mod+h split h
-
 # split in vertical orientation
 bindsym $mod+v split v
+
+# slit in horizontal orientation
+#bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
