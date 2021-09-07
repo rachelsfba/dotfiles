@@ -130,7 +130,7 @@ bindsym $mod+Shift+semicolon exec "lutris"
 bindsym $mod+Shift+backslash exec "pavucontrol"
 #bindsym $mod+Shift+l exec "systemctl suspend"
 #bindsym $mod+Shift+l exec "lock"
-bindsym $mod+Scroll_Lock exec "lock"
+bindsym $mod+Shift+Scroll_Lock exec "lock"
 
 bindsym Ctrl+Scroll_Lock exec "loopclk"
 #bindsym F6 exec "loopclk"
