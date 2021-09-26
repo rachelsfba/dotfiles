@@ -30,6 +30,11 @@ call plug#begin(stdpath('data') . '/plugged')
 
    " Declare the list of plugins.
    
+   " Carbon for screenshotting code snippets
+   " per https://twitter.com/thingskatedid/status/1439155034348941313
+   " (base repo: https://github.com/carbon-app/carbon)
+   Plug 'kristijanhusak/vim-carbon-now-sh'
+   
    " Use release branch (recommend)
    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
