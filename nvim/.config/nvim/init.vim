@@ -58,6 +58,7 @@ call plug#begin(stdpath('data') . '/plugged')
    "Plug 'obeijaflor/neverland-vim-theme'
    Plug 'trapd00r/neverland-vim-theme'
    "Plug 'aonemd/kuroi.vim'
+   "Plug 'theacodes/witchhazel'
   
    " Color scheme test
    Plug 'jgallen23/Color-Scheme-Test'
@@ -493,18 +494,8 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 "{{{Look and Feel
 
-" Favorite Color Scheme
-if has("gui_running")
-   colorscheme inkpot
-   " Remove Toolbar
-   set guioptions-=T
-   "Terminus is AWESOME
-   set guifont=Terminus\ 9
-else
-   " Neverland Theme
-    color neverland
-
-endif
+color neverland
+" color witchhazel
 
 " }}}
 

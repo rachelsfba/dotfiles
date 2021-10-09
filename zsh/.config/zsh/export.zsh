@@ -8,6 +8,7 @@ export D_CODE=$DATA/Code
 export D_WEB=$D_WWW
 export D_MEDIA=$DATA/Media
 export D_GAMES=$DATA/Games
+export D_BACKUPS=$DATA/Backups
 export D_MUSIC=$D_MEDIA/Music
 
 if [ "$HOST" = "yemen" ]; then
@@ -16,20 +17,14 @@ elif [ "$HOST" = "mongolia" ]; then
     export D_DOC=$DATA/Documents
 fi
 
-#export D_DBOX=$D_DOC/Dropbox
 export D_NCLOUD=$D_DOC/NextCloud
-
 export D_DL=$D_DOC/Downloads
-export D_FL=/media/fl
-
 export D_ALY=$D_NCLOUD/Aly
 export D_DND=$D_NCLOUD/DnD
 export D_ART=$D_NCLOUD/Art
-export D_VIDS=$D_NCLOUD/Videos
+export D_VIDS=$D_NCLOUD/beijaflor.nyc3.digitaloceanspaces.com/Videos
 export D_VIDEOS=$D_VIDS
 export D_PHOTOS=$D_NCLOUD/Photographs
-export D_PHOTOGRAPHS=$D_PHOTOS
-export D_MEMES=$D_NCLOUD/Memes
 
 # XDG settings
 export XDG_CACHE_HOME=$HOME/.cache
