@@ -1,0 +1,3 @@
+#!/bin/bash
+now="$(date +%F-%H%M%S.%N)"
+tar cavf $D_BACKUPS/nextcloud-backup-$now.tar.zst $D_NCLOUD

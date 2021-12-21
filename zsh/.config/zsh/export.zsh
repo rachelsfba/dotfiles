@@ -22,7 +22,7 @@ export D_DL=$D_DOC/Downloads
 export D_ALY=$D_NCLOUD/Aly
 export D_DND=$D_NCLOUD/DnD
 export D_ART=$D_NCLOUD/Art
-export D_VIDS=$D_NCLOUD/beijaflor.nyc3.digitaloceanspaces.com/Videos
+export D_VIDS=$D_NCLOUD/Videos
 export D_VIDEOS=$D_VIDS
 export D_PHOTOS=$D_NCLOUD/Photographs
 
@@ -46,6 +46,7 @@ export CARGO_HOME=$XDG_CACHE_HOME/cargo
 
 # General environment variables
 export EDITOR=nvim
+export SYSTEMD_EDITOR=nvim
 export TERMINAL=alacritty
 export PATH=$BINARIES:$PATH
 #export PYTHONPATH=$PYTHONPATH
