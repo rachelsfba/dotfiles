@@ -74,7 +74,7 @@ export ZSH_CUSTOM=$ZSH_HOME/omz_custom
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git dirhistory rust rustup cargo sudo extract)
+plugins=(git dirhistory rust sudo extract)
 
 source $ZSH/oh-my-zsh.sh
 
