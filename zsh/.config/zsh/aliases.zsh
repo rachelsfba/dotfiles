@@ -17,11 +17,10 @@ alias rgrep="grep -r"
 
 alias cd2='cd $DL && exa -laF -snew'
 
-alias ls='exa'
-alias l='exa'
-
-alias la='exa -alaFg'
-alias ll='exa -alaFg'
+alias ls='lsd'
+alias l='lsd'
+alias la='lsd -a'
+alias ll='lsd -al'
 #alias lsp='ls++ --potsf'
 #alias ls='exa -laF --git'
 
