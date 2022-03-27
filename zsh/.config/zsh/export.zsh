@@ -59,7 +59,6 @@ export MPD_HOST=${MPD_PASS}@10.0.0.251
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 # ZSH config
-export TZ='America/New_York'
 export HISTFILE=~/.zshhistory
 export HISTSIZE=5000
 export SAVEHIST=1000000
