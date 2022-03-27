@@ -7,12 +7,12 @@
 #  ##################### ##################### ####################
 #  ##                 ## ##                 ## ##                ## 
 #  ##     $mLeft      ## ##    $mCenter     ## ##     $mRight    ##
-#  ##     DVI-I-1     ## ##    DP-1.1.8     ## ##     DP-1.8     ##
+#  ##    DP-1.1.8     ## ##    DP-1.1.1     ## ##     DP-1.8     ##
 #  ##                 ## ##                 ## ##                ## 
 #  ##################### ##################### ####################
 # 
-set $mLeft DVI-I-1
-set $mCenter DP-1.1.8
+set $mLeft DP-1.1.8
+set $mCenter DP-1.1.1
 set $mRight DP-1.8
 
 # Create the workspaces and manage them. 
