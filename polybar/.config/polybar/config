@@ -52,7 +52,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = DejaVu Sans:pixelsize=10;1
 font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
@@ -99,7 +99,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = DejaVu Sans:pixelsize=10;1
 font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
@@ -149,7 +149,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = DejaVu Sans:pixelsize=10;1
 font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
@@ -199,7 +199,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = DejaVu Sans:pixelsize=10;1
 font-1 = Inconsolata Nerd Font:size=12;1
 
 modules-left = i3
