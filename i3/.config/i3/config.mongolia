@@ -7,13 +7,13 @@
 #  ##################### ##################### ####################
 #  ##                 ## ##                 ## ##                ## 
 #  ##     $mLeft      ## ##    $mCenter     ## ##     $mRight    ##
-#  ##    DP-1.1.8     ## ##    DP-1.1.1     ## ##     DP-1.8     ##
+#  ##    DP-2.1.8     ## ##    DP-2.1.1     ## ##     DP-2.8     ##
 #  ##                 ## ##                 ## ##                ## 
 #  ##################### ##################### ####################
 # 
-set $mLeft DP-1.1.8
-set $mCenter DP-1.1.1
-set $mRight DP-1.8
+set $mLeft DP-2.1.8
+set $mCenter DP-2.1.1
+set $mRight DP-2.8
 
 # Create the workspaces and manage them. 
 # Start up with workspaces on right monitors

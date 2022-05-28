@@ -50,7 +50,7 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'justinmk/vim-syntax-extra'
    
    " Extra movement options
-   Plug 'justinmk/vim-sneak'
+   " Plug 'justinmk/vim-sneak'
    
    " Color schemes
    "Plug 'wojciechkepka/bogster'

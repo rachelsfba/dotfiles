@@ -63,11 +63,12 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 KEY="`cat ${DIR}/weather_api_key`"
 #CITY="King%20George"
 #CITY=4767771
-UNITS="metric"
+UNITS="imperial"
 #SYMBOL="°"
 #SYMBOL=""  # \Ue339 nf-weather-celsius
 #SYMBOL="糖"  # \Ufa03 nf-mdi-temperature_celsius
-SYMBOL="°C"
+#SYMBOL="°C"
+SYMBOL="°F"
 
 API="https://api.openweathermap.org/data/2.5"
 
