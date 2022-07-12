@@ -42,7 +42,8 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'tpope/vim-fugitive'
    
    " Commenting out lines easily
-   Plug 'tpope/vim-commentary'
+   " Plug 'tpope/vim-commentary'
+   Plug 'numToStr/Comment.nvim'
 
    " Language syntaxes
    Plug 'martinda/Jenkinsfile-vim-syntax'
@@ -57,6 +58,7 @@ call plug#begin(stdpath('data') . '/plugged')
    "Plug 'drewtempelmeyer/palenight.vim'
    "Plug 'obeijaflor/neverland-vim-theme'
    Plug 'trapd00r/neverland-vim-theme'
+   Plug 'theacodes/witchhazel'
    "Plug 'aonemd/kuroi.vim'
    "Plug 'theacodes/witchhazel'
   
@@ -358,20 +360,20 @@ nnoremap <C-h> :nohlsearch<cr>
 set backspace=2
 
 " Line Numbers
-set number
+"set number
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
 
 " per https://jeffkreeftmeijer.com/vim-number/
-"set relativenumber
-"set nonumber
-"augroup numbertoggle
-"  autocmd!
-"  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber nonumber
-"  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber number
-"augroup END
+set number
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+augroup END
 
 " Ignoring case is a fun trick
 set ignorecase
@@ -383,8 +385,8 @@ set smartcase
 inoremap jj <Esc>
 
 " Move by line
-nnoremap j gj
-nnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
 
 nnoremap JJJJ <Nop>
 
@@ -464,8 +466,10 @@ set tabpagemax=100
 
 "}}}
 
-nnoremap <leader><Space> :Commentary<cr>
-vnoremap <leader><Space> :Commentary<cr>
+lua require('Comment').setup()
+
+" nnoremap <leader><Space> :Commentary<cr>
+" vnoremap <leader><Space> :Commentary<cr>
 
 " Append modeline after last line in buffer.
 " Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
@@ -495,7 +499,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 "{{{Look and Feel
 
 color neverland
+" color witchhazel-hypercolor
 " color witchhazel
 
 " }}}
-
