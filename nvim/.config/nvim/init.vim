@@ -382,13 +382,12 @@ set ignorecase
 set smartcase
 
 " This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great!
-inoremap jj <Esc>
+" inoremap jj <Esc>
+nnoremap JJJJ <Nop>
 
 " Move by line
 "nnoremap j gj
 "nnoremap k gk
-
-nnoremap JJJJ <Nop>
 
 " Add current date/time to insert position
 nnoremap <leader>da :put =strftime(\"%Y-%m-%d %H:%M:%S\")<cr>
@@ -449,6 +448,12 @@ nnoremap <F4> :set number!<cr>
 vnoremap <F4> :set number!<cr>
 
 set tabpagemax=100
+
+" I want to auto-continue comments on the next line.  
+" The default is 'tcql' -- add 'r' (for Insert mode) and 'o' (for Normal mode).
+"
+" See `:h formatoptions` and `:h fo-table` for more info.
+set formatoptions+=ro
 
 "}}}
 
