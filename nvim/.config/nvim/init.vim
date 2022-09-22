@@ -505,6 +505,7 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 color neverland
 " color witchhazel-hypercolor
+" set termguicolors
 " color witchhazel
 
-" }}}
+" m}}

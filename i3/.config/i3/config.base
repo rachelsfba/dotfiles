@@ -336,6 +336,7 @@ exec --no-startup-id nextcloud
 # exec --no-startup-id unclutter --timeout 3 --fork
 exec --no-startup-id xset +dpms
 exec --no-startup-id xmodshit
+exec --no-startup-id dunst
 
 # Doesn't really NEED to start up by default
 #exec discord
