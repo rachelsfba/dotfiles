@@ -28,11 +28,8 @@ workspace $ws3 output $mRight
 workspace $ws9 output $mLeft 
 workspace $ws10 output $mLeft
 
-# Set font with proper size
-font pango:Inconsolata 11
-# Can't use Inconsolata Nerd Font because ligatures are overwritten -- see 
-# https://github.com/ryanoasis/nerd-fonts/issues/509
-# and
-# https://github.com/ryanoasis/nerd-fonts/issues/254
-#font pango:Inconsolata Nerd Font 11
-#font pango:monospace 11
+# Set font with proper size for use in window titles.  Also sets status bar font, but we
+# use polybar instead for that.
+font pango:JetBrains Mono 11
+
+# vim: set ts=4 sw=4 tw=88 et ft=i3config :

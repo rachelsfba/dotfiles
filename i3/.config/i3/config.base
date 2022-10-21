@@ -21,8 +21,8 @@ set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8" 
-set $ws9 "9: messages"
-set $ws10 "10: media"
+set $ws9 "9"
+set $ws10 "10"
 
 
 ########################################################################################################
@@ -116,24 +116,24 @@ for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating e
 #########################################################################################             ##
 ########################################################################################################
 
-bindsym $mod+Shift+a exec "minecraft"
-bindsym $mod+Shift+s exec "youtube-music"
+# bindsym $mod+Shift+a exec "minecraft"
+# bindsym $mod+Shift+s exec "youtube-music"
 #bindsym $mod+Shift+s exec "spotify"
 #bindsym $mod+Shift+s exec "gpmdp"
 bindsym $mod+Shift+f exec "ff"
 # bindsym $mod+Shift+p exec "thunderbird"
 bindsym $mod+Shift+p exec "evolution"
-bindsym $mod+t exec "steam"
-bindsym $mod+Shift+m exec "vlc"
+# bindsym $mod+t exec "steam"
+# bindsym $mod+Shift+m exec "vlc"
 bindsym $mod+Shift+d exec "discord"
-bindsym $mod+Shift+semicolon exec "lutris"
+# bindsym $mod+Shift+semicolon exec "lutris"
 bindsym $mod+Shift+backslash exec "pavucontrol"
 #bindsym $mod+Shift+l exec "systemctl suspend"
 #bindsym $mod+Shift+l exec "lock"
 bindsym $mod+Shift+Scroll_Lock exec "lock"
 bindsym XF86Sleep exec "lock"
 
-bindsym Ctrl+Scroll_Lock exec "loopclk"
+#bindsym Ctrl+Scroll_Lock exec "loopclk"
 #bindsym F6 exec "loopclk"
 #bindsym F7 exec "loopclk2"
 #bindsym F8 exec "xdotool mousedown 3"
@@ -208,7 +208,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # start a terminal
 #bindsym $mod+Shift+Return exec wrxvt
 #bindsym $mod+Shift+Return exec termite
-bindsym $mod+Shift+Return exec alacritty
+bindsym $mod+Shift+Return exec wezterm
+# bindsym $mod+Shift+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -342,3 +343,5 @@ exec --no-startup-id dunst
 #exec discord
 # Doesn't really NEED to start up by default
 #exec keepassxc 
+
+# vim: set ts=4 sw=4 tw=88 et ft=i3config :

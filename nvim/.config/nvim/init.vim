@@ -1,18 +1,6 @@
-" All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
-" /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
-" you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since archlinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing archlinux.vim since it alters the value of the
-" 'compatible' option.
-
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages.
 runtime! archlinux.vim
-
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim74/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
 
 "{{{Plugin Managers
 
@@ -58,7 +46,8 @@ call plug#begin(stdpath('data') . '/plugged')
    "Plug 'drewtempelmeyer/palenight.vim'
    "Plug 'obeijaflor/neverland-vim-theme'
    Plug 'trapd00r/neverland-vim-theme'
-   Plug 'theacodes/witchhazel'
+   " Plug 'sainnhe/everforest'
+   Plug 'morhetz/gruvbox'
    "Plug 'aonemd/kuroi.vim'
    "Plug 'theacodes/witchhazel'
   
@@ -155,31 +144,32 @@ let g:coc_global_extensions = [
     \ 'coc-rust-analyzer'
     \]
 
-" Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-
-" 'Smart' nevigation
 " Use tab for trigger completion with characters ahead and navigate.
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <c-.> to trigger completion.
-inoremap <silent><expr> <c-.> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
 else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -288,8 +278,7 @@ autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 " Necesary  for lots of cool vim things
 set nocompatible
 
-" This shows what you are typing as a command.  I love this!
-set showcmd
+" This shows what you are typing as a command.  I love this! set showcmd
 
 " Folding Stuffs
 set foldmethod=marker
@@ -406,13 +395,13 @@ nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 "inoremap <right> <nop>
 
 " Left and right can switch buffers
-"nnoremap <left> :bp<CR>
-"nnoremap <right> :bn<CR>
+" nnoremap <left> :bp<CR>
+" nnoremap <right> :bn<CR>
 
 " Control + Page Down or Control + Page Up can switch buffers
 " I use gt and gT for tabs anyway so idc if overriding that
-nnoremap <C-PageUp> :bn<CR>
-nnoremap <C-PageDown> :bp<CR>
+" nnoremap <C-PageUp> :bn<CR>
+" nnoremap <C-PageDown> :bp<CR>
 
 " Incremental searching is sexy
 set incsearch
@@ -503,8 +492,9 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 "{{{Look and Feel
 
-color neverland
-" color witchhazel-hypercolor
+" color neverland
+" color everforest
+color gruvbox
 " set termguicolors
 " color witchhazel
 
