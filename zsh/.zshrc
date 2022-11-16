@@ -69,14 +69,24 @@ bindkey '^b' backward-kill-word
 bindkey ' ' magic-space                # Do history expansion on space
 
 # Set LS_COLORS
-eval `dircolors -b ${XDG_CONFIG_HOME}/LS_COLORS`
+if [ -f ${XDG_CONFIG_HOME}/LS_COLORS ]; then
+    eval `dircolors -b ${XDG_CONFIG_HOME}/LS_COLORS`
+fi
+
 # Source rustup env (adds Rust binaries to $PATH)
-source $CARGO_HOME/env
+if [ -f ${CARGO_HOME}/env ]; then
+    source ${CARGO_HOME}/env
+fi
+
 # Load SSH key into memory so I'm not prompted for my password all the time
-eval `keychain -q --eval ~/.ssh/id_ecdsa`
+# if [ -f ~/.ssh/id_ecdsa ]; then
+#     eval `keychain -q --eval ~/.ssh/id_ecdsa`
+# fi
+if [ -f ~/.ssh/id_ed25519 ]; then
+    eval `keychain -q --eval ~/.ssh/id_ed25519`
+fi
+
 # Show TODO list
 # todo
 
 eval "$(starship init zsh)"
-
-
