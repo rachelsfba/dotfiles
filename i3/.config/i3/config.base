@@ -116,7 +116,7 @@ for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating e
 #########################################################################################             ##
 ########################################################################################################
 
-# bindsym $mod+Shift+a exec "minecraft"
+bindsym $mod+Shift+a exec "minecraft"
 # bindsym $mod+Shift+s exec "youtube-music"
 #bindsym $mod+Shift+s exec "spotify"
 #bindsym $mod+Shift+s exec "gpmdp"
@@ -335,7 +335,7 @@ exec_always --no-startup-id setwall
 
 exec --no-startup-id nextcloud
 # exec --no-startup-id unclutter --timeout 3 --fork
-exec --no-startup-id xset +dpms
+exec --no-startup-id xset +dpms -b
 exec --no-startup-id xmodshit
 exec --no-startup-id dunst
 

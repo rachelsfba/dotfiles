@@ -17,16 +17,22 @@ alias rgrep="grep -r"
 
 alias cd2='cd $DL && exa -laF -snew'
 
+# {{{ ls-related
 alias ls='lsd'
 alias l='lsd'
 alias la='lsd -a'
 alias ll='lsd -al'
 #alias lsp='ls++ --potsf'
-#alias ls='exa -laF --git'
+#alias ls='exa -laeF --git'
+# }}}
 
-alias dps='docker ps -a'
-
-alias inc="chromium --incognito"
+# {{{ git-related
+alias ga='git add'
+alias gc='git commit'
+alias gcl='git clone'
+alias gl='git pull'
+alias gp='git push' 
+# }}}
 
 # From https://askubuntu.com/a/104484
 alias ppt2pdf="libreoffice --headless --invisible --convert-to pdf" 
@@ -41,7 +47,5 @@ alias tea2='termdown 4m && ( while true; do paplay $XDG_DATA_HOME/sounds/bell.og
 
 # Per https://www.reddit.com/r/archlinux/comments/kcbjcu/discord_becomes_laggy_during_long_voice_calls/
 alias discord='discord --no-sandbox'
-
-alias vi='nvim'
 
 #alias keepassxc='QT_AUTO_SCREEN_SCALE_FACTOR=0 QT_QPA_PLATFORMTHEME= keepassxc'
