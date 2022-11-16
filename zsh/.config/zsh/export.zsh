@@ -52,8 +52,10 @@ export PATH=$BINARIES:$PATH
 #export PYTHONPATH=$PYTHONPATH
 
 # MPD stuff
-export MPD_PASS=$(cat ${XDG_DATA_HOME}/mpd/password)
-export MPD_HOST=${MPD_PASS}@10.0.0.251
+if [ -f ${XDG_DATA_HOME}/mpd/password ]; then
+    export MPD_PASS=$(cat ${XDG_DATA_HOME}/mpd/password)
+    export MPD_HOST=${MPD_PASS}@10.0.0.251
+fi
 
 # Qt4/Qt5/KDE/GTK theme stuff
 export QT_QPA_PLATFORMTHEME=qt5ct
