@@ -81,9 +81,16 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'lervag/vimtex'
    Plug 'tpope/vim-abolish'
 
-   " From https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
-   " Evaluating currently for usefulness.
-   Plug 'preservim/nerdtree'
+   " File explorer
+   Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+   Plug 'nvim-tree/nvim-tree.lua'
+
+   " Obsidian.md replacement -- look into later
+   " https://www.reddit.com/r/neovim/comments/zolylk/new_to_neovim_wanting_to_use_it_for_notes/
+   " 
+   " https://github.com/renerocksai/telekasten.nvim
+   "Plug 'renerocksai/telekasten.nvim'
+   "Plug 'renerocksai/calendar-vim'
 
    " Fuzzy finder
    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -176,6 +183,22 @@ lua <<EOF
       },
     }
 EOF
+" }}}
+
+" {{{ nvim-tree
+
+" Per https://github.com/nvim-tree/nvim-tree.lua/wiki/Tips
+lua << EOF
+require("nvim-tree").setup{
+  open_on_setup = true,
+  open_on_setup_file = true, 
+  ignore_ft_on_setup = {
+    "gitcommit",
+  },
+  ignore_buffer_on_setup = true,
+}
+EOF
+
 " }}}
 
 " {{{ NeoVim LSP 
