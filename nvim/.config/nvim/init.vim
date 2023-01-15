@@ -188,10 +188,12 @@ EOF
 " {{{ nvim-tree
 
 " Per https://github.com/nvim-tree/nvim-tree.lua/wiki/Tips
+"
+" See `:help nvim-tree-setup` for more info on configuration options
 lua << EOF
 require("nvim-tree").setup{
-  open_on_setup = true,
-  open_on_setup_file = true, 
+  -- open_on_setup = true,
+  -- open_on_setup_file = true, 
   ignore_ft_on_setup = {
     "gitcommit",
   },
