@@ -47,6 +47,7 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'martinda/Jenkinsfile-vim-syntax'
    Plug 'cespare/vim-toml'
    Plug 'justinmk/vim-syntax-extra'
+   Plug 'twh2898/vim-scarpet'
    
    " Extra movement options
    " Plug 'justinmk/vim-sneak'
@@ -152,7 +153,9 @@ lua <<EOF
       auto_install = true,
 
       -- List of parsers to ignore installing (for "all")
-      -- ignore_install = { "javascript" },
+      -- NOTE(2023-03-07): Disabled Treesitter for LaTeX due to conflicts with VimTeX.
+      --    See `:help vimtex-faq-treesitter` for more info.
+      ignore_install = { "latex" },
 
       ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
       -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
@@ -191,14 +194,7 @@ EOF
 "
 " See `:help nvim-tree-setup` for more info on configuration options
 lua << EOF
-require("nvim-tree").setup{
-  -- open_on_setup = true,
-  -- open_on_setup_file = true, 
-  ignore_ft_on_setup = {
-    "gitcommit",
-  },
-  ignore_buffer_on_setup = true,
-}
+require("nvim-tree").setup()
 EOF
 
 " }}}
