@@ -18,6 +18,9 @@ call plug#begin(stdpath('data') . '/plugged')
 
    " Declare the list of plugins.
    
+   " Secure modelines
+   Plug 'ciaranm/securemodelines'
+   
    " Carbon for screenshotting code snippets
    " per https://twitter.com/thingskatedid/status/1439155034348941313
    " (base repo: https://github.com/carbon-app/carbon)
@@ -31,6 +34,7 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'hrsh7th/cmp-path'
    Plug 'hrsh7th/cmp-cmdline'
    Plug 'hrsh7th/nvim-cmp'
+   Plug 'ray-x/lsp_signature.nvim'
 
    " code/text snippet functionality
    Plug 'hrsh7th/cmp-vsnip'
