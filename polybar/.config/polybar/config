@@ -34,7 +34,7 @@ width = 100%
 height = 32
 
 ; Put the bar at the bottom of the screen
-bottom = true
+bottom = false
 
 ;offset-x = 1%
 ;offset-y = 1%
@@ -85,7 +85,7 @@ width = 100%
 height = 32
 
 ; Put the bar at the bottom of the screen
-bottom = true
+bottom = false
 
 ;offset-x = 1%
 ;offset-y = 1%
@@ -139,7 +139,7 @@ width = 100%
 height = 32
 
 ; Put the bar at the bottom of the screen
-bottom = true
+bottom = false
 
 ;offset-x = 1%
 ;offset-y = 1%
@@ -193,7 +193,7 @@ width = 100%
 height = 32
 
 ; Put the bar at the bottom of the screen
-bottom = true
+bottom = false
 
 ;offset-x = 1%
 ;offset-y = 1%
