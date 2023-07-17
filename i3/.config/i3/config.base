@@ -130,6 +130,7 @@ bindsym $mod+Shift+d exec "discord"
 bindsym $mod+Shift+backslash exec "pavucontrol"
 #bindsym $mod+Shift+l exec "systemctl suspend"
 #bindsym $mod+Shift+l exec "lock"
+bindsym $mod+Shift+z exec obsidian
 bindsym $mod+Shift+Scroll_Lock exec "lock"
 bindsym XF86Sleep exec "lock"
 
