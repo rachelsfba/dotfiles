@@ -20,7 +20,8 @@ setopt notify globdots pushdtohome cdablevars autolist
 setopt autocd recexact longlistjobs
 setopt autoresume pushdsilent
 setopt autopushd pushdminus extendedglob rcquotes mailwarning
-unsetopt bgnice autoparamslash
+unsetopt bgnice autoparamslash 
+unsetopt BEEP # Per https://blog.vghaisas.com/zsh-beep-sound/
 autoload -Uz compinit
 compinit
 

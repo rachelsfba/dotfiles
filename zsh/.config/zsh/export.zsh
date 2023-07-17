@@ -54,7 +54,7 @@ export PATH=$BINARIES:$PATH
 # MPD stuff
 if [ -f ${XDG_DATA_HOME}/mpd/password ]; then
     export MPD_PASS=$(cat ${XDG_DATA_HOME}/mpd/password)
-    export MPD_HOST=${MPD_PASS}@10.0.0.251
+    export MPD_HOST=${MPD_PASS}@127.0.0.1
 fi
 
 # Qt4/Qt5/KDE/GTK theme stuff

@@ -627,7 +627,9 @@ set ignorecase
 set smartcase
 
 " Keep on mouse support
-set mouse=a
+"set mouse=a
+" Turn off mouse support
+set mouse=
 
 " This is totally awesome - remap jj to escape in insert mode.  You'll never type jj anyway, so it's great!
 " inoremap jj <Esc>

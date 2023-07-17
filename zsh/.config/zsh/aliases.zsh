@@ -2,6 +2,7 @@
 # ${XDG_CONFIG_HOME}/zsh/aliases.zsh
 # ZSH aliases 
 
+alias vim='vim -p'
 alias ..='cd ..'
 alias mkdir='mkdir -p -v'
 alias cp='cp -rf'
