@@ -8,22 +8,22 @@ get_icon() {
         # Icons for Nerd Fonts
         # Glyphs are searchable here: https://www.nerdfonts.com/cheat-sheet 
         #   & https://erikflowers.github.io/weather-icons/
-        01d) icon="";;  # \Ue30d  nf-weather-day_sunny
-        01n) icon="";;  # \Ue32b  nf-weather-night_clear
-        02d) icon="";;  # \Ue302  nf-weather-day_cloudy
-        02n) icon="";;  # \Ue37e  nf-weather-night_alt_cloudy
-        03*) icon="";;  # \Ue33d  nf-weather-cloud
-        04*) icon="";;  # \Ue312  nf-weather-cloudy
-        09*) icon="";;  # \Ue317  nf-weather-rain_wind
-        10d) icon="";;  # \Ue308  nf-weather-day_rain
-        10n) icon="";;  # \Ue333  nf-weather-night_rain
-        11d) icon="";;  # \Ue305  nf-weather-day_lightning
-        11n) icon="";;  # \Ue322  nf-weather-night_alt_lightning
-        13d) icon="";;  # \Ue30a  nf-weather-day_snow
-        13n) icon="";;  # \Ue327  nf-weather-night_alt_snow
-        50d) icon="";;  # \Ue303  nf-weather-day_fog
-        50n) icon="";;  # \Ue346  nf-weather-night_fog
-        *)   icon="";   # \Uf128  nf-fa-question
+        01d) icon="%{T4} %{T-}";;  # \Ue30d  nf-weather-day_sunny
+        01n) icon="%{T4} %{T-}";;  # \Ue32b  nf-weather-night_clear
+        02d) icon="%{T4} %{T-}";;  # \Ue302  nf-weather-day_cloudy
+        02n) icon="%{T4} %{T-}";;  # \Ue37e  nf-weather-night_alt_cloudy
+        03*) icon="%{T4} %{T-}";;  # \Ue33d  nf-weather-cloud
+        04*) icon="%{T4} %{T-}";;  # \Ue312  nf-weather-cloudy
+        09*) icon="%{T4} %{T-}";;  # \Ue317  nf-weather-rain_wind
+        10d) icon="%{T4} %{T-}";;  # \Ue308  nf-weather-day_rain
+        10n) icon="%{T4} %{T-}";;  # \Ue333  nf-weather-night_rain
+        11d) icon="%{T4} %{T-}";;  # \Ue305  nf-weather-day_lightning
+        11n) icon="%{T4} %{T-}";;  # \Ue322  nf-weather-night_alt_lightning
+        13d) icon="%{T4} %{T-}";;  # \Ue30a  nf-weather-day_snow
+        13n) icon="%{T4} %{T-}";;  # \Ue327  nf-weather-night_alt_snow
+        50d) icon="%{T4} %{T-}";;  # \Ue303  nf-weather-day_fog
+        50n) icon="%{T4} %{T-}";;  # \Ue346  nf-weather-night_fog
+        *)   icon="%{T4} %{T-}";   # \Uf128  nf-fa-question
 
         # Icons for weather-icons
         #01d) icon="";;  # \Uf00d  wi-day-sunny
@@ -103,13 +103,13 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     forecast_icon=$(echo "$forecast" | jq -r ".list[].weather[0].icon")
 
     if [ "$current_temp" -gt "$forecast_temp" ]; then
-        trend=""  # \Ue380  nf-weather-direction_down_right
+        trend="%{T4}%{T-}"  # \Ue380  nf-weather-direction_down_right
         #trend=""  # \Uf088  wi-direction-down-right
     elif [ "$forecast_temp" -gt "$current_temp" ]; then
-        trend=""  # \Ue352  nf-weather-direction_up_right
+        trend="%{T4}%{T-}"  # \Ue352  nf-weather-direction_up_right
         #trend=""  # \Uf057  wi-direction-up-right
     else
-        trend=""  # \Ue349  nf-weather-direction_right
+        trend="%{T4}%{T-}"  # \Ue349  nf-weather-direction_right
         #trend=""  # \Uf04d  wi-direction-right
     fi
 
@@ -128,5 +128,5 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
         #daytime="   $(get_duration "$((sun_rise-now))")"  # \Uf051  wi-sunrise
     fi
 
-    echo "%{T4}$(get_icon "$current_icon") %{T-}$current_temp$SYMBOL  %{T4}$trend%{T-}  %{T4}$(get_icon "$forecast_icon") %{T-}$forecast_temp$SYMBOL%{T-}  %{T4}$daytime"
+    echo "$(get_icon "$current_icon")$current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon")$forecast_temp$SYMBOL   $daytime"
 fi

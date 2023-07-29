@@ -9,9 +9,9 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 0.1; done
 
 # Launch bar1 and bar2
-if [ "$HOST" = "yemen" ]; then
+if [ "$HOST" = "sjc-laptop" ]; then
     polybar main & disown
-elif [ "$HOST" = "mongolia" ]; then
+elif [ "$HOST" = "sjc-pc" ]; then
     polybar mainA & disown
     polybar mainB & disown
     polybar mainC & disown

@@ -49,7 +49,7 @@ call plug#begin(stdpath('data') . '/plugged')
 
    " Language syntaxes
    Plug 'martinda/Jenkinsfile-vim-syntax'
-   Plug 'cespare/vim-toml'
+   " Plug 'cespare/vim-toml' unnecessary now
    Plug 'justinmk/vim-syntax-extra'
    Plug 'twh2898/vim-scarpet'
    
@@ -176,7 +176,7 @@ nmap <leader>; :Buffers<cr>
 lua <<EOF
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"
-      ensure_installed = { "c", "comment", "lua", "rust", "python", "vim", "yaml" },
+      ensure_installed = { "c", "comment", "lua", "rust", "terraform", "python", "vim", "yaml" },
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
@@ -748,6 +748,10 @@ noremap <leader>c :w !xsel -ib<cr><cr>
 
 " Per https://vim.fandom.com/wiki/Search_and_replace_the_word_under_the_cursor#Mapping
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" Per https://vi.stackexchange.com/questions/678/how-do-i-save-a-file-in-a-directory-that-does-not-yet-exist
+nnoremap <Leader>m :call mkdir(expand("%:p:h"), "p")<CR>
+
 
 "}}}
 

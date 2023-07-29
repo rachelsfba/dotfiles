@@ -11,9 +11,9 @@ export D_GAMES=$DATA/Games
 export D_BACKUPS=$DATA/Backups
 export D_MUSIC=$D_MEDIA/Music
 
-if [ "$HOST" = "yemen" ]; then
+if [ "$HOST" = "sjc-laptop" ]; then
     export D_DOC=$DATA
-elif [ "$HOST" = "mongolia" ]; then
+elif [ "$HOST" = "sjc-pc" ]; then
     export D_DOC=$DATA/Documents
 fi
 

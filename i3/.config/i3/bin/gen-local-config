@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Generates host-specific local i3 config. Necessary to make sure monitor stuff
-# is handled properly for desktop (mongolia is hostname).
+# is handled properly for desktop (sjc-pc is hostname).
 
 # location of i3 wm files
 i3location=$HOME/dotfiles/i3/.config/i3/
@@ -23,10 +23,10 @@ EOF`
 echo -e "${warning_text}\n" >config
 
 # Host-specific setup
-if [ "$HOST" = "mongolia" ]; then
-    cat config.base config.mongolia >>config 
-elif [ "$HOST" = "yemen" ]; then
-    cat config.base config.yemen >>config 
+if [ "$HOST" = "sjc-pc" ]; then
+    cat config.base config.sjc-pc >>config 
+elif [ "$HOST" = "sjc-laptop" ]; then
+    cat config.base config.sjc-laptop >>config 
 else
     cat config.base >>config 
 fi
