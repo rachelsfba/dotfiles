@@ -1,0 +1,25 @@
+/* Black on white for HTML messages in Evolution Reader/Composer */
+/* adjust colour to your liking */
+EMailView WebKitWebView, EMailReader WebKitWebView {
+    color: #000fff;
+    background-color: #fff000;
+}
+
+/*****************************
+ * FIX EVOLUTION BLACK EMAIL *
+ *****************************/
+GtkWindow {
+     color: @theme_fg_color;
+     background-color: @theme_bg_color;
+ }
+GtkPaned {
+     color: @theme_fg_color;
+
+    /* Evolution sets the background color of its mail window to the background
+     * color of entries, but cannot handle background images. Setting the
+     * background color here doesn't effect real entries, because
+     * 'background-image' has precedence.
+     */
+     background-color: @theme_bg_color;
+ }
+

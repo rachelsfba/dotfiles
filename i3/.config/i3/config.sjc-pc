@@ -30,6 +30,6 @@ workspace $ws10 output $mLeft
 
 # Set font with proper size for use in window titles.  Also sets status bar font, but we
 # use polybar instead for that.
-font pango:JetBrains Mono 11
+font pango:JetBrains Mono 10
 
 # vim: set ts=4 sw=4 tw=88 et ft=i3config :
