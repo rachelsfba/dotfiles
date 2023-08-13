@@ -20,7 +20,8 @@ return {
             'Symbols Nerd Font Mono'
         }
     ),
-    color_scheme = "Gruvbox dark, pale (base16)",
+    -- color_scheme = "Gruvbox dark, pale (base16)",
+    color_scheme = "Catppuccin Mocha", -- or Macchiato, Frappe, Latte
     hide_tab_bar_if_only_one_tab = true, 
 }
 

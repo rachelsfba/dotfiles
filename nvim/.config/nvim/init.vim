@@ -64,6 +64,7 @@ call plug#begin(stdpath('data') . '/plugged')
    " Plug 'sainnhe/everforest'
    " Plug 'morhetz/gruvbox'
    Plug 'sainnhe/gruvbox-material'
+   Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
    "Plug 'aonemd/kuroi.vim'
    "Plug 'theacodes/witchhazel'
   
@@ -760,8 +761,19 @@ nnoremap <Leader>m :call mkdir(expand("%:p:h"), "p")<CR>
 " color neverland
 " color everforest
 " color gruvbox
-color gruvbox-material
-let g:airline_theme='gruvbox_material'
+" color gruvbox-material
+" let g:airline_theme='gruvbox_material'
+
+" https://github.com/catppuccin/nvim
+lua << EOF
+    require("catppuccin").setup({
+    })
+
+    -- setup must be called before loading
+    vim.cmd.colorscheme "catppuccin-mocha"
+EOF
+let g:airline_theme = 'catppuccin'
+
 " set termguicolors
 " color witchhazel
 
