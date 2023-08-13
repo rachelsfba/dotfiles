@@ -2,6 +2,24 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+########################################################################################################
+##############################################################################################        ##
+############################################################################################## COLORS ##
+##############################################################################################        ##
+########################################################################################################
+
+# Catppuccin Macchiato from https://github.com/catppuccin/i3
+include themes/catppuccin-macchiato
+
+# Default colors per https://i3wm.org/docs/userguide.html#client_colors
+#
+# class                   border  backgr. text    indicator child_border
+# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+# client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+# client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+# client.urgent           #2f343a #900000 #ffffff #900000   #900000
+# client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# client.background       #ffffff
 
 ########################################################################################################
 ###########################################################################################           ##
@@ -10,7 +28,8 @@
 ########################################################################################################
 
 # Control the modifier key.
-set $mod Mod4
+# Windows/Meta key
+set $mod Mod4  
 
 # Workspace setup
 set $ws1 "1"
@@ -71,8 +90,18 @@ new_float normal
 ########################################################################################################
 
 # uses i3-gaps
-# gaps inner 0
-# gaps outer 0
+gaps inner 10
+gaps outer 5
+
+# no window titles
+# for_window [all] border pixel 5
+# for_window [all] border pixel 0
+
+# yes window titles
+for_window [all] border normal 5
+for_window [all] title_window_icon on
+for_window [all] title_format " <b>%title</b>"
+
 
 
 
@@ -107,6 +136,11 @@ for_window [title="QUAKE LIVE Launcher" class="Wine"] floating enable
 for_window [title="Quake Live" class="Wine"] floating enable
 for_window [title="FINAL FANTASY XIV" class="ffxiv_dx11.exe"] floating enable
 for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating enable
+
+for_window [class="(?i)^steam*"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Gimp"] floating enable
+for_window [class="(?i)^gnome*"] floating enable
 
 
 

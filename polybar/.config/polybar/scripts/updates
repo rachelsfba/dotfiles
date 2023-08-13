@@ -1,0 +1,11 @@
+#!/bin/bash
+pac=$(checkupdates 2>/dev/null | wc -l)
+aur=$(yay -Qu --aur 2>/dev/null | wc -l)
+
+check=$((pac + aur))
+if [[ "$check" != "0" ]]
+then
+    # \Uf021  nf-fa-refresh
+    # #a6da95  Catppuccin Macchiato - Green (See https://github.com/catppuccin/catppuccin)
+    echo "$pac %{F#a6da95}  %{F-} $aur"  
+fi

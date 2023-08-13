@@ -1,7 +1,7 @@
 #!/bin/zsh
 # ${XDG_CONFIG_HOME}/zsh/aliases.zsh
 # ZSH aliases 
-
+alias scat='bat -pp'  # scat := *s*ource code *cat*
 alias vim='vim -p'
 alias ..='cd ..'
 alias mkdir='mkdir -p -v'

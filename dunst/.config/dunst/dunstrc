@@ -1,46 +1,50 @@
 [global]
-    # https://github.com/catppuccin/dunst
-    frame_color = "#89B4FA"
-    separator_color= frame
+font = Inconsolata 14
+word_wrap = yes
+padding = 8
+horizontal_padding = 8
+# separator_color = auto
+separator_color = frame
+timeout = 10s
+follow = keyboard
+# icon_position = off
+icon_position = left
 
-    font = Inconsolata 14
-    word_wrap = yes
-    padding = 8
-    horizontal_padding = 8
-    separator_color = auto
-    timeout = 10
-    follow = keyboard
-    icon_position = off
+width = (0, 700)
+height = 800
+origin = top-right
+offset = 15x15
+scale = 0
+notification_limit = 5
+frame_width = 3
+# show_indicators = no
+stack_duplicates = no
 
-    width = (0, 700)
-    height = 800
-    origin = top-right
-    offset = 15x15
-    scale = 0
-    notification_limit = 5
-    frame_width = 0
-    show_indicators = no
-    stack_duplicates = no
+close_all = mod1+mod4+w
+history = mod1+mod4+h
 
-    close_all = mod4+space
-    history = mod4+h
+# https://github.com/catppuccin/dunst/blob/main/src/macchiato.conf
+# https://github.com/catppuccin/catppuccin#-palette
+[urgency_low]
+background = "#24273A"
+foreground = "#CAD3F5"
+frame_color = "#8aadf4"  # red
+timeout = 10s
 
-    [urgency_low]
-    # https://github.com/catppuccin/dunst
-    background = "#1E1E2E"
-    foreground = "#CDD6F4"
-    timeout = 5
+# https://github.com/catppuccin/dunst/blob/main/src/macchiato.conf
+# https://github.com/catppuccin/catppuccin#-palette
+[urgency_normal]
+background = "#24273A"
+foreground = "#CAD3F5"
+frame_color = "#a6da95"  # green
+timeout = 10s
 
-    [urgency_normal]
-    # https://github.com/catppuccin/dunst
-    background = "#1E1E2E"
-    foreground = "#CDD6F4"
-
-    [urgency_critical]
-    # https://github.com/catppuccin/dunst
-    background = "#1E1E2E"
-    foreground = "#CDD6F4"
-    frame_color = "#FAB387"
-    timeout = 0
+# https://github.com/catppuccin/dunst/blob/main/src/macchiato.conf
+# https://github.com/catppuccin/catppuccin#-palette
+[urgency_critical]
+background = "#24273A"
+foreground = "#CAD3F5"
+frame_color = "#ed8796"  # red
+timeout = 0s
 
 #  vim: set ft=dosini ts=4 sw=4 tw=88 et :

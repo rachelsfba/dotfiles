@@ -1,0 +1,130 @@
+#!/bin/sh
+# Script modified from
+# https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/openweathermap-fullfeatured
+# 
+# Icons at https://erikflowers.github.io/weather-icons/
+get_icon() {
+    case $1 in
+        # Icons for Nerd Fonts
+        # Glyphs are searchable here: https://www.nerdfonts.com/cheat-sheet 
+        #   & https://erikflowers.github.io/weather-icons/
+        #
+        # The below hex codes correspond to colors from the Catppuccin Macchiato color
+        # palette: https://github.com/catppuccin/catppuccin
+        #
+        #   #cad3f5  text  (for cloudiness)
+        #   #b8c0e0  subtext1  (for fog)
+        #   #eed49f  yellow (for clear & sunny *or* lightning)
+        #   #ed8796  red (for unknown)
+        #   #8aadf4  blue (for rainy events)
+        #   #91d7e3  sky (for snowy events)
+        #   #f4dbd6  rosewater (for night/moon)
+        01d) icon="%{F#eed49f}%{T4} %{T-}%{F-}";;  # \Ue30d  nf-weather-day_sunny
+        01n) icon="%{F#f4dbd6}%{T4} %{T-}%{F-}";;  # \Ue32b  nf-weather-night_clear
+        02d) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue302  nf-weather-day_cloudy
+        02n) icon="%{F#f4dbd6}%{T4} %{T-}%{F-}";;  # \Ue37e  nf-weather-night_alt_cloudy
+        03*) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue33d  nf-weather-cloud
+        04*) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue312  nf-weather-cloudy
+        09*) icon="%{F#8aadf4}%{T4} %{T-}%{F-}";;  # \Ue317  nf-weather-rain_wind
+        10d) icon="%{F#8aadf4}%{T4} %{T-}%{F-}";;  # \Ue308  nf-weather-day_rain
+        10n) icon="%{F#8aadf4}%{T4} %{T-}%{F-}";;  # \Ue333  nf-weather-night_rain
+        11d) icon="%{F#eed49f}%{T4} %{T-}%{F-}";;  # \Ue305  nf-weather-day_lightning
+        11n) icon="%{F#eed49f}%{T4} %{T-}%{F-}";;  # \Ue322  nf-weather-night_alt_lightning
+        13d) icon="%{F#91d7e3}%{T4} %{T-}%{F-}";;  # \Ue30a  nf-weather-day_snow
+        13n) icon="%{F#91d7e3}%{T4} %{T-}%{F-}";;  # \Ue327  nf-weather-night_alt_snow
+        50d) icon="%{F#b8c0e0}%{T4} %{T-}%{F-}";;  # \Ue303  nf-weather-day_fog
+        50n) icon="%{F#b8c0e0}%{T4} %{T-}%{F-}";;  # \Ue346  nf-weather-night_fog
+        *)   icon="%{F#ed8796}%{T4} %{T-}%{F-}";   # \Uf128  nf-fa-question
+    esac
+
+    echo $icon
+}
+
+get_duration() {
+
+    osname=$(uname -s)
+
+    case $osname in
+        *BSD) date -r "$1" -u +%H:%M;;
+        *) date --date="@$1" -u +%H:%M;;
+    esac
+
+}
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../" >/dev/null 2>&1 && pwd )"
+
+KEY="`cat ${DIR}/weather_api_key`"
+#CITY="King%20George"
+#CITY=4767771
+UNITS="imperial"
+# UNITS="metric"
+#SYMBOL="°"
+#SYMBOL=""  # \Ue339 nf-weather-celsius
+#SYMBOL="糖"  # \Ufa03 nf-mdi-temperature_celsius
+# SYMBOL="°C"
+SYMBOL="°F"
+
+API="https://api.openweathermap.org/data/2.5"
+
+if [ -n "$CITY" ]; then
+    if [ "$CITY" -eq "$CITY" ] 2>/dev/null; then
+        CITY_PARAM="id=$CITY"
+    else
+        CITY_PARAM="q=$CITY"
+    fi
+
+    current=$(curl -sf "$API/weather?appid=$KEY&$CITY_PARAM&units=$UNITS")
+    forecast=$(curl -sf "$API/forecast?appid=$KEY&$CITY_PARAM&units=$UNITS&cnt=1")
+else
+    location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
+
+    if [ -n "$location" ]; then
+        location_lat="$(echo "$location" | jq '.location.lat')"
+        location_lon="$(echo "$location" | jq '.location.lng')"
+
+        current=$(curl -sf "$API/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
+        forecast=$(curl -sf "$API/forecast?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS&cnt=1")
+    fi
+fi
+
+if [ -n "$current" ] && [ -n "$forecast" ]; then
+    current_temp=$(echo "$current" | jq ".main.temp" | cut -d "." -f 1)
+    current_icon=$(echo "$current" | jq -r ".weather[0].icon")
+
+    forecast_temp=$(echo "$forecast" | jq ".list[].main.temp" | cut -d "." -f 1)
+    forecast_icon=$(echo "$forecast" | jq -r ".list[].weather[0].icon")
+
+    if [ "$current_temp" -gt "$forecast_temp" ]; then
+        # \Ue380  nf-weather-direction_down_right
+        # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
+        trend="%{F#a5adcb}%{T4}%{T-}%{F-}"   
+    elif [ "$forecast_temp" -gt "$current_temp" ]; then
+        # \Ue352  nf-weather-direction_up_right
+        # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
+        trend="%{F#a5adcb}%{T4}%{T-}%{F-}" 
+    else
+        # \Ue349  nf-weather-direction_right
+        # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
+        trend="%{F#a5adcb}%{T4}%{T-}%{F-}"  
+    fi
+
+    sun_rise=$(echo "$current" | jq ".sys.sunrise")
+    sun_set=$(echo "$current" | jq ".sys.sunset")
+    now=$(date +%s)
+
+    if [ "$sun_rise" -gt "$now" ]; then
+        # \Ue34c  nf-weather-sunrise
+        # #eed49f  yellow  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
+        daytime="%{F#eed49f}%{T4} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
+    elif [ "$sun_set" -gt "$now" ]; then
+        # \Ue34d  nf-weather-sunset
+        # #ee99a0  maroon  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
+        daytime="%{F#ee99a0}%{T4} %{T-}%{F-}$(get_duration "$((sun_set-now))")"  
+    else
+        # \Ue34c  nf-weather-sunrise
+        # #eed49f  yellow  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
+        daytime="%{F#eed49f}%{T4} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
+    fi
+
+    echo "$(get_icon "$current_icon")$current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon")$forecast_temp$SYMBOL   $daytime"
+fi

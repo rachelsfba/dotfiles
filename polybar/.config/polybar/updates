@@ -1,9 +1,0 @@
-#!/bin/bash
-pac=$(checkupdates 2>/dev/null | wc -l)
-aur=$(yay -Qu --aur 2>/dev/null | wc -l)
-
-check=$((pac + aur))
-if [[ "$check" != "0" ]]
-then
-    echo "$pac %{F#d14200}  %{F-} $aur"  # \Uf021  nf-fa-refresh
-fi
