@@ -177,7 +177,23 @@ nmap <leader>; :Buffers<cr>
 lua <<EOF
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"
-      ensure_installed = { "c", "comment", "lua", "rust", "terraform", "python", "vim", "yaml" },
+      -- https://github.com/nvim-treesitter/nvim-treesitter
+      ensure_installed = {
+          "c",
+          "comment",
+          "diff",
+          "gitcommit",
+          "git_rebase",
+          "lua",
+          "markdown",
+          "markdown_inline",
+          "rust",
+          "terraform",
+          "python",
+          "vim",
+          "yaml",
+      },
+         
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
@@ -217,7 +233,7 @@ lua <<EOF
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
-      },
+      }
     }
 EOF
 " }}}
