@@ -27,12 +27,12 @@ set $crust     #181926
 
 # My color settings.  I use window titles.  WIP
 #
-# class                  border     bg     text       indicator  child_border
-client.focused           $green     $base  $green     $surface1 $base
-client.focused_inactive  $crust     $base  $text      $surface1 $base
-client.unfocused         $crust     $base  $text      $surface1 $base
-client.urgent            $sapphire  $base  $sapphire  $surface1 $sapphire
-client.placeholder       $crust     $base  $text      $surface1 $base
+# class                  border     bg       text      indicator  child_border
+client.focused           $base      $base   $green     $surface1  $base
+client.focused_inactive  $crust     $crust  $text      $surface1  $base
+client.unfocused         $crust     $crust  $text      $surface1  $base
+client.urgent            $sapphire  $crust  $sapphire  $surface1  $sapphire
+client.placeholder       $crust     $crust  $text      $surface1  $base
 client.background        $surface2
 
 # Suggested colors from GitHub (note that user doesn't make use of window titles...)

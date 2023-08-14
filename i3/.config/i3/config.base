@@ -90,17 +90,21 @@ new_float normal
 ########################################################################################################
 
 # uses i3-gaps
-gaps inner 10
-gaps outer 5
+# gaps inner 12
+# gaps outer 6
 
 # no window titles
 # for_window [all] border pixel 5
 # for_window [all] border pixel 0
 
 # yes window titles
+# for_window [all] border normal 0
+# for_window [all] border normal 1
 for_window [all] border normal 5
-for_window [all] title_window_icon on
-for_window [all] title_format " <b>%title</b>"
+# for_window [all] title_window_icon on
+for_window [all] title_window_icon off
+# for_window [all] title_format " <b>%title</b>"
+for_window [all] title_format " %title"
 
 
 
