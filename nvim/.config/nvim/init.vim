@@ -778,19 +778,11 @@ nnoremap <Leader>m :call mkdir(expand("%:p:h"), "p")<CR>
 " color everforest
 " color gruvbox
 " color gruvbox-material
+" set termguicolors
 " let g:airline_theme='gruvbox_material'
 
 " https://github.com/catppuccin/nvim
-lua << EOF
-    require("catppuccin").setup({
-    })
-
-    -- setup must be called before loading
-    vim.cmd.colorscheme "catppuccin-macchiato"
-EOF
+color catppuccin-macchiato
 let g:airline_theme = 'catppuccin'
-
-" set termguicolors
-" color witchhazel
 
 "}}}
