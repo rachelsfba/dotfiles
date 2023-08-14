@@ -13,16 +13,15 @@ get_icon() {
         # palette: https://github.com/catppuccin/catppuccin
         #
         #   #cad3f5  text  (for cloudiness)
-        #   #b8c0e0  subtext1  (for fog)
+        #   #b8c0e0  subtext1  (for fog, moon)
         #   #eed49f  yellow (for clear & sunny *or* lightning)
         #   #ed8796  red (for unknown)
         #   #8aadf4  blue (for rainy events)
         #   #91d7e3  sky (for snowy events)
-        #   #f4dbd6  rosewater (for night/moon)
         01d) icon="%{F#eed49f}%{T4} %{T-}%{F-}";;  # \Ue30d  nf-weather-day_sunny
-        01n) icon="%{F#f4dbd6}%{T4} %{T-}%{F-}";;  # \Ue32b  nf-weather-night_clear
+        01n) icon="%{F#b8c0e0}%{T4}%{T-} %{F-}";;  # \Ue32b  nf-weather-night_clear
         02d) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue302  nf-weather-day_cloudy
-        02n) icon="%{F#f4dbd6}%{T4} %{T-}%{F-}";;  # \Ue37e  nf-weather-night_alt_cloudy
+        02n) icon="%{F#b8c0e0}%{T4} %{T-}%{F-}";;  # \Ue37e  nf-weather-night_alt_cloudy
         03*) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue33d  nf-weather-cloud
         04*) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue312  nf-weather-cloudy
         09*) icon="%{F#8aadf4}%{T4} %{T-}%{F-}";;  # \Ue317  nf-weather-rain_wind
