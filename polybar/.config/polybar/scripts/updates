@@ -7,5 +7,9 @@ if [[ "$check" != "0" ]]
 then
     # \Uf021  nf-fa-refresh
     # #a6da95  Catppuccin Macchiato - Green (See https://github.com/catppuccin/catppuccin)
-    echo "$pac %{F#a6da95}  %{F-} $aur"  
+    # #8bd5ca  Catppuccin Macchiato - Teal (See https://github.com/catppuccin/catppuccin)
+    # #91d7e3  Catppuccin Macchiato - Sky (See https://github.com/catppuccin/catppuccin)
+    # #ed8796  Catppuccin Macchiato - Red (See https://github.com/catppuccin/catppuccin)
+    # echo "$pac %{O1}%{T4}%{F#a6da95}%{F-}%{T-}%{O5} $aur"
+    echo "$pac %{O1}%{T4}%{F#8bd5ca}%{F-}%{T-}%{O5} $aur"
 fi
