@@ -65,6 +65,15 @@ export HISTFILE=~/.zshhistory
 export HISTSIZE=5000
 export SAVEHIST=1000000
 
+# Use nvim as pager (including manpages), if possible.
+if command -v nvimpager &> /dev/null; then
+    export PAGER="nvimpager"
+    export MANPAGER="nvimpager"
+elif command -v nvim &> /dev/null; then
+    export PAGER="nvim -R"
+    export MANPAGER="nvim -R"
+fi
+
 # Ansible
 export ANSIBLE_CONFIG=$XDG_CONFIG_HOME/ansible/ansible.cfg
 
