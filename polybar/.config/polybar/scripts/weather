@@ -18,22 +18,22 @@ get_icon() {
         #   #ed8796  red (for unknown)
         #   #8aadf4  blue (for rainy events)
         #   #91d7e3  sky (for snowy events)
-        01d) icon="%{F#eed49f}%{T4} %{T-}%{F-}";;  # \Ue30d  nf-weather-day_sunny
-        01n) icon="%{F#b8c0e0}%{T4}%{T-} %{F-}";;  # \Ue32b  nf-weather-night_clear
-        02d) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue302  nf-weather-day_cloudy
-        02n) icon="%{F#b8c0e0}%{T4} %{T-}%{F-}";;  # \Ue37e  nf-weather-night_alt_cloudy
-        03*) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue33d  nf-weather-cloud
-        04*) icon="%{F#cad3f5}%{T4} %{T-}%{F-}";;  # \Ue312  nf-weather-cloudy
-        09*) icon="%{F#8aadf4}%{T4} %{T-}%{F-}";;  # \Ue317  nf-weather-rain_wind
-        10d) icon="%{F#8aadf4}%{T4} %{T-}%{F-}";;  # \Ue308  nf-weather-day_rain
-        10n) icon="%{F#8aadf4}%{T4} %{T-}%{F-}";;  # \Ue333  nf-weather-night_rain
-        11d) icon="%{F#eed49f}%{T4} %{T-}%{F-}";;  # \Ue305  nf-weather-day_lightning
-        11n) icon="%{F#eed49f}%{T4} %{T-}%{F-}";;  # \Ue322  nf-weather-night_alt_lightning
-        13d) icon="%{F#91d7e3}%{T4} %{T-}%{F-}";;  # \Ue30a  nf-weather-day_snow
-        13n) icon="%{F#91d7e3}%{T4} %{T-}%{F-}";;  # \Ue327  nf-weather-night_alt_snow
-        50d) icon="%{F#b8c0e0}%{T4} %{T-}%{F-}";;  # \Ue303  nf-weather-day_fog
-        50n) icon="%{F#b8c0e0}%{T4} %{T-}%{F-}";;  # \Ue346  nf-weather-night_fog
-        *)   icon="%{F#ed8796}%{T4} %{T-}%{F-}";   # \Uf128  nf-fa-question
+        01d) icon="%{F#eed49f}%{T5} %{T-}%{F-}";;  # \Ue30d  nf-weather-day_sunny
+        01n) icon="%{F#b8c0e0}%{T5}%{T-} %{F-}";;  # \Ue32b  nf-weather-night_clear
+        02d) icon="%{F#cad3f5}%{T5} %{T-}%{F-}";;  # \Ue302  nf-weather-day_cloudy
+        02n) icon="%{F#b8c0e0}%{T5} %{T-}%{F-}";;  # \Ue37e  nf-weather-night_alt_cloudy
+        03*) icon="%{F#cad3f5}%{T5} %{T-}%{F-}";;  # \Ue33d  nf-weather-cloud
+        04*) icon="%{F#cad3f5}%{T5} %{T-}%{F-}";;  # \Ue312  nf-weather-cloudy
+        09*) icon="%{F#8aadf4}%{T5} %{T-}%{F-}";;  # \Ue317  nf-weather-rain_wind
+        10d) icon="%{F#8aadf4}%{T5} %{T-}%{F-}";;  # \Ue308  nf-weather-day_rain
+        10n) icon="%{F#8aadf4}%{T5} %{T-}%{F-}";;  # \Ue333  nf-weather-night_rain
+        11d) icon="%{F#eed49f}%{T5} %{T-}%{F-}";;  # \Ue305  nf-weather-day_lightning
+        11n) icon="%{F#eed49f}%{T5} %{T-}%{F-}";;  # \Ue322  nf-weather-night_alt_lightning
+        13d) icon="%{F#91d7e3}%{T5} %{T-}%{F-}";;  # \Ue30a  nf-weather-day_snow
+        13n) icon="%{F#91d7e3}%{T5} %{T-}%{F-}";;  # \Ue327  nf-weather-night_alt_snow
+        50d) icon="%{F#b8c0e0}%{T5} %{T-}%{F-}";;  # \Ue303  nf-weather-day_fog
+        50n) icon="%{F#b8c0e0}%{T5} %{T-}%{F-}";;  # \Ue346  nf-weather-night_fog
+        *)   icon="%{F#ed8796}%{T5} %{T-}%{F-}";   # \Uf128  nf-fa-question
     esac
 
     echo $icon
@@ -96,15 +96,15 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     if [ "$current_temp" -gt "$forecast_temp" ]; then
         # \Ue380  nf-weather-direction_down_right
         # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        trend="%{F#a5adcb}%{T4}%{T-}%{F-}"   
+        trend="%{F#a5adcb}%{T5}%{T-}%{F-}"   
     elif [ "$forecast_temp" -gt "$current_temp" ]; then
         # \Ue352  nf-weather-direction_up_right
         # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        trend="%{F#a5adcb}%{T4}%{T-}%{F-}" 
+        trend="%{F#a5adcb}%{T5}%{T-}%{F-}" 
     else
         # \Ue349  nf-weather-direction_right
         # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        trend="%{F#a5adcb}%{T4}%{T-}%{F-}"  
+        trend="%{F#a5adcb}%{T5}%{T-}%{F-}"  
     fi
 
     sun_rise=$(echo "$current" | jq ".sys.sunrise")
@@ -114,15 +114,15 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
     if [ "$sun_rise" -gt "$now" ]; then
         # \Ue34c  nf-weather-sunrise
         # #eed49f  yellow  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        daytime="%{F#eed49f}%{T4} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
+        daytime="%{F#eed49f}%{T5} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
     elif [ "$sun_set" -gt "$now" ]; then
         # \Ue34d  nf-weather-sunset
         # #ee99a0  maroon  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        daytime="%{F#ee99a0}%{T4} %{T-}%{F-}$(get_duration "$((sun_set-now))")"  
+        daytime="%{F#ee99a0}%{T5} %{T-}%{F-}$(get_duration "$((sun_set-now))")"  
     else
         # \Ue34c  nf-weather-sunrise
         # #eed49f  yellow  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        daytime="%{F#eed49f}%{T4} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
+        daytime="%{F#eed49f}%{T5} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
     fi
 
     echo "%{O10}$(get_icon "$current_icon")$current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon")$forecast_temp$SYMBOL   $daytime"

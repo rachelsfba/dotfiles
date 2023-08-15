@@ -2,7 +2,7 @@
 palette = "catppuccin_macchiato"
 
 [directory]
-truncation_length = 4
+truncation_length = 0
 # Catppuccin 'lavender'
 style = "bold lavender"
 
