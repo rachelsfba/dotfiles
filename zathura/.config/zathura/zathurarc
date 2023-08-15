@@ -1,4 +1,10 @@
 set synctex true
 set synctex-editor-command "nvr --remote-silent %{input} -c %{line}"
 
+# Invert colors, for night reading.  Rebind to Ctrl + I (for Invert) cause I'm more
+# likely to remember that than Ctrl + R (for Recolor)
+#
+# As per https://www.noudaldenhoven.nl/wordpress/?p=166
+map <C-i> recolor 
+
 # vim: set ts=4 sw=4 tw=88 ft=conf et :
