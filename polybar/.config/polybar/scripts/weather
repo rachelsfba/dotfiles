@@ -1,62 +1,51 @@
 #!/bin/sh
 # Script modified from
 # https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/openweathermap-fullfeatured
-# 
-# Icons at https://erikflowers.github.io/weather-icons/
-get_icon() {
-    case $1 in
-        # Icons for Nerd Fonts
-        # Glyphs are searchable here: https://www.nerdfonts.com/cheat-sheet 
-        #   & https://erikflowers.github.io/weather-icons/
-        #
-        # The below hex codes correspond to colors from the Catppuccin Macchiato color
-        # palette: https://github.com/catppuccin/catppuccin
-        #
-        #   #cad3f5  text  (for cloudiness)
-        #   #b8c0e0  subtext1  (for fog, moon)
-        #   #eed49f  yellow (for clear & sunny *or* lightning)
-        #   #ed8796  red (for unknown)
-        #   #8aadf4  blue (for rainy events)
-        #   #91d7e3  sky (for snowy events)
-        01d) icon="%{F#eed49f}%{T5} %{T-}%{F-}";;  # \Ue30d  nf-weather-day_sunny
-        01n) icon="%{F#b8c0e0}%{T5}%{T-} %{F-}";;  # \Ue32b  nf-weather-night_clear
-        02d) icon="%{F#cad3f5}%{T5} %{T-}%{F-}";;  # \Ue302  nf-weather-day_cloudy
-        02n) icon="%{F#b8c0e0}%{T5} %{T-}%{F-}";;  # \Ue37e  nf-weather-night_alt_cloudy
-        03*) icon="%{F#cad3f5}%{T5} %{T-}%{F-}";;  # \Ue33d  nf-weather-cloud
-        04*) icon="%{F#cad3f5}%{T5} %{T-}%{F-}";;  # \Ue312  nf-weather-cloudy
-        09*) icon="%{F#8aadf4}%{T5} %{T-}%{F-}";;  # \Ue317  nf-weather-rain_wind
-        10d) icon="%{F#8aadf4}%{T5} %{T-}%{F-}";;  # \Ue308  nf-weather-day_rain
-        10n) icon="%{F#8aadf4}%{T5} %{T-}%{F-}";;  # \Ue333  nf-weather-night_rain
-        11d) icon="%{F#eed49f}%{T5} %{T-}%{F-}";;  # \Ue305  nf-weather-day_lightning
-        11n) icon="%{F#eed49f}%{T5} %{T-}%{F-}";;  # \Ue322  nf-weather-night_alt_lightning
-        13d) icon="%{F#91d7e3}%{T5} %{T-}%{F-}";;  # \Ue30a  nf-weather-day_snow
-        13n) icon="%{F#91d7e3}%{T5} %{T-}%{F-}";;  # \Ue327  nf-weather-night_alt_snow
-        50d) icon="%{F#b8c0e0}%{T5} %{T-}%{F-}";;  # \Ue303  nf-weather-day_fog
-        50n) icon="%{F#b8c0e0}%{T5} %{T-}%{F-}";;  # \Ue346  nf-weather-night_fog
-        *)   icon="%{F#ed8796}%{T5} %{T-}%{F-}";   # \Uf128  nf-fa-question
-    esac
-
-    echo $icon
-}
-
-get_duration() {
-
-    osname=$(uname -s)
-
-    case $osname in
-        *BSD) date -r "$1" -u +%H:%M;;
-        *) date --date="@$1" -u +%H:%M;;
-    esac
-
-}
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../" >/dev/null 2>&1 && pwd )"
 
 KEY="`cat ${DIR}/weather_api_key`"
-#CITY="King%20George"
-#CITY=4767771
+
+# {{{ Catppuccin Macchiato Color Palette - https://github.com/catppuccin/catppuccin
+COLOR_BASE="#24273a"
+COLOR_MANTLE="#1e2030"
+COLOR_CRUST="#181926"
+
+COLOR_TEXT="#cad3f5"
+COLOR_SUBTEXT0="#a5adcb"
+COLOR_SUBTEXT1="#b8c0e0"
+
+COLOR_SURFACE0="#363a4f"
+COLOR_SURFACE1="#494d64"
+COLOR_SURFACE2="#5b6078"
+
+COLOR_OVERLAY0="#6e738d"
+COLOR_OVERLAY1="#8087a2"
+COLOR_OVERLAY2="#939ab7"
+
+COLOR_BLUE="#8aadf4"
+COLOR_LAVENDER="#b7bdf8"
+COLOR_SAPPHIRE="#7dc4e4"
+COLOR_SKY="#91d7e3"
+COLOR_TEAL="#8bd5ca"
+COLOR_GREEN="#a6da95"
+COLOR_YELLOW="#eed49f"
+COLOR_PEACH="#f5a97f"
+COLOR_MAROON="#ee99a0"
+COLOR_RED="#ed8796"
+COLOR_MAUVE="#c6a0f6"
+COLOR_PINK="#f5bde6"
+COLOR_FLAMINGO="#f0c6c6"
+COLOR_ROSEWATER="#f4dbd6"
+
+COLOR_TRANSPARENT="#ff00000"
+# }}}
+
+# Possible Values: imperial, metric
 UNITS="imperial"
 # UNITS="metric"
+
+# Symbol to use when displaying temperatures.  User-defined.
 #SYMBOL="°"
 #SYMBOL=""  # \Ue339 nf-weather-celsius
 #SYMBOL="糖"  # \Ufa03 nf-mdi-temperature_celsius
@@ -64,6 +53,28 @@ UNITS="imperial"
 SYMBOL="°F"
 
 API="https://api.openweathermap.org/data/2.5"
+
+# High temperature threshhold; triggers a different text color when the temperature is
+# at or above this value.  Make sure this makes sense for the currently selected units
+# (°F or °C).
+HI_TEMP_THRESH="75"  # °F
+HI_TEMP_COLOR="$COLOR_PEACH"
+# Dangerous temperature threshhold; triggers a different text color when the
+# temperature is at or above this value.  Make sure this makes sense for the currently
+# selected units (°F or °C).
+DANGER_TEMP_THRESH="88"  # °F
+DANGER_TEMP_COLOR="$COLOR_RED"
+
+# Add color formatting to temperatures.
+format_temp() {
+    if [[ "$1" -ge "${DANGER_TEMP_THRESH}" ]]; then
+        echo "%{F${DANGER_TEMP_COLOR}}${1}${SYMBOL}%{F-}"
+    elif [[ "$1" -ge "${HI_TEMP_THRESH}" ]]; then
+        echo "%{F${HI_TEMP_COLOR}}${1}${SYMBOL}%{F-}"
+    else
+        echo "$1"
+    fi
+}
 
 if [ -n "$CITY" ]; then
     if [ "$CITY" -eq "$CITY" ] 2>/dev/null; then
@@ -86,6 +97,43 @@ else
     fi
 fi
 
+get_icon() {
+    case $1 in
+        # Icons for Nerd Fonts
+        # Glyphs are searchable here: https://www.nerdfonts.com/cheat-sheet 
+        #   & https://erikflowers.github.io/weather-icons/
+        01d) icon="%{F${COLOR_YELLOW}}%{T5} %{T-}%{F-}";;    # \Ue30d  nf-weather-day_sunny
+        01n) icon="%{F${COLOR_SUBTEXT1}}%{T5}%{T-} %{F-}";;  # \Ue32b  nf-weather-night_clear
+        02d) icon="%{F${COLOR_YELLOW}}%{T5} %{T-}%{F-}";;    # \Ue302  nf-weather-day_cloudy
+        02n) icon="%{F${COLOR_SUBTEXT1}}%{T5} %{T-}%{F-}";;  # \Ue37e  nf-weather-night_alt_cloudy
+        03*) icon="%{F${COLOR_TEXT}}%{T5} %{T-}%{F-}";;      # \Ue33d  nf-weather-cloud
+        04*) icon="%{F${COLOR_TEXT}}%{T5} %{T-}%{F-}";;      # \Ue312  nf-weather-cloudy
+        09*) icon="%{F${COLOR_BLUE}}%{T5} %{T-}%{F-}";;      # \Ue317  nf-weather-rain_wind
+        10d) icon="%{F${COLOR_BLUE}}%{T5} %{T-}%{F-}";;      # \Ue308  nf-weather-day_rain
+        10n) icon="%{F${COLOR_BLUE}}%{T5} %{T-}%{F-}";;      # \Ue333  nf-weather-night_rain
+        11d) icon="%{F${COLOR_YELLOW}}%{T5} %{T-}%{F-}";;    # \Ue305  nf-weather-day_lightning
+        11n) icon="%{F${COLOR_YELLOW}}%{T5} %{T-}%{F-}";;    # \Ue322  nf-weather-night_alt_lightning
+        13d) icon="%{F${COLOR_SKY}}%{T5} %{T-}%{F-}";;       # \Ue30a  nf-weather-day_snow
+        13n) icon="%{F${COLOR_SKY}}%{T5} %{T-}%{F-}";;       # \Ue327  nf-weather-night_alt_snow
+        50d) icon="%{F${COLOR_SUBTEXT1}}%{T5} %{T-}%{F-}";;  # \Ue303  nf-weather-day_fog
+        50n) icon="%{F${COLOR_SUBTEXT1}}%{T5} %{T-}%{F-}";;  # \Ue346  nf-weather-night_fog
+        *)   icon="%{F${COLOR_RED}}%{T5} %{T-}%{F-}";        # \Uf128  nf-fa-question
+    esac
+
+    echo $icon
+}
+
+get_duration() {
+    osname=$(uname -s)
+
+    case $osname in
+        *BSD) date -r "$1" -u +%H:%M;;
+        *) date --date="@$1" -u +%H:%M;;
+    esac
+
+}
+
+
 if [ -n "$current" ] && [ -n "$forecast" ]; then
     current_temp=$(echo "$current" | jq ".main.temp" | cut -d "." -f 1)
     current_icon=$(echo "$current" | jq -r ".weather[0].icon")
@@ -95,16 +143,13 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
 
     if [ "$current_temp" -gt "$forecast_temp" ]; then
         # \Ue380  nf-weather-direction_down_right
-        # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        trend="%{F#a5adcb}%{T5}%{T-}%{F-}"   
+        trend="%{F${COLOR_BLUE}}%{T5}%{T-}%{F-}"  
     elif [ "$forecast_temp" -gt "$current_temp" ]; then
         # \Ue352  nf-weather-direction_up_right
-        # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        trend="%{F#a5adcb}%{T5}%{T-}%{F-}" 
+        trend="%{F${COLOR_RED}}%{T5}%{T-}%{F-}"  
     else
         # \Ue349  nf-weather-direction_right
-        # #a5adcb  subtext0  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        trend="%{F#a5adcb}%{T5}%{T-}%{F-}"  
+        trend="%{F-}%{T5}%{T-}%{F-}"
     fi
 
     sun_rise=$(echo "$current" | jq ".sys.sunrise")
@@ -113,17 +158,18 @@ if [ -n "$current" ] && [ -n "$forecast" ]; then
 
     if [ "$sun_rise" -gt "$now" ]; then
         # \Ue34c  nf-weather-sunrise
-        # #eed49f  yellow  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        daytime="%{F#eed49f}%{T5} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
+        daytime="%{F${COLOR_YELLOW}}%{T5} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
     elif [ "$sun_set" -gt "$now" ]; then
         # \Ue34d  nf-weather-sunset
-        # #ee99a0  maroon  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        daytime="%{F#ee99a0}%{T5} %{T-}%{F-}$(get_duration "$((sun_set-now))")"  
+        daytime="%{F${COLOR_MAROON}}%{T5} %{T-}%{F-}$(get_duration "$((sun_set-now))")"  
     else
         # \Ue34c  nf-weather-sunrise
-        # #eed49f  yellow  from Catppuccin Macchiato (https://github.com/catppuccin/catppuccin)
-        daytime="%{F#eed49f}%{T5} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
+        daytime="%{F${COLOR_YELLOW}}%{T5} %{T-}%{F-}$(get_duration "$((sun_rise-now))")"  
     fi
 
-    echo "%{O10}$(get_icon "$current_icon")$current_temp$SYMBOL  $trend  $(get_icon "$forecast_icon")$forecast_temp$SYMBOL   $daytime"
+    # Emphasize temperatures if they exceed a constant.
+    current_temp_fmtd="$(format_temp $current_temp)"
+    forecast_temp_fmtd="$(format_temp $forecast_temp)"
+
+    echo "%{O10}$(get_icon "$current_icon")$current_temp_fmtd  $trend  $(get_icon "$forecast_icon")$forecast_temp_fmtd   $daytime"
 fi
