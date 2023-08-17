@@ -85,7 +85,7 @@ format_temp() {
     elif [[ "$1" -ge "${HI_TEMP_THRESH}" ]]; then
         echo "%{F${HI_TEMP_COLOR}}${1}${SYMBOL}%{F-}"
     else
-        echo "$1"
+        echo "${1}${SYMBOL}"
     fi
 }
 
