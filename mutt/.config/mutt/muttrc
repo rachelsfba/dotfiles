@@ -1,3 +1,3 @@
-source ~/.config/mutt/colors/colors.`if [ "$TERM" = "linux" ] ; then echo linux ; else echo trapd00r; fi`
+source ~/.config/mutt/private.muttrc
 
 #  vim: set ts=4 sw=4 tw=88 ft=muttrc et :

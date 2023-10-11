@@ -141,7 +141,7 @@ for_window [title="Quake Live" class="Wine"] floating enable
 for_window [title="FINAL FANTASY XIV" class="ffxiv_dx11.exe"] floating enable
 for_window [title="NVIDIA X Server Settings" class="nvidia-settings"] floating enable
 
-for_window [class="(?i)^steam*"] floating enable
+# for_window [class="(?i)^steam*"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Gimp"] floating enable
 for_window [class="(?i)^gnome*"] floating enable
