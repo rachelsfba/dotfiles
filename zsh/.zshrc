@@ -25,6 +25,14 @@ unsetopt BEEP # Per https://blog.vghaisas.com/zsh-beep-sound/
 autoload -Uz compinit
 compinit
 
+# https://stackoverflow.com/a/903973
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+# For mass renaming of files: https://www.twilio.com/blog/zsh-tricks-to-blow-your-mind
+autoload zmv
+
 # smart urls
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
@@ -67,6 +75,7 @@ bindkey "^r" history-incremental-pattern-search-backward
 bindkey "^f" history-incremental-pattern-search-forward
 bindkey '^w' kill-word
 bindkey '^b' backward-kill-word
+bindkey '^xe' edit-command-line  # see above - autoload edit-command-line 
 bindkey ' ' magic-space                # Do history expansion on space
 
 # Set LS_COLORS

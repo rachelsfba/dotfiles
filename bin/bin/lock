@@ -2,5 +2,5 @@
 if [ "$HOST" = "sjc-laptop" ]; then
     i3lock -i "${D_ART}/wallpapers/wallhaven-602455.png" && systemctl suspend
 elif [ "$HOST" = "sjc-pc" ]; then
-    systemctl suspend -i
+    systemctl suspend 
 fi
