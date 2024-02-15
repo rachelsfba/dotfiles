@@ -66,9 +66,6 @@ export SAVEHIST=1000000
 if command -v nvimpager &> /dev/null; then
     export PAGER="nvimpager"
     export MANPAGER="nvimpager"
-elif command -v nvim &> /dev/null; then
-    export PAGER="nvim -R"
-    export MANPAGER="nvim -R"
 fi
 
 # Ansible
