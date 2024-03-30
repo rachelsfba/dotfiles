@@ -16,7 +16,14 @@ alias more='less'
 alias spck="aspell -t -c"
 alias rgrep="grep -r"
 
-alias cd2='cd $DL && exa -laF -snew'
+# Quick access to docker compose stuff on servers
+if [ -d "/opt/repos/${HOST}-infra" ]; then
+    alias cd1="cd /opt/repos/${HOST}-infra && sudo docker compose ps"
+fi
+# Quick access to downloads directory
+if [ -d "$DL" ]; then
+    alias cd2='cd $DL && exa -laF -snew'
+fi
 
 # {{{ ls-related
 alias ls='lsd'
