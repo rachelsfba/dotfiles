@@ -63,7 +63,7 @@ mpd_music_dir = $D_MUSIC
 ## visualizer.
 ##
 
-visualizer_data_source = /tmp/mpd.fifo
+visualizer_data_source = ~/.local/share/mpd/mpd.fifo
 
 ##
 ## Note: Below parameter is needed for ncmpcpp to determine which output
