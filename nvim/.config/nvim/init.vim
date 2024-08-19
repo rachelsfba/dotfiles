@@ -78,26 +78,13 @@ call plug#begin(stdpath('data') . '/plugged')
    Plug 'rust-lang/rust.vim'
    
    " Plugins
-   "Plug 'itchyny/lightline.vim'
-   "Plug 'powerline/powerline'
-   "Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
    Plug 'vim-airline/vim-airline'
-   " Plug 'vim-airline/vim-airline-themes'"
-   "Plug 'Yggdroot/indentLine'
-   "Plug 'vim-latex/vim-latex'
    Plug 'lervag/vimtex'
    Plug 'tpope/vim-abolish'
 
    " File explorer
    Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
    Plug 'nvim-tree/nvim-tree.lua'
-
-   " Obsidian.md replacement -- look into later
-   " https://www.reddit.com/r/neovim/comments/zolylk/new_to_neovim_wanting_to_use_it_for_notes/
-   " 
-   " https://github.com/renerocksai/telekasten.nvim
-   "Plug 'renerocksai/telekasten.nvim'
-   "Plug 'renerocksai/calendar-vim'
 
    " Fuzzy finder
    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -187,14 +174,15 @@ lua <<EOF
           "lua",
           "markdown",
           "markdown_inline",
+          "python",
+          "query",
           "rust",
           "terraform",
-          "python",
           "vim",
+          "vimdoc",
           "yaml",
       },
          
-
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,
 
@@ -210,6 +198,12 @@ lua <<EOF
       ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
       -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
+      -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1136#issuecomment-986260717
+      indent = {
+          disable = true,
+          -- disable = { "yaml", "python", }
+      },
+      
       highlight = {
         -- `false` will disable the whole extension
         enable = true,
@@ -419,6 +413,7 @@ lua <<EOF
       }
     }
   }
+
 EOF
 " }}}
 
@@ -769,6 +764,10 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Per https://vi.stackexchange.com/questions/678/how-do-i-save-a-file-in-a-directory-that-does-not-yet-exist
 nnoremap <Leader>m :call mkdir(expand("%:p:h"), "p")<CR>
+
+" Run doctest on current file, for use when LeetCoding
+nnoremap <Leader>dt :!pytest --doctest-modules %<CR>
+
 
 
 "}}}
