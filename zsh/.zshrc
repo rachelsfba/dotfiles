@@ -96,6 +96,11 @@ if [ -f ~/.ssh/id_ed25519 ]; then
     eval `keychain -q --eval ~/.ssh/id_ed25519`
 fi
 
+# Read in ZSH stuff that isn't checked into source control
+if [ -f $ZSH_HOME/local.zsh ]; then
+    source $ZSH_HOME/local.zsh
+fi
+
 # Show TODO list
 # todo
 
