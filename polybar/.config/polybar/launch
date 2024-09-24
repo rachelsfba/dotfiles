@@ -8,13 +8,13 @@ killall -q -s 9 polybar
 # Wait until the processes have been shut down
 while pgrep -x polybar >/dev/null; do sleep 0.1; done
 
-# Launch bar1 and bar2
+# Launch all polybars, depending on host
 if [ "$HOST" = "sjc-laptop" ]; then
-    polybar main & disown
+    polybar laptop & disown
 elif [ "$HOST" = "sjc-pc" ]; then
-    polybar mainA & disown
-    polybar mainB & disown
-    polybar mainC & disown
+    polybar pc-monitor1 & disown
+    polybar pc-monitor2 & disown
+    polybar pc-monitor3 & disown
 fi
 
 echo "Bars launched..."
