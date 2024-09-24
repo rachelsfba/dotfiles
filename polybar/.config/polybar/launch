@@ -12,9 +12,9 @@ while pgrep -x polybar >/dev/null; do sleep 0.1; done
 if [ "$HOST" = "sjc-laptop" ]; then
     polybar laptop & disown
 elif [ "$HOST" = "sjc-pc" ]; then
-    polybar pc-monitor1 & disown
-    polybar pc-monitor2 & disown
-    polybar pc-monitor3 & disown
+    polybar pc_monitor1 & disown
+    polybar pc_monitor2 & disown
+    polybar pc_monitor3 & disown
 fi
 
 echo "Bars launched..."

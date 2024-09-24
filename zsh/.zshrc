@@ -97,8 +97,8 @@ if [ -f ~/.ssh/id_ed25519 ]; then
 fi
 
 # Read in ZSH stuff that isn't checked into source control
-if [ -f $ZSH_HOME/local.zsh ]; then
-    source $ZSH_HOME/local.zsh
+if [ -f $XDG_DATA_HOME/zsh/local.zsh ]; then
+    source $XDG_DATA_HOME/zsh/local.zsh
 fi
 
 # Show TODO list

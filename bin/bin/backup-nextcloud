@@ -4,7 +4,7 @@ set -e -u -x
 now="$(date +%F-%H%M%S.%N)"
 
 tar cavf $D_BACKUPS/nextcloud-backup-$now.tar.zst $D_NCLOUD
-sha512sum D_BACKUPS/nextcloud-backup-$now.tar.zst >$D_BACKUPS/nextcloud-backup-$now.tar.zst.sha512
+sha512sum $D_BACKUPS/nextcloud-backup-$now.tar.zst >$D_BACKUPS/nextcloud-backup-$now.tar.zst.sha512
 
 scp $D_BACKUPS/nextcloud-backup-$now.tar.zst $D_BACKUPS/nextcloud-backup-$now.tar.zst.sha512 \
     $BACKUP_HOST_USER@$BACKUP_HOST_SERVER:.
