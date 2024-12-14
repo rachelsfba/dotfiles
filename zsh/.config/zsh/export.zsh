@@ -20,7 +20,7 @@ fi
 export D_NCLOUD=$D_DOC/NextCloud
 export D_DL=$D_DOC/Downloads
 export D_ALY=$D_NCLOUD/Aly
-export D_DND=$D_NCLOUD/DnD
+export D_RECIPES=$D_DOC/Notion/Recipes
 export D_ART=$D_NCLOUD/Art
 export D_VIDS=$D_NCLOUD/Videos
 export D_VIDEOS=$D_VIDS

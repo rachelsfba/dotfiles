@@ -1,4 +1,5 @@
 #!/bin/bash
 
-cd $D_GAMES/Minecraft_Server
+# cd $D_GAMES/Minecraft_Server
+cd /srv/mc3
 java -jar -Xms2G -Xmx2G -jar server.jar nogui | grep -v " that already exists with UUID "

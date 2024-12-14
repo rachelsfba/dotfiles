@@ -11,9 +11,9 @@ follow = keyboard
 icon_position = left
 
 width = (0, 700)
-height = 800
+height = 125 
 origin = top-right
-offset = 15x15
+offset = (15, 15)
 scale = 0
 notification_limit = 5
 frame_width = 3
