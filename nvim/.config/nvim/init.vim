@@ -660,21 +660,21 @@ nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " No arrow keys --- force yourself to use the home row
 " Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" nnoremap <up> <nop>
+" nnoremap <down> <nop>
+" inoremap <up> <nop>
+" inoremap <down> <nop>
+" inoremap <left> <nop>
+" inoremap <right> <nop>
 
 " Left and right can switch buffers
-nnoremap <left> :bp<CR>
-nnoremap <right> :bn<CR>
+" nnoremap <left> :bp<CR>
+" nnoremap <right> :bn<CR>
 
 " Control + Page Down or Control + Page Up can switch buffers
 " I use gt and gT for tabs anyway so idc if overriding that
-" nnoremap <C-PageUp> :bn<CR>
-" nnoremap <C-PageDown> :bp<CR>
+nnoremap <C-PageUp> :bn<CR>
+nnoremap <C-PageDown> :bp<CR>
 
 " Incremental searching is sexy
 set incsearch

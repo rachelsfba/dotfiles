@@ -375,12 +375,10 @@ exec_always --no-startup-id setwall
 exec --no-startup-id nextcloud
 # exec --no-startup-id unclutter --timeout 3 --fork
 exec --no-startup-id xset +dpms -b
-exec --no-startup-id xmodshit
 exec --no-startup-id dunst
 
 # Doesn't really NEED to start up by default
 #exec discord
-# Doesn't really NEED to start up by default
 #exec keepassxc 
 
 # vim: set ts=4 sw=4 tw=88 et ft=i3config :

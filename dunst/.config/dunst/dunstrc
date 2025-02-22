@@ -11,7 +11,7 @@ follow = keyboard
 icon_position = left
 
 width = (0, 700)
-height = 125 
+height = (0, 800)
 origin = top-right
 offset = (15, 15)
 scale = 0
