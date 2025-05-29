@@ -658,15 +658,6 @@ nnoremap <leader>da :put =strftime(\"%Y-%m-%d %H:%M:%S\")<cr>
 " Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" No arrow keys --- force yourself to use the home row
-" Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
-
 " Left and right can switch buffers
 " nnoremap <left> :bp<CR>
 " nnoremap <right> :bn<CR>
@@ -706,7 +697,7 @@ autocmd BufRead *.pacnew set readonly
 " Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 autocmd InsertLeave * set nopaste
 
-set pastetoggle=<F3>
+" set pastetoggle=<F3>
 nnoremap <F4> :set number!<cr>
 vnoremap <F4> :set number!<cr>
 
@@ -772,7 +763,7 @@ nnoremap <Leader>dt :!pytest --doctest-modules %<CR>
 
 "}}}
 
-"{{{Look and Feel
+"PageUp{{{Look and Feel
 
 " color neverland
 " color everforest
