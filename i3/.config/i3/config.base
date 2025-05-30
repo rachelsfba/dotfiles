@@ -252,6 +252,8 @@ bindsym $mod+Shift+Return exec wezterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
+# The middle button and a modifier over the titlebar will kill that window
+bindsym --release $mod+button2 kill 
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec "rofi -show run"
