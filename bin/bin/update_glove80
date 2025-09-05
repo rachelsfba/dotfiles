@@ -1,0 +1,47 @@
+#!/bin/zsh
+set -e
+mountpoint=/mnt
+uf2_layout_folder=$D_NCLOUD/Miscellaneous_Shit/glove80/uf2_layouts
+
+die() {
+    echo $1 1>&2
+    exit 1
+}
+
+identify_glove80_device() {
+    possibilities=()
+    # left-hand side
+    possibilities+=(/dev/disk/by-label/GLV80LHBOOT)
+    # right-hand side
+    possibilities+=(/dev/disk/by-label/GLV80RHBOOT)
+    found=0
+
+    for possibility in $possibilities; do
+        if [[ -e "$possibility" ]]; then
+            echo "$possibility"
+            found=1
+            break
+        fi
+    done
+    if [[ $found -ne 1 ]]; then
+        die "Could not find a suitable Glove80 device"
+    fi
+}
+
+identify_latest_keymap() {
+    fd .\*.uf2 $uf2_layout_folder -X ls -tr | tail -1
+}
+
+glove80_device=$(identify_glove80_device)
+keymap_name="$(identify_latest_keymap)"
+
+if find $mountpoint -mindepth 1 -maxdepth 1 | read; then
+    die "Mount point $mountpoint not empty"
+fi
+
+sudo mount $glove80_device $mountpoint
+echo "Mounted $glove80_device to $mountpoint"
+sudo cp "$keymap_name" $mountpoint
+echo "Copied over keymap '$keymap_name' to $mountpoint"
+sudo umount $mountpoint
+echo "Unmounted Glove80 device"

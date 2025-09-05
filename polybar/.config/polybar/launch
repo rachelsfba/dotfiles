@@ -13,8 +13,6 @@ if [ "$HOST" = "sjc-laptop" ]; then
     polybar laptop & disown
 elif [ "$HOST" = "sjc-pc" ]; then
     polybar pc_monitor1 & disown
-    polybar pc_monitor2 & disown
-    polybar pc_monitor3 & disown
 fi
 
 echo "Bars launched..."
