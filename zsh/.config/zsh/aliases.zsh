@@ -22,7 +22,7 @@ if [ -d "/opt/repos/${HOST}-infra" ]; then
 fi
 # Quick access to downloads directory
 if [ -d "$DL" ]; then
-    alias cd2='cd $DL && exa -laF -snew'
+    alias cd2='cd $DL && ls -al -tr'
 fi
 
 # {{{ ls-related

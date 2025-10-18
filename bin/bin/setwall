@@ -2,7 +2,10 @@
 if [ "$HOST" = "sjc-laptop" ]; then
     feh --bg-scale ${D_ART}/wallpapers/wallhaven-602455.jpg &
 else
-    feh --bg-scale ${D_ART}/wallpapers/2025-04-19_reddit_mvp44tyf9tve1_great_smokies.jpg &
+    #chicago
+    feh --bg-scale ${D_ART}/wallpapers/nvxpcaruslnd1.png &
+    # iceland coast
+    # feh --bg-scale ${D_ART}/wallpapers/27bbconb9av61.webp &
 fi
 
 

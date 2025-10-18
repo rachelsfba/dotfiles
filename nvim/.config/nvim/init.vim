@@ -384,13 +384,14 @@ lua <<EOF
   end
 
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['pyright'].setup {
+  vim.lsp.config('pyright', {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
-  }
+  })
+  vim.lsp.enable({"pyright"})
 
-  require('lspconfig')['rust_analyzer'].setup {
+  vim.lsp.config('rust_analyzer', {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
@@ -412,7 +413,7 @@ lua <<EOF
         },
       }
     }
-  }
+  })
 
 EOF
 " }}}
