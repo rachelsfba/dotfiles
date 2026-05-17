@@ -665,8 +665,10 @@ nnoremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Control + Page Down or Control + Page Up can switch buffers
 " I use gt and gT for tabs anyway so idc if overriding that
-nnoremap <C-PageUp> :bn<CR>
-nnoremap <C-PageDown> :bp<CR>
+"nnoremap <C-PageUp> :bn<CR>
+"nnoremap <C-PageDown> :bp<CR>
+nnoremap <C-j> :bn<CR>
+nnoremap <C-k> :bp<CR>
 
 " Incremental searching is sexy
 set incsearch

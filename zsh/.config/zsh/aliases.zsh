@@ -24,6 +24,10 @@ fi
 if [ -d "$DL" ]; then
     alias cd2='cd $DL && ls -al -tr'
 fi
+# Quick access to NextCloud directory
+if [ -d "$D_NCLOUD" ]; then
+    alias cd3='cd $D_NCLOUD && ls -al'
+fi
 
 # {{{ ls-related
 alias ls='lsd'

@@ -3,9 +3,9 @@ if [ "$HOST" = "sjc-laptop" ]; then
     feh --bg-scale ${D_ART}/wallpapers/wallhaven-602455.jpg &
 else
     #chicago
-    feh --bg-scale ${D_ART}/wallpapers/nvxpcaruslnd1.png &
-    # iceland coast
-    # feh --bg-scale ${D_ART}/wallpapers/27bbconb9av61.webp &
+    #feh --bg-scale ${D_ART}/wallpapers/nvxpcaruslnd1.png &
+    # golden gate bridge from oakland
+    feh --bg-scale ${D_ART}/wallpapers/1srq3tg_the_golden_gate_from_oakland_this_am_r_oakland_5120x2160.jpg &
 fi
 
 
