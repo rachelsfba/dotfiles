@@ -154,8 +154,9 @@ for_window [class="(?i)^gnome*"] floating enable
 #########################################################################################             ##
 ########################################################################################################
 
-bindsym $mod+Shift+a exec "minecraft"
-# bindsym $mod+Shift+s exec "youtube-music"
+
+#bindsym $mod+Shift+a exec "minecraft"
+#bindsym $mod+Shift+s exec "youtube-music"
 #bindsym $mod+Shift+s exec "spotify"
 #bindsym $mod+Shift+s exec "gpmdp"
 bindsym $mod+Shift+f exec "ff"
@@ -171,6 +172,7 @@ bindsym $mod+Shift+backslash exec "pavucontrol"
 bindsym $mod+Shift+z exec obsidian
 bindsym $mod+Shift+Scroll_Lock exec "lock"
 bindsym XF86Sleep exec "lock"
+bindsym $mod+Shift+period exec keepassxc
 
 #bindsym Ctrl+Scroll_Lock exec "loopclk"
 #bindsym F6 exec "loopclk"
