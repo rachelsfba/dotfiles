@@ -1,4 +1,10 @@
 --------------------------------------------------------------------------------
+-- init.lua
+-- Pure-Lua rewrite of the original init.vim
+-- Plugin manager: lazy.nvim (https://github.com/folke/lazy.nvim)
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
 -- Bootstrap lazy.nvim
 --------------------------------------------------------------------------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -69,6 +75,7 @@ require("lazy").setup({
 
   -- Git plugin
   "tpope/vim-fugitive",
+  
 
   -- Commenting out lines easily
   {
@@ -119,8 +126,16 @@ require("lazy").setup({
       vim.g.airline_powerline_fonts = 1
       vim.g["airline#extensions#tabline#enabled"] = 1
       vim.g["airline#extensions#tabline#formatter"] = "default"
-      vim.g.airline_theme = "catppuccin"
+      vim.g.airline_theme = "catppuccin_macchiato"
     end,
+  },
+  -- NOTE(2026-11-09): until https://github.com/vim-airline/vim-airline-themes/pull/288
+  -- is merged into `vim-airline/vim-airline-themes`, we need to use this one forked
+  -- repo to get the catppuccin themes
+  --"vim-airline/vim-airline-themes", 
+  {
+    "comfysage/vim-airline-themes", 
+    branch = "push-nllkturtlpkm",
   },
 
   "lervag/vimtex",
@@ -160,91 +175,90 @@ require("lazy").setup({
   "airblade/vim-gitgutter",
 
   -- TreeSitter for better syntax highlighting
-  -- https://github.com/nvim-treesitter/nvim-treesitter
+  -- https://github.com/nvim-treesitter/nvim-treesitter (`main` branch rewrite)
+  -- NOTE: the rewrite has no `nvim-treesitter.configs` module, no
+  -- `ensure_installed`/`auto_install`/`highlight` options. Parsers are installed
+  -- with `require("nvim-treesitter").install()` and highlighting is started
+  -- with Neovim's built-in `vim.treesitter.start()`.
+  -- Requires Neovim 0.11+, the `tree-sitter` CLI, and a C compiler.
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false, -- this plugin does not support lazy-loading
     build = ":TSUpdate", -- We recommend updating the parsers on update
     config = function()
-      require("nvim-treesitter.configs").setup({
-        -- A list of parser names, or "all"
-        -- https://github.com/nvim-treesitter/nvim-treesitter
-        ensure_installed = {
-          "c",
-          "comment",
-          "diff",
-          "gitcommit",
-          "git_rebase",
-          "lua",
-          "markdown",
-          "markdown_inline",
-          "python",
-          "query",
-          "rust",
-          "terraform",
-          "vim",
-          "vimdoc",
-          "yaml",
-        },
+      local ts = require("nvim-treesitter")
 
-        -- Install parsers synchronously (only applied to `ensure_installed`)
-        sync_install = false,
+      ts.setup({
+        -- Where parsers/queries are stored (this is the default)
+        install_dir = vim.fn.stdpath("data") .. "/site",
+      })
 
-        -- Automatically install missing parsers when entering buffer
-        -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-        auto_install = true,
+      -- Equivalent of the old `ensure_installed` (async; no-op if already installed)
+      ts.install({
+        "c",
+        "comment",
+        "diff",
+        "gitcommit",
+        "git_rebase",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "query",
+        "rust",
+        "terraform",
+        "vim",
+        "vimdoc",
+        "yaml",
+      })
 
-        -- List of parsers to ignore installing (for "all")
-        -- NOTE(2023-03-07): Disabled Treesitter for LaTeX due to conflicts with VimTeX.
-        --   See `:help vimtex-faq-treesitter` for more info.
-        ignore_install = { "latex" },
+      -- NOTE(2023-03-07): Disabled Treesitter for LaTeX due to conflicts with VimTeX.
+      --   See `:help vimtex-faq-treesitter` for more info.
+      local ignore_langs = { latex = true }
 
-        -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1136#issuecomment-986260717
-        indent = {
-          disable = true,
-          -- disable = { "yaml", "python" },
-        },
+      -- Equivalent of the old `highlight.disable` function (skip large files)
+      local max_filesize = 100 * 1024 -- 100 KB
 
-        highlight = {
-          -- `false` will disable the whole extension
-          enable = true,
+      -- Equivalent of `highlight.enable = true` and `auto_install = true`.
+      -- (`indent` was disabled in the old config, so nothing to set up for it.)
+      vim.api.nvim_create_autocmd("FileType", {
+        group = vim.api.nvim_create_augroup("treesitter_start", { clear = true }),
+        pattern = "*",
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match) or args.match
+          -- ignore any ignored languages
+          if ignore_langs[lang] then
+            return
+          end
 
-          -- NOTE: these are the names of the parsers and not the filetype. (for example
-          -- if you want to disable highlighting for the `tex` filetype, you need to
-          -- include `latex` in this list as this is the name of the parser)
-          -- disable = { "c", "rust" },
+          -- do not use treesitter for any huge files, it would be too buggy
+          local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(args.buf))
+          if ok and stats and stats.size > max_filesize then
+            return
+          end
 
-          -- Or use a function for more flexibility, e.g. to disable slow treesitter
-          -- highlight for large files
-          disable = function(lang, buf)
-            local max_filesize = 100 * 1024 -- 100 KB
-            local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-            if ok and stats and stats.size > max_filesize then
-              return true
-            end
-          end,
-
-          -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-          -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-          -- Using this option may slow down your editor, and you may see some duplicate
-          -- highlights. Instead of true it can also be a list of languages.
-          additional_vim_regex_highlighting = false,
-        },
+          if vim.tbl_contains(ts.get_installed(), lang) then
+            vim.treesitter.start(args.buf, lang)
+          elseif vim.tbl_contains(ts.get_available(), lang) then
+            -- Auto-install a missing parser (async). Highlighting begins the
+            -- next time this filetype loads, e.g. after `:e`.
+            ts.install({ lang })
+          end
+        end,
       })
     end,
   },
 
-  -- For TODO, etc. highlighting in comments
-  {
-      "folke/todo-comments.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
-  },
+  -- For TODO, etc. highlighting in comments (disabled, as in the original)
+  -- "nvim-lua/plenary.nvim",
+  -- "folke/todo-comments.nvim",
 
   {
     "ray-x/lsp_signature.nvim",
-    event = "InsertEnter",
-    opts = {
-      -- cfg options
-    },
+    config = function()
+      require("config.lsp_signature")
+    end,
   },
 })
 
@@ -286,15 +300,15 @@ opt.wildmode = "list:longest,full"
 -- Taken from https://github.com/jonhoo/configs/blob/master/editor/.config/nvim/init.vim
 opt.wildignore = {
   "*~", 
-  "*.png",
-  "*.jpg",
-  "*.gif",
-  "*.settings",
+  "*.png", 
+  "*.jpg", 
+  "*.gif", 
+  "*.settings", 
   "Thumbs.db",
-  "*.min.js",
-  "*.sw?",
-  "*.o",
-  "*.hi",
+  "*.min.js", 
+  "*.sw?", 
+  "*.o", 
+  "*.hi", 
   "vendor",
 }
 
